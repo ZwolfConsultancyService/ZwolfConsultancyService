@@ -1,22 +1,24 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navItems = [
-    { name: "Home", path: "/", active: true },
+    { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Services", path: "/services", dropdown: true },
     { name: "Portfolio", path: "/portfolio" },
     { name: "Blog", path: "/blog" },
   ];
 
+  const isActive = (path) => location.pathname === path;
+
   return (
     <div className="bg-[#f7f8fc] w-full fixed top-0 left-0 shadow z-50">
       <nav className="flex items-center justify-between max-w-7xl mx-auto px-6 py-4">
-        
         {/* Logo */}
         <Link
           to="/"
@@ -28,14 +30,14 @@ const Navbar = () => {
           <span>LF</span>
         </Link>
 
-        {/* Desktop Menu (only from lg breakpoint) */}
-        <ul className="hidden lg:flex items-center space-x-8 text-base  font-medium text-[#1e1e2d]">
+        {/* Desktop Menu */}
+        <ul className="hidden lg:flex items-center space-x-8 text-base font-medium text-[#1e1e2d]">
           {navItems.map((item, idx) => (
             <li key={idx}>
               <Link
                 to={item.path}
                 className={`flex items-center space-x-1 ${
-                  item.active
+                  isActive(item.path)
                     ? "text-[#5aa6f8] font-semibold"
                     : "hover:text-[#1e1e2d]"
                 }`}
@@ -44,7 +46,7 @@ const Navbar = () => {
                 {item.dropdown && (
                   <FaChevronDown
                     className={`text-xs ${
-                      item.active ? "text-[#5aa6f8]" : ""
+                      isActive(item.path) ? "text-[#5aa6f8]" : ""
                     }`}
                   />
                 )}
@@ -53,7 +55,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* CTA Button - Desktop */}
+        {/* CTA Button */}
         <Link
           to="/consultation"
           className="hidden lg:inline-flex items-center justify-center bg-[#5aa6f8] text-white font-semibold text-sm rounded-full px-6 py-3 hover:bg-[#1467c0] transition"
@@ -61,7 +63,7 @@ const Navbar = () => {
           Free Consultation
         </Link>
 
-        {/* Mobile/Tablet Menu Button */}
+        {/* Mobile Menu Toggle */}
         <button
           className="lg:hidden text-2xl text-[#1e1e2d]"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -70,7 +72,7 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {/* Mobile/Tablet Menu */}
+      {/* Mobile Menu */}
       {menuOpen && (
         <div className="lg:hidden bg-[#f7f8fc] shadow-inner px-6 py-4 space-y-4">
           {navItems.map((item, idx) => (
@@ -78,7 +80,7 @@ const Navbar = () => {
               key={idx}
               to={item.path}
               className={`block ${
-                item.active
+                isActive(item.path)
                   ? "text-[#5aa6f8] font-semibold"
                   : "text-[#1e1e2d] hover:text-[#1467c0]"
               }`}
