@@ -5,6 +5,9 @@ import About from './components/ui/about/About';
 import Layout from './components/Pages/layout/Layout';
 import Services from './components/ui/service/Services';
 import Blog from './components/ui/blog/Blog';
+import PrivacyPolicy from './components/ui/term&policy/PrivacyPolicy';
+import TermsConditions from './components/ui/term&policy/TermsConditions';
+import ServiceDetail from './components/ui/service/ServiceDetail';
 
 function App() {
   return (
@@ -14,7 +17,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/:id" element={<ServiceDetail />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
         </Routes>
       </Layout>
     </>

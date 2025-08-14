@@ -73,8 +73,10 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto mt-12 border-t border-gray-200 pt-5 px-6 flex flex-col md:flex-row justify-between items-center text-base text-gray-500">
         <p> @ 2024 Zwolf. All rights reserved.</p>
         <div className="flex gap-6 mt-4 md:mt-0">
-          <span className="hover:text-[#5aa6f8] cursor-pointer">Privacy Policy</span>
-          <span className="hover:text-[#5aa6f8] cursor-pointer">Terms of Service</span>
+          <span className="hover:text-[#5aa6f8] cursor-pointer">
+            <Link to={"/privacy-policy"}>Privacy Policy</Link></span>
+          <span className="hover:text-[#5aa6f8] cursor-pointer">
+            <Link to={"/terms-conditions"}>Terms of Service</Link></span>
           <span
             className="hover:text-[#5aa6f8] cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

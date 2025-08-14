@@ -1,50 +1,73 @@
 import React from "react";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { servicesData } from "./servicesData";
+import { Link } from "react-router-dom";
 
-const services = [
-  {
-    title: "Web Development",
-    description:
-      "totam rem aperiam, eaque ipsa quae ab illo inventore et quasi architecto beatae.",
-    image:
-      "https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2ViJTIwZGV2ZWxvcGVyfGVufDB8fDB8fHww",
-  },
-  {
-    title: "Digital Marketing",
-    description:
-      "totam rem aperiam, eaque ipsa quae ab illo inventore et quasi architecto beatae.",
-    image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
-  },
-  {
-    title: "Game Development",
-    description:
-      "totam rem aperiam, eaque ipsa quae ab illo inventore et quasi architecto beatae.",
-    image:
-      "https://plus.unsplash.com/premium_photo-1682141025267-9e0ade0c0826?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2FtZSUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww",
-  },
-  {
-    title: "Mobile App Development",
-    description:
-      "totam rem aperiam, eaque ipsa quae ab illo inventore et quasi architecto beatae.",
-    image:
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80",
-  },
-  {
-    title: "Networking Services",
-    description:
-      "totam rem aperiam, eaque ipsa quae ab illo inventore et quasi architecto beatae.",
-    image:
-      "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=800&q=80",
-  },
-  {
-    title: "Graphic Design",
-    description:
-      "totam rem aperiam, eaque ipsa quae ab illo inventore et quasi architecto beatae.",
-    image:
-      "https://images.unsplash.com/photo-1503602642458-232111445657?w=800&q=80",
-  },
-];
+// const services = [
+//   {
+//     title: "Website Development",
+//     description:
+//       "Beautiful, fast, and SEO-ready websites that convert visitors into loyal customers.",
+//     image:
+//       "https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2ViJTIwZGV2ZWxvcGVyfGVufDB8fDB8fHww",
+//   },
+//   {
+//     title: "Mobile App Development",
+//     description:
+//       "User-friendly mobile apps that keep your business in your customer’s pocket.",
+//     image:
+//       "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80",
+//   },
+//   {
+//     title: "Graphic Designing",
+//     description:
+//       "Eye-catching designs that speak your brand’s language and inspire action.",
+//     image:
+//       "https://images.unsplash.com/photo-1503602642458-232111445657?w=800&q=80",
+//   },
+//   {
+//     title: "Digital Marketing",
+//     description:
+//       "Data-driven campaigns that turn clicks into paying customers.",
+//     image:
+//       "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=80",
+//   },
+//   {
+//     title: "Business Consultation",
+//     description:
+//       "Smart strategies to solve challenges, scale faster, and grow stronger.",
+//     image:
+//       "https://plus.unsplash.com/premium_photo-1682141025267-9e0ade0c0826?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2FtZSUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww",
+//   },
+//   {
+//     title: "Cloud & Hosting Services",
+//     description:
+//       "Secure, reliable, and scalable hosting to keep your business online 24/7.",
+//     image:
+//       "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=800&q=80",
+//   },
+//   {
+//     title: "Accounting & Financial Services",
+//     description:
+//       "Stress-free accounting and compliance so you can focus on growth.",
+//     image:
+//       "https://plus.unsplash.com/premium_photo-1682141025267-9e0ade0c0826?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2FtZSUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww",
+//   },
+//   {
+//     title: "Lead Generation",
+//     description:
+//       "Targeted leads that boost sales, cut costs, and speed up your sales cycle.",
+//     image:
+//       "https://www.vanguard86.com/hs-fs/hubfs/Blog%20cover%20images/Smiling%20young%20man%20shaking%20hands%20with%20an%20insurance%20agent%20or%20investment%20adviser%20as%20he%20sits%20in%20a%20meeting%20with%20his%20wife%20in%20her%20office.jpeg?width=1000&name=Smiling%20young%20man%20shaking%20hands%20with%20an%20insurance%20agent%20or%20investment%20adviser%20as%20he%20sits%20in%20a%20meeting%20with%20his%20wife%20in%20her%20office.jpeg",
+//   },
+//   {
+//     title: "Software Development",
+//     description:
+//       "Custom software solutions built to streamline your business operations.",
+//     image:
+//       "https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2ViJTIwZGV2ZWxvcGVyfGVufDB8fDB8fHww",
+//   },
+// ];
 
 const Services = () => {
   return (
@@ -68,11 +91,12 @@ const Services = () => {
 
         {/* Services Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
+          {servicesData.map((service, index) => (
             <div
               key={index}
               className="bg-white rounded-2xl shadow-sm p-6 flex flex-col justify-between hover:shadow-lg transition"
             >
+              <Link to={`/services/${service.id}`}>
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-gray-900">
@@ -91,6 +115,7 @@ const Services = () => {
                   className="rounded-xl w-full h-40 object-cover"
                 />
               </div>
+              </Link>
             </div>
           ))}
         </div>
