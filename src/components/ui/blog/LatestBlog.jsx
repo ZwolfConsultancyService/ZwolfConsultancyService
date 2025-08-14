@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 const blogs = [
   {
@@ -43,12 +44,12 @@ const LatestBlog = () => {
               The latest insights you need to know
             </h2>
           </div>
-          <a
-            href="#"
+          <Link
+            to="/blog"
             className="mt-4 sm:mt-0 inline-flex items-center gap-2 bg-[#5aa6f8] hover:bg-[#4a94e4] text-white px-5 py-3 rounded-full font-medium transition"
           >
             View All Articles <FaArrowRight />
-          </a>
+          </Link>
         </div>
 
         {/* Blog Cards */}

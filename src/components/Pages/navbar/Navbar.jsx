@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
+import { slugify } from "../../../lib/slugify";
+import { servicesData } from "../../ui/service/servicesData";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,14 +17,10 @@ const Navbar = () => {
     { name: "Blog", path: "/blog" },
   ];
 
-  const servicesDropdown = [
-    { name: "Web Development", path: "/services/web-development" },
-    { name: "Digital Marketing", path: "/services/digital-marketing" },
-    { name: "Game Development", path: "/services/game-development" },
-    { name: "Mobile App Development", path: "/services/mobile-app-development" },
-    { name: "Networking Services", path: "/services/networking-services" },
-    { name: "Graphics Design", path: "/services/graphics-design" },
-  ];
+  const servicesDropdown = servicesData.map(service => ({
+  name: service.title,
+  path: `/services/${slugify(service.title)}`
+}));
 
   const isActive = (path) => location.pathname === path;
 
@@ -89,7 +88,7 @@ const Navbar = () => {
           to="/consultation"
           className="hidden lg:inline-flex items-center justify-center bg-[#5aa6f8] text-white font-semibold text-sm rounded-full px-6 py-3 hover:bg-[#1467c0] transition"
         >
-          Free Consultation
+          Free Consultation <FaArrowUpRightFromSquare className="ml-2" />
         </Link>
 
         {/* Mobile Menu Toggle */}

@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FaArrowLeft, FaCheck } from "react-icons/fa";
-import { getServiceById } from "./servicesData";
+import { getServiceById, servicesData } from "./servicesData";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ServiceDetailHero from "./ServiceDetailHero";
-
+import {slugify} from "../../../lib/slugify";
 const ServiceDetail = () => {
-  const { id } = useParams();
-  const service = getServiceById(id);
+  const { slug } = useParams();
+const service = servicesData.find(s => slugify(s.title) === slug);
 
   useEffect(() => {
     AOS.init({
