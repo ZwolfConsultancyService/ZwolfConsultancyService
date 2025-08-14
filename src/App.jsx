@@ -1,22 +1,22 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Pages/navbar/Navbar';
+import { Routes, Route, Router } from 'react-router-dom';
 import HomePage from './components/Pages/home/HomePage';
-import Footer from './components/Pages/footer/Footer';
 import About from './components/ui/about/About';
+import Layout from './components/Pages/layout/Layout';
+import Services from './components/ui/service/Services';
+import Blog from './components/ui/blog/Blog';
 
 function App() {
   return (
     <>
-      <Navbar />
-
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path='/about' element={<About />} />
-    
-      </Routes>
-
-      <Footer />
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+      </Layout>
     </>
   );
 }

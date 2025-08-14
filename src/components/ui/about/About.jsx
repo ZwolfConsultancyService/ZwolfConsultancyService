@@ -9,8 +9,8 @@ const About = () => {
   }, []);
 
   return (
-    <div className="bg-white text-black">
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-16 py-12 sm:py-16">
+    <div className="bg-white text-black ">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10  py-12">
         {/* Heading */}
         <a
           className="text-[#5aa6f8] text-sm font-medium mb-2 inline-block"

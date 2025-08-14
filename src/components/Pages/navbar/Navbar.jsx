@@ -4,14 +4,23 @@ import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Services", path: "/services", dropdown: true },
-    { name: "Portfolio", path: "/portfolio" },
     { name: "Blog", path: "/blog" },
+  ];
+
+  const servicesDropdown = [
+    { name: "Web Development", path: "/services/web-development" },
+    { name: "Digital Marketing", path: "/services/digital-marketing" },
+    { name: "Game Development", path: "/services/game-development" },
+    { name: "Mobile App Development", path: "/services/mobile-app-development" },
+    { name: "Networking Services", path: "/services/networking-services" },
+    { name: "Graphics Design", path: "/services/graphics-design" },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -33,7 +42,12 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden lg:flex items-center space-x-8 text-base font-medium text-[#1e1e2d]">
           {navItems.map((item, idx) => (
-            <li key={idx}>
+            <li
+              key={idx}
+              className="relative"
+              onMouseEnter={() => item.dropdown && setServicesOpen(true)}
+              onMouseLeave={() => item.dropdown && setServicesOpen(false)}
+            >
               <Link
                 to={item.path}
                 className={`flex items-center space-x-1 ${
@@ -51,6 +65,21 @@ const Navbar = () => {
                   />
                 )}
               </Link>
+
+              {/* Dropdown */}
+              {item.dropdown && servicesOpen && (
+                <div className="absolute left-0 mt-2 bg-[#5aa6f8] text-white rounded-xl shadow-lg py-3 w-56">
+                  {servicesDropdown.map((service, sIdx) => (
+                    <Link
+                      key={sIdx}
+                      to={service.path}
+                      className="block px-4 py-2 hover:bg-[#1467c0] transition"
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </li>
           ))}
         </ul>
@@ -76,18 +105,35 @@ const Navbar = () => {
       {menuOpen && (
         <div className="lg:hidden bg-[#f7f8fc] shadow-inner px-6 py-4 space-y-4">
           {navItems.map((item, idx) => (
-            <Link
-              key={idx}
-              to={item.path}
-              className={`block ${
-                isActive(item.path)
-                  ? "text-[#5aa6f8] font-semibold"
-                  : "text-[#1e1e2d] hover:text-[#1467c0]"
-              }`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.name}
-            </Link>
+            <div key={idx}>
+              <Link
+                to={item.path}
+                className={`block ${
+                  isActive(item.path)
+                    ? "text-[#5aa6f8] font-semibold"
+                    : "text-[#1e1e2d] hover:text-[#1467c0]"
+                }`}
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+
+              {/* Mobile dropdown for Services */}
+              {item.dropdown && (
+                <div className="ml-4 mt-2 space-y-2">
+                  {servicesDropdown.map((service, sIdx) => (
+                    <Link
+                      key={sIdx}
+                      to={service.path}
+                      className="block text-[#1e1e2d] hover:text-[#5aa6f8]"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
 
           <Link
