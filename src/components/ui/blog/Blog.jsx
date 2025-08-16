@@ -36,53 +36,57 @@ const blogs = [
   },
 ];
 
+
 const Blog = () => {
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
 
-  return (
-	<>
-	<BlogHero />
-    <section className="bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-   
-        {/* <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10">
-          <div>
-            <p className="text-[#5aa6f8] font-medium mb-2">
-              Latest Blog & Articles
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              The latest insights you need to know
-            </h2>
-          </div>
-        </div> */}
+  // Function to create URL slug from title
+  const createSlug = (title) => {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+  };
 
-        {/* Blog Cards */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {blogs.map((blog, index) => (
-            <div
-              key={index}
-              className="bg-[#f9fbff] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition"
-              data-aos="fade-up"
-              data-aos-delay={index * 150}
-            >
-              <img
-                src={blog.image}
-                alt={blog.title}
-                className="w-full h-52 object-cover"
-              />
-              <div className="p-5">
-                <p className="text-gray-400 text-sm mb-1">{blog.date}</p>
-                <h3 className="text-lg font-semibold text-gray-900">
-                  {blog.title}
-                </h3>
+  const handleBlogClick = (blog) => {
+    const slug = createSlug(blog.title);
+    sessionStorage.setItem('selectedBlog', JSON.stringify(blog));
+    window.location.href = `/blog/${slug}`;
+  };
+
+  return (
+    <>
+      <BlogHero />
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Blog Cards */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {blogs.map((blog, index) => (
+              <div
+                key={index}
+                className="bg-[#f9fbff] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition cursor-pointer"
+                data-aos="fade-up"
+                data-aos-delay={index * 150}
+                onClick={() => handleBlogClick(blog)}
+              >
+                <img
+                  src={blog.image}
+                  alt={blog.title}
+                  className="w-full h-52 object-cover"
+                />
+                <div className="p-5">
+                  <p className="text-gray-400 text-sm mb-1">{blog.date}</p>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {blog.title}
+                  </h3>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 };

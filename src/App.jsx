@@ -10,6 +10,7 @@ import TermsConditions from './components/ui/term&policy/TermsConditions';
 import ServiceDetail from './components/ui/service/ServiceDetail';
 import ScrollToTop from './lib/ScrollToTop';
 import Contact from './components/ui/contact/Contact';
+import BlogDetail from './components/ui/blog/BlogDetail';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/services" element={<Services />} />
      <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path='/contact' element={<Contact />} />
