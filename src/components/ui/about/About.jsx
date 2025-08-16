@@ -2,9 +2,13 @@ import React, { useEffect, useState } from "react";
 import { FaCheck, FaArrowUpRightFromSquare, FaChevronDown, FaChevronUp } from "react-icons/fa6";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
   const [expanded, setExpanded] = useState(false);
+
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     AOS.init({ duration: 1200, once: true, easing: "ease-in-out" });
@@ -118,6 +122,7 @@ const About = () => {
                 className="bg-[#5aa6f8] text-white font-semibold rounded-full px-6 py-3 text-sm flex items-center space-x-2 hover:bg-[#4892e2] transition"
                 type="button"
                 data-aos="zoom-in"
+                onClick={() => navigate("/contact")}
               >
                 <span>Free Consultation</span>
                 <FaArrowUpRightFromSquare />

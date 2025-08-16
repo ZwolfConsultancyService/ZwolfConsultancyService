@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaCheck } from "react-icons/fa";
 import { getServiceById, servicesData } from "./servicesData";
 import AOS from "aos";
@@ -9,6 +9,9 @@ import {slugify} from "../../../lib/slugify";
 const ServiceDetail = () => {
   const { slug } = useParams();
 const service = servicesData.find(s => slugify(s.title) === slug);
+
+
+      const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({
@@ -197,7 +200,8 @@ const service = servicesData.find(s => slugify(s.title) === slug);
             Let's discuss how we can help your business grow with our {service.title.toLowerCase()} services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-[#5aa6f8] px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition">
+            <button className="bg-white text-[#5aa6f8] px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition"
+            onClick={() => navigate("/contact")}>
               Get Free Consultation
             </button>
 

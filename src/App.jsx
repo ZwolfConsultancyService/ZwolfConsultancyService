@@ -9,6 +9,7 @@ import PrivacyPolicy from './components/ui/term&policy/PrivacyPolicy';
 import TermsConditions from './components/ui/term&policy/TermsConditions';
 import ServiceDetail from './components/ui/service/ServiceDetail';
 import ScrollToTop from './lib/ScrollToTop';
+import Contact from './components/ui/contact/Contact';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
       </Layout>
     </>

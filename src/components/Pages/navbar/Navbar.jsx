@@ -85,7 +85,7 @@ const Navbar = () => {
 
         {/* CTA Button */}
         <Link
-          to="/consultation"
+          to="/contact"
           className="hidden lg:inline-flex items-center justify-center bg-[#5aa6f8] text-white font-semibold text-sm rounded-full px-6 py-3 hover:bg-[#1467c0] transition"
         >
           Free Consultation <FaArrowUpRightFromSquare className="ml-2" />
@@ -136,7 +136,7 @@ const Navbar = () => {
           ))}
 
           <Link
-            to="/consultation"
+            to="/contact"
             className="inline-flex items-center justify-center w-full bg-[#5aa6f8] text-white font-semibold text-sm rounded-full px-6 py-3 hover:bg-[#1467c0] transition"
             onClick={() => setMenuOpen(false)}
           >

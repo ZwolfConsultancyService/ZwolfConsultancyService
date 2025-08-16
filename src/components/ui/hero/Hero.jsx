@@ -61,7 +61,7 @@ const Hero = () => {
           data-aos-delay="400"
         >
           <Link
-            to="#"
+            to="/contact"
             className="inline-flex items-center justify-center font-semibold rounded-full px-6 py-3 text-sm sm:text-base transition"
             style={{ backgroundColor: "#5aa6f8", color: "#fff" }}
             onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#4892e2")}

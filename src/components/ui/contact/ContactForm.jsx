@@ -1,0 +1,72 @@
+import React, { useEffect } from "react";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+const ContactForm = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
+  return (
+    <div className="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12">
+      {/* Left */}
+      <div data-aos="fade-right">
+        <p className="text-[#5aa6f8] font-medium mb-2">Contact Us</p>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          Get in touch with us today
+        </h2>
+        <p className="text-gray-500 mb-8">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium,
+          totam rem aperiam, eaque ipsa quae ab illo inventore et.
+        </p>
+
+        <h4 className="font-semibold text-lg mb-2">Follow Us:</h4>
+        <div className="flex gap-4">
+          <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white">
+            <FaFacebookF />
+          </a>
+          <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white">
+            <FaInstagram />
+          </a>
+          <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white">
+            <FaLinkedinIn />
+          </a>
+          <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white">
+            <FaTwitter />
+          </a>
+        </div>
+      </div>
+
+      {/* Form */}
+      <form
+        data-aos="fade-left"
+        className="bg-[#f4f8ff] rounded-3xl p-8 space-y-4"
+      >
+        <div className="grid sm:grid-cols-2 gap-4">
+          <input type="text" placeholder="First Name" className="p-3 rounded-lg w-full outline-none" />
+          <input type="text" placeholder="Last Name" className="p-3 rounded-lg w-full outline-none" />
+          <input type="text" placeholder="Phone" className="p-3 rounded-lg w-full outline-none" />
+          <input type="email" placeholder="Email" className="p-3 rounded-lg w-full outline-none" />
+        </div>
+
+        <input type="text" placeholder="Subjects" className="p-3 rounded-lg w-full outline-none" />
+
+        <textarea
+          rows="6"
+          placeholder="Message"
+          className="p-3 rounded-lg w-full outline-none"
+        ></textarea>
+
+        <button
+          type="submit"
+          className="bg-[#5aa6f8] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#467ddc] transition"
+        >
+          Send A Message
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default ContactForm;

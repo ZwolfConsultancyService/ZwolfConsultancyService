@@ -21,8 +21,8 @@ const Footer = () => {
           <p className="mt-3">
             Creative Agency Based on Country name
           </p>
-          <p className="font-semibold mt-5">info@domainname.com</p>
-          <p>(+0) 123 456 789</p>
+          <p className="font-semibold mt-5">zwolfconsultancy@gmail.com</p>
+          <p>(+91) 952 098 9744</p>
         </div>
 
         {/* Pages */}
