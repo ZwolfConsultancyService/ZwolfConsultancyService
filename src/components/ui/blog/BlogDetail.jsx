@@ -1,8 +1,6 @@
-{/* Pagination */}  const handleBackClick = () => {
-    window.history.back();
-    // Or navigate to blog list: window.location.href = '/blog';
-  };import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaArrowLeft, FaCalendar, FaChevronLeft, FaChevronRight, FaCopy, FaFacebook, FaLinkedin, FaShare, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { getBlogByTitle, getPreviousBlog, getNextBlog, createSlug } from './blogData';
 
 const BlogDetail = () => {
   const [blog, setBlog] = useState(null);
@@ -12,184 +10,41 @@ const BlogDetail = () => {
     const storedBlog = sessionStorage.getItem('selectedBlog');
     if (storedBlog) {
       const blogData = JSON.parse(storedBlog);
-      // Add extended content for detail view
-      const extendedBlog = {
-        ...blogData,
-        author: getAuthorByTitle(blogData.title),
-        category: getCategoryByTitle(blogData.title),
-        readTime: "5 min read",
-        content: getContentByTitle(blogData.title)
-      };
-      setBlog(extendedBlog);
+      
+      // Get complete blog data using the title
+      const fullBlogData = getBlogByTitle(blogData.title);
+      
+      if (fullBlogData) {
+        setBlog(fullBlogData);
+      }
     }
     window.scrollTo(0, 0);
   }, []);
 
-  // Helper functions to get additional data based on title
-  const getAuthorByTitle = (title) => {
-    const authors = {
-      "Unlocking the Potential of AI in Business Success": "John Smith",
-      "Strategies for Building a Successful Distributed Team": "Sarah Johnson",
-      "Empowering Citizen Developers and Accelerating Innovation": "Mike Davis",
-      "Top Cybersecurity Trends to Watch in 2024": "Lisa Chen",
-      "The Role of Cloud Computing in Modern Businesses": "David Wilson"
-    };
-    return authors[title] || "Tech Writer";
-  };
-
-  const getCategoryByTitle = (title) => {
-    const categories = {
-      "Unlocking the Potential of AI in Business Success": "Technology",
-      "Strategies for Building a Successful Distributed Team": "Business",
-      "Empowering Citizen Developers and Accelerating Innovation": "Development",
-      "Top Cybersecurity Trends to Watch in 2024": "Security",
-      "The Role of Cloud Computing in Modern Businesses": "Cloud"
-    };
-    return categories[title] || "Technology";
-  };
-
-  // All blog titles for pagination
-  const allBlogs = [
-    "Unlocking the Potential of AI in Business Success",
-    "Strategies for Building a Successful Distributed Team", 
-    "Empowering Citizen Developers and Accelerating Innovation",
-    "Top Cybersecurity Trends to Watch in 2024",
-    "The Role of Cloud Computing in Modern Businesses"
-  ];
-
-  const getContentByTitle = (title) => {
-    const contents = {
-      "Unlocking the Potential of AI in Business Success": `
-        <p>Artificial Intelligence is no longer a futuristic concept—it's a present reality that's transforming how businesses operate, compete, and grow. From automating routine tasks to providing deep insights through data analysis, AI has become an indispensable tool for modern enterprises.</p>
-        
-        <h2>The AI Revolution in Business</h2>
-        <p>Today's businesses are leveraging AI in various ways to enhance productivity, reduce costs, and improve customer experiences. Machine learning algorithms can predict market trends, chatbots provide 24/7 customer support, and automated systems streamline operations.</p>
-        
-        <h2>Key Benefits of AI Implementation</h2>
-        <p>Organizations that successfully implement AI solutions report significant improvements in efficiency, accuracy, and decision-making capabilities. The technology enables businesses to process vast amounts of data quickly and identify patterns that would be impossible for humans to detect.</p>
-        
-        <h2>Future Outlook</h2>
-        <p>As AI continues to evolve, we can expect even more innovative applications that will further transform the business landscape. Companies that embrace AI today are positioning themselves for success in tomorrow's digital economy.</p>
-      `,
-      "Strategies for Building a Successful Distributed Team": `
-        <p>The shift to remote work has fundamentally changed how we think about team building and collaboration. Building a successful distributed team requires intentional strategies and the right tools to ensure productivity and engagement.</p>
-        
-        <h2>Communication is Key</h2>
-        <p>Effective communication becomes even more critical when team members are spread across different locations and time zones. Establishing clear communication protocols and using the right tools can make all the difference.</p>
-        
-        <h2>Building Trust and Culture</h2>
-        <p>Creating a strong team culture remotely requires deliberate effort. Regular virtual team building activities, clear expectations, and transparent feedback processes help build trust among distributed team members.</p>
-        
-        <h2>Tools and Technology</h2>
-        <p>Investing in the right collaboration tools, project management platforms, and communication systems is essential for distributed team success. The right technology stack can bridge geographical gaps and enable seamless collaboration.</p>
-      `,
-      "Empowering Citizen Developers and Accelerating Innovation": `
-        <p>Citizen development is revolutionizing how organizations approach software creation. By empowering non-technical users to build applications, companies can accelerate innovation and reduce the burden on IT departments.</p>
-        
-        <h2>What is Citizen Development?</h2>
-        <p>Citizen development refers to the practice of enabling business users to create applications using low-code or no-code platforms, without requiring traditional programming skills.</p>
-        
-        <h2>Benefits for Organizations</h2>
-        <p>Organizations embracing citizen development see faster time-to-market for applications, reduced IT backlog, and increased innovation from business users who understand their needs best.</p>
-        
-        <h2>Best Practices</h2>
-        <p>Successful citizen development programs require proper governance, training, and support to ensure security, scalability, and maintainability of applications created by business users.</p>
-      `,
-      "Top Cybersecurity Trends to Watch in 2024": `
-        <p>Cybersecurity continues to evolve as new threats emerge and technology advances. Understanding the latest trends and threats is crucial for organizations looking to protect their digital assets.</p>
-        
-        <h2>AI-Powered Security</h2>
-        <p>Artificial intelligence is being leveraged both by attackers and defenders. AI-powered security solutions can detect anomalies and respond to threats faster than traditional methods.</p>
-        
-        <h2>Zero Trust Architecture</h2>
-        <p>The zero trust security model continues to gain adoption as organizations realize that traditional perimeter-based security is no longer sufficient in today's distributed work environment.</p>
-        
-        <h2>Cloud Security Challenges</h2>
-        <p>As more organizations move to the cloud, new security challenges emerge. Understanding cloud security best practices and compliance requirements is essential for modern businesses.</p>
-      `,
-      "The Role of Cloud Computing in Modern Businesses": `
-        <p>Cloud computing has become the backbone of modern digital infrastructure. From startups to enterprise organizations, businesses are leveraging cloud services to scale, innovate, and compete effectively.</p>
-        
-        <h2>Scalability and Flexibility</h2>
-        <p>Cloud services offer unparalleled scalability, allowing businesses to quickly adapt to changing demands without significant upfront infrastructure investments.</p>
-        
-        <h2>Cost Optimization</h2>
-        <p>By moving to the cloud, organizations can reduce capital expenditures and convert fixed costs to variable costs, paying only for the resources they actually use.</p>
-        
-        <h2>Innovation Enablement</h2>
-        <p>Cloud platforms provide access to cutting-edge technologies like AI, machine learning, and advanced analytics, enabling businesses to innovate faster than ever before.</p>
-      `
-    };
-    return contents[title] || "<p>Content not available.</p>";
-  };
-
-  // Pagination functionality
-  const getCurrentBlogIndex = () => {
-    return allBlogs.findIndex(title => title === blog.title);
-  };
-
-  const getPreviousBlog = () => {
-    const currentIndex = getCurrentBlogIndex();
-    if (currentIndex > 0) {
-      return allBlogs[currentIndex - 1];
-    }
-    return null;
-  };
-
-  const getNextBlog = () => {
-    const currentIndex = getCurrentBlogIndex();
-    if (currentIndex < allBlogs.length - 1) {
-      return allBlogs[currentIndex + 1];
-    }
-    return null;
-  };
-
-  const createSlug = (title) => {
-    return title
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/(^-|-$)+/g, '');
+  // Navigation handlers
+  const handleBackClick = () => {
+    window.history.back();
+    // Or navigate to blog list: window.location.href = '/blog';
   };
 
   const handlePrevious = () => {
-    const prevTitle = getPreviousBlog();
-    if (prevTitle) {
-      const slug = createSlug(prevTitle);
+    const prevBlog = getPreviousBlog(blog.title);
+    if (prevBlog) {
+      const slug = createSlug(prevBlog.title);
       // Store new blog data
-      const prevBlog = {
-        title: prevTitle,
-        date: "April 16, 2024",
-        image: getBlogImage(prevTitle)
-      };
       sessionStorage.setItem('selectedBlog', JSON.stringify(prevBlog));
       window.location.href = `/blog/${slug}`;
     }
   };
 
   const handleNext = () => {
-    const nextTitle = getNextBlog();
-    if (nextTitle) {
-      const slug = createSlug(nextTitle);
+    const nextBlog = getNextBlog(blog.title);
+    if (nextBlog) {
+      const slug = createSlug(nextBlog.title);
       // Store new blog data
-      const nextBlog = {
-        title: nextTitle,
-        date: "April 16, 2024",
-        image: getBlogImage(nextTitle)
-      };
       sessionStorage.setItem('selectedBlog', JSON.stringify(nextBlog));
       window.location.href = `/blog/${slug}`;
     }
-  };
-
-  const getBlogImage = (title) => {
-    const images = {
-      "Unlocking the Potential of AI in Business Success": "https://www.livemint.com/lm-img/img/2024/10/10/600x338/Ai_potential_mint_1728544134669_1728544141578.jpg",
-      "Strategies for Building a Successful Distributed Team": "https://www.tronsoftech.com/website/images/post-2.jpg",
-      "Empowering Citizen Developers and Accelerating Innovation": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80",
-      "Top Cybersecurity Trends to Watch in 2024": "https://cognissolutions.com/wp-content/uploads/2024/09/cyber-security-concept-digital-art_23-2151637760.jpg",
-      "The Role of Cloud Computing in Modern Businesses": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80"
-    };
-    return images[title] || "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&q=80";
   };
 
   // Share functionality
@@ -232,7 +87,6 @@ const BlogDetail = () => {
     const url = getCurrentPageUrl();
     try {
       await navigator.clipboard.writeText(url);
-      // Show success message (you can add a toast notification here)
       alert('Link copied to clipboard!');
     } catch (err) {
       // Fallback for older browsers
@@ -246,6 +100,7 @@ const BlogDetail = () => {
     }
   };
 
+  // Loading state
   if (!blog) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -256,6 +111,9 @@ const BlogDetail = () => {
       </div>
     );
   }
+
+  const previousBlog = getPreviousBlog(blog.title);
+  const nextBlog = getNextBlog(blog.title);
 
   return (
     <div className="bg-white">
@@ -298,6 +156,9 @@ const BlogDetail = () => {
                 <FaCalendar className="mr-2" />
                 <span>{blog.date}</span>
               </div>
+              <div className="flex items-center">
+                <span>{blog.readTime}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -307,10 +168,11 @@ const BlogDetail = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Article Content */}
         <div className="prose prose-lg max-w-none">
-          <div 
-            className="text-gray-700 leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: blog.content }}
-          />
+          <div className="text-gray-700 leading-relaxed">
+            <p className="text-lg leading-relaxed whitespace-pre-line">
+              {blog.content}
+            </p>
+          </div>
         </div>
 
         {/* Share Section */}
@@ -359,10 +221,12 @@ const BlogDetail = () => {
             </div>
           </div>
         </div>
+
+        {/* Pagination Section */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex justify-between items-center">
             <div className="flex-1">
-              {getPreviousBlog() && (
+              {previousBlog && (
                 <button
                   onClick={handlePrevious}
                   className="group flex items-center text-blue-600 hover:text-blue-700 transition-colors"
@@ -371,9 +235,9 @@ const BlogDetail = () => {
                   <div className="text-left">
                     <p className="text-sm text-gray-500 mb-1">Previous Article</p>
                     <p className="font-medium text-gray-900 group-hover:text-blue-700">
-                      {getPreviousBlog().length > 50 ? 
-                        `${getPreviousBlog().substring(0, 50)}...` : 
-                        getPreviousBlog()
+                      {previousBlog.title.length > 50 ? 
+                        `${previousBlog.title.substring(0, 50)}...` : 
+                        previousBlog.title
                       }
                     </p>
                   </div>
@@ -382,7 +246,7 @@ const BlogDetail = () => {
             </div>
             
             <div className="flex-1 text-right">
-              {getNextBlog() && (
+              {nextBlog && (
                 <button
                   onClick={handleNext}
                   className="group flex items-center justify-end text-blue-600 hover:text-blue-700 transition-colors"
@@ -390,9 +254,9 @@ const BlogDetail = () => {
                   <div className="text-right">
                     <p className="text-sm text-gray-500 mb-1">Next Article</p>
                     <p className="font-medium text-gray-900 group-hover:text-blue-700">
-                      {getNextBlog().length > 50 ? 
-                        `${getNextBlog().substring(0, 50)}...` : 
-                        getNextBlog()
+                      {nextBlog.title.length > 50 ? 
+                        `${nextBlog.title.substring(0, 50)}...` : 
+                        nextBlog.title
                       }
                     </p>
                   </div>
@@ -402,7 +266,6 @@ const BlogDetail = () => {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
