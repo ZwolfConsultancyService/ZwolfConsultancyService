@@ -47,10 +47,10 @@ const ContactForm = () => {
 
         <h4 className="font-semibold text-lg mb-2">Follow Us:</h4>
         <div className="flex gap-4">
-          <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white"><FaFacebookF /></a>
-          <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white"><FaInstagram /></a>
-          <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white"><FaLinkedinIn /></a>
-          <a href="#" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white"><FaTwitter /></a>
+          <a href="https://www.facebook.com/profile.php?id=61576374277131" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white"><FaFacebookF /></a>
+          <a href="https://www.instagram.com/zwolfconsultancy/profilecard/?igsh=d2pzOWJmeDBnbWZx" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white"><FaInstagram /></a>
+          <a href="https://www.linkedin.com/company/zwolf-consultancy/" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white"><FaLinkedinIn /></a>
+          <a href="https://x.com/Zwolfconsultanc" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white"><FaTwitter /></a>
         </div>
       </div>
 

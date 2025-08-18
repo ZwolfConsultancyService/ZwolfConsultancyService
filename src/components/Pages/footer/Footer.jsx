@@ -1,7 +1,8 @@
 import React from "react";
 import { FaInstagram, FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom"; // Only for internal navigation
-
+import {servicesData} from '../../ui/service/servicesData';
+import {slugify} from "../../../lib/slugify"
 const Footer = () => {
   return (
     <footer className="bg-[#f8f9fc] text-gray-700 pt-16 pb-10 border-t border-gray-200">
@@ -36,37 +37,71 @@ const Footer = () => {
             <li><Link to="/contact" className="hover:text-[#5aa6f8]">Contact</Link></li>
           </ul>
         </div>
+{/* Socials */}
+<div>
+  <h3 className="font-bold mb-4">Socials</h3>
+  <ul className="space-y-3">
+    <li>
+      <a
+        href="https://www.instagram.com/zwolfconsultancy/profilecard/?igsh=d2pzOWJmeDBnbWZx"
+        className="flex items-center gap-2 hover:text-[#5aa6f8] cursor-pointer"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaInstagram /> Instagram
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.facebook.com/profile.php?id=61576374277131"
+        className="flex items-center gap-2 hover:text-[#5aa6f8] cursor-pointer"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaFacebookF /> Facebook
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://x.com/Zwolfconsultanc"
+        className="flex items-center gap-2 hover:text-[#5aa6f8] cursor-pointer"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaTwitter /> Twitter
+      </a>
+    </li>
+    <li>
+      <a
+        href="https://www.linkedin.com/company/zwolf-consultancy/"
+        className="flex items-center gap-2 hover:text-[#5aa6f8] cursor-pointer"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <FaLinkedinIn /> Linkedin
+      </a>
+    </li>
+  </ul>
+</div>
 
-        {/* Socials */}
-        <div>
-          <h3 className="font-bold mb-4">Socials</h3>
-          <ul className="space-y-3">
-            <li className="flex items-center gap-2 hover:text-[#5aa6f8] cursor-pointer">
-              <FaInstagram /> Instagram
-            </li>
-            <li className="flex items-center gap-2 hover:text-[#5aa6f8] cursor-pointer">
-              <FaFacebookF /> Facebook
-            </li>
-            <li className="flex items-center gap-2 hover:text-[#5aa6f8] cursor-pointer">
-              <FaTwitter /> Twitter
-            </li>
-            <li className="flex items-center gap-2 hover:text-[#5aa6f8] cursor-pointer">
-              <FaLinkedinIn /> Linkedin
-            </li>
-          </ul>
-        </div>
+{/* Services */}
+<div>
+  <h3 className="font-bold mb-4">Services</h3>
+  <ul className="space-y-3">
+    {servicesData.slice(0, 5).map((service, idx) => (
+      <li key={idx}>
+        <Link
+          to={`/services/${slugify(service.title)}`}
+          className="hover:text-[#5aa6f8] cursor-pointer"
+        >
+          {service.title}
+        </Link>
+      </li>
+    ))}
+  </ul>
+</div>
 
-        {/* Services */}
-        <div>
-          <h3 className="font-bold mb-4">Services</h3>
-          <ul className="space-y-3">
-            <li className="hover:text-[#5aa6f8] cursor-pointer">Web Development</li>
-            <li className="hover:text-[#5aa6f8] cursor-pointer">Digital Marketing</li>
-            <li className="hover:text-[#5aa6f8] cursor-pointer">Game Development</li>
-            <li className="hover:text-[#5aa6f8] cursor-pointer">Mobile App Development</li>
-            <li className="hover:text-[#5aa6f8] cursor-pointer">Networking Services</li>
-          </ul>
-        </div>
+
       </div>
 
       {/* Bottom Bar */}

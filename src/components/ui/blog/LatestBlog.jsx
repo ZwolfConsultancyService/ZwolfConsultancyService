@@ -31,6 +31,19 @@ const LatestBlog = () => {
     AOS.init({ duration: 800, once: true });
   }, []);
 
+  const createSlug = (title) => {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)+/g, '');
+  };
+
+  const handleBlogClick = (blog) => {
+    const slug = createSlug(blog.title);
+    sessionStorage.setItem('selectedBlog', JSON.stringify(blog));
+    window.location.href = `/blog/${slug}`;
+  };
+
   return (
     <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,9 +70,10 @@ const LatestBlog = () => {
           {blogs.map((blog, index) => (
             <div
               key={index}
-              className="bg-[#f9fbff] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition"
+              className="bg-[#f9fbff] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition cursor-pointer"
               data-aos="fade-up"
               data-aos-delay={index * 150}
+              onClick={() => handleBlogClick(blog)}
             >
               <img
                 src={blog.image}
