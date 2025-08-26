@@ -2,7 +2,8 @@ import React from "react";
 import { FaInstagram, FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom"; // Only for internal navigation
 import {servicesData} from '../../ui/service/servicesData';
-import {slugify} from "../../../lib/slugify"
+import {slugify} from "../../../lib/slugify";
+import zwolf from "../../../assets/zwolf.png"
 const Footer = () => {
   return (
     <footer className="bg-[#f8f9fc] text-gray-700 pt-16 pb-10 border-t border-gray-200">
@@ -10,7 +11,7 @@ const Footer = () => {
         
         {/* Logo & Info */}
         <div>
-               <Link
+               {/* <Link
                       to="/"
                       className="flex items-center font-extrabold text-3xl text-[#1e1e2d]"
                     >
@@ -18,6 +19,16 @@ const Footer = () => {
                       <span className="text-[#5aa6f8]">W</span>
                       <span className="text-[#5aa6f8]">0</span>
                       <span>LF</span>
+                    </Link> */}
+                    <Link
+                      to="/"
+                      className="flex items-center h-[50px]"
+                    >
+                      <img 
+                        src={zwolf}
+                        alt="ZWOLF Logo" 
+                        className="w-[100px]"
+                      />
                     </Link>
           <p className="mt-3">
             Creative Agency Based on Country name

@@ -3,3 +3,7 @@
 body{
 	overflow-x: hidden;
 }
+
+.masonry-column > img {
+  margin-bottom: 8px;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Masonry from "react-masonry-css";
 
 const OurPortfolio = () => {
   const [showAll, setShowAll] = useState(false);
@@ -9,18 +10,17 @@ const OurPortfolio = () => {
   useEffect(() => {
     AOS.init({ duration: 700, once: true });
 
-    // Check screen width on load and on resize
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); // initial
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
- const images = [
+  const images = [
     "https://storage.googleapis.com/a1aa/image/e878fed7-8adb-4cb8-0e4f-cae39e98d166.jpg",
     "https://storage.googleapis.com/a1aa/image/3c622e2e-15f6-4c22-8847-a6512f1f43e6.jpg",
     "https://storage.googleapis.com/a1aa/image/cc6035b6-9507-4cf0-81a4-aa5283dfdfcd.jpg",
@@ -47,6 +47,13 @@ const OurPortfolio = () => {
   const visibleImages =
     isMobile && !showAll ? images.slice(0, 6) : images;
 
+  // breakpoints / columns for masonry
+  const breakpointColumnsObj = {
+    default: 5,
+    1024: 4,
+    768: 2,
+  };
+
   return (
     <section className="bg-[#f9fafb] py-12 mt-4">
       <div className="max-w-7xl mx-auto px-4">
@@ -54,21 +61,22 @@ const OurPortfolio = () => {
           Our Portfolio
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-2">
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="flex w-auto"
+          columnClassName="masonry-column"
+        >
           {visibleImages.map((img, idx) => (
             <img
               key={idx}
               src={img}
               data-aos="fade-up"
               alt="Portfolio"
-              className="w-full object-cover"
-              height={300}
-              width={300}
+              className="w-full mb-2 object-cover rounded transition-transform duration-300 hover:-translate-y-2 hover:scale-105"
             />
           ))}
-        </div>
+        </Masonry>
 
-        {/* Show All button only in mobile view */}
         {isMobile && !showAll && (
           <div className="mt-6 text-center">
             <button

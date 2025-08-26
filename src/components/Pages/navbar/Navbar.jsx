@@ -4,7 +4,7 @@ import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { slugify } from "../../../lib/slugify";
 import { servicesData } from "../../ui/service/servicesData";
-
+import zwolf from "../../../assets/zwolf.png"
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -33,7 +33,7 @@ const Navbar = () => {
     <div className="bg-[#f7f8fc] w-full fixed top-0 left-0 shadow z-50">
       <nav className="flex items-center justify-between max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 md:py-4">
         {/* Logo - Responsive sizing */}
-        <Link
+        {/* <Link
           to="/"
           className="flex items-center font-extrabold text-xl sm:text-2xl md:text-3xl text-[#1e1e2d]"
         >
@@ -41,7 +41,18 @@ const Navbar = () => {
           <span className="text-[#5aa6f8]">W</span>
           <span className="text-[#5aa6f8]">0</span>
           <span>LF</span>
-        </Link>
+        </Link> */}
+
+        <Link
+  to="/"
+  className="flex items-center h-[50px]"
+>
+  <img 
+    src={zwolf}
+    alt="ZWOLF Logo" 
+    className="w-[100px]"
+  />
+</Link>
 
         {/* Desktop Menu - Hidden on mobile and tablet */}
         <ul className="hidden xl:flex items-center space-x-6 2xl:space-x-8 text-sm lg:text-base font-medium text-[#1e1e2d]">
