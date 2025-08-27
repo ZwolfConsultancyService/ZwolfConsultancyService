@@ -11,7 +11,7 @@ const Footer = () => {
         
         {/* Logo & Info */}
         <div>
-               {/* <Link
+               <Link
                       to="/"
                       className="flex items-center font-extrabold text-3xl text-[#1e1e2d]"
                     >
@@ -19,8 +19,8 @@ const Footer = () => {
                       <span className="text-[#5aa6f8]">W</span>
                       <span className="text-[#5aa6f8]">0</span>
                       <span>LF</span>
-                    </Link> */}
-                    <Link
+                    </Link>
+                    {/* <Link
                       to="/"
                       className="flex items-center h-[50px]"
                     >
@@ -29,7 +29,7 @@ const Footer = () => {
                         alt="ZWOLF Logo" 
                         className="w-[100px]"
                       />
-                    </Link>
+                    </Link> */}
           <p className="mt-3">
             Creative Agency Based on Country name
           </p>
