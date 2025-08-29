@@ -5,6 +5,7 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { slugify } from "../../../lib/slugify";
 import { servicesData } from "../../ui/service/servicesData";
 import zwolf from "../../../assets/zwolf.png"
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -29,13 +30,19 @@ const Navbar = () => {
     setMobileServicesOpen(!mobileServicesOpen);
   };
 
+  const closeMobileMenu = () => {
+    setMenuOpen(false);
+    setMobileServicesOpen(false);
+  };
+
   return (
     <div className="bg-[#f7f8fc] w-full fixed top-0 left-0 shadow z-50">
-      <nav className="flex items-center justify-between max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 md:py-4">
-        {/* Logo - Responsive sizing */}
+      <nav className="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 lg:py-4">
+        
+        {/* Logo - Mobile First Responsive */}
         <Link
           to="/"
-          className="flex items-center font-extrabold text-xl sm:text-2xl md:text-3xl text-[#1e1e2d]"
+          className="flex items-center font-extrabold text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#1e1e2d] z-10"
         >
           <span>Z</span>
           <span className="text-[#5aa6f8]">W</span>
@@ -43,19 +50,22 @@ const Navbar = () => {
           <span>LF</span>
         </Link>
 
-        {/* <Link
-  to="/"
-  className="flex items-center h-[50px]"
->
-  <img 
-    src={zwolf}
-    alt="ZWOLF Logo" 
-    className="w-[100px]"
-  />
-</Link> */}
+        {/* Alternative Logo Image (uncomment to use) */}
+        {/* 
+        <Link
+          to="/"
+          className="flex items-center h-10 sm:h-12 lg:h-14 z-10"
+        >
+          <img 
+            src={zwolf}
+            alt="ZWOLF Logo" 
+            className="h-full w-auto"
+          />
+        </Link> 
+        */}
 
-        {/* Desktop Menu - Hidden on mobile and tablet */}
-        <ul className="hidden xl:flex items-center space-x-6 2xl:space-x-8 text-sm lg:text-base font-medium text-[#1e1e2d]">
+        {/* Desktop Menu - Shows from lg (1024px) and up */}
+        <ul className="hidden lg:flex items-center space-x-4 xl:space-x-6 2xl:space-x-8 text-sm xl:text-base font-medium text-[#1e1e2d]">
           {navItems.map((item, idx) => (
             <li
               key={idx}
@@ -65,13 +75,13 @@ const Navbar = () => {
             >
               <Link
                 to={item.path}
-                className={`flex items-center space-x-1 transition-colors duration-200 ${
+                className={`flex items-center space-x-1 transition-colors duration-200 py-2 px-1 ${
                   isActive(item.path)
                     ? "text-[#5aa6f8] font-semibold"
                     : "hover:text-[#5aa6f8]"
                 }`}
               >
-                <span>{item.name}</span>
+                <span className="whitespace-nowrap">{item.name}</span>
                 {item.dropdown && (
                   <FaChevronDown
                     className={`text-xs transition-transform duration-200 ${
@@ -83,12 +93,12 @@ const Navbar = () => {
 
               {/* Desktop Dropdown */}
               {item.dropdown && servicesOpen && (
-                <div className="absolute left-0 mt-2 bg-white border border-gray-100 text-[#1e1e2d] rounded-xl shadow-lg py-2 w-56 transform opacity-100 scale-100 transition-all duration-200">
+                <div className="absolute left-0 mt-1 bg-white border border-gray-100 text-[#1e1e2d] rounded-xl shadow-lg py-2 w-56 transform opacity-100 scale-100 transition-all duration-200">
                   {servicesDropdown.map((service, sIdx) => (
                     <Link
                       key={sIdx}
                       to={service.path}
-                      className="block px-4 py-2 hover:bg-[#5aa6f8] hover:text-white transition-colors duration-150"
+                      className="block px-4 py-2 text-sm hover:bg-[#5aa6f8] hover:text-white transition-colors duration-150"
                     >
                       {service.name}
                     </Link>
@@ -99,48 +109,55 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* CTA Button - Responsive sizing and visibility */}
+        {/* CTA Button - Shows from lg (1024px) and up only */}
         <Link
           to="/contact"
-          className="hidden md:inline-flex items-center justify-center bg-[#5aa6f8] text-white font-semibold text-xs sm:text-sm rounded-full px-4 sm:px-6 py-2 sm:py-3 hover:bg-[#1467c0] transition-colors duration-200"
+          className="hidden lg:inline-flex items-center justify-center bg-[#5aa6f8] text-white font-semibold text-sm rounded-full px-6 py-3 hover:bg-[#1467c0] transition-colors duration-200 whitespace-nowrap z-10"
         >
-          <span className="hidden lg:inline">Free Consultation</span>
-          <span className="lg:hidden">Contact</span>
-          <FaArrowUpRightFromSquare className="ml-1 lg:ml-2 text-xs" />
+          Free Consultation
+          <FaArrowUpRightFromSquare className="ml-2 text-sm" />
         </Link>
 
-        {/* Mobile/Tablet Menu Toggle */}
+        {/* Mobile/Tablet Menu Toggle - Shows up to lg (below 1024px) */}
         <button
-          className="xl:hidden text-xl sm:text-2xl text-[#1e1e2d] p-1"
+          className="lg:hidden text-xl sm:text-2xl text-[#1e1e2d] p-2 z-10 hover:text-[#5aa6f8] transition-colors duration-200"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </nav>
 
-      {/* Mobile/Tablet Menu */}
-      {menuOpen && (
-        <div className="xl:hidden bg-[#f7f8fc] border-t border-gray-200 px-3 sm:px-4 md:px-6 py-4 space-y-3 max-h-[calc(100vh-80px)] overflow-y-auto">
+      {/* Mobile/Tablet Menu - Shows up to lg (below 1024px) */}
+      <div 
+        className={`lg:hidden bg-[#f7f8fc] border-t border-gray-200 transition-all duration-300 overflow-hidden ${
+          menuOpen 
+            ? 'max-h-[calc(100vh-80px)] opacity-100' 
+            : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="px-4 sm:px-6 py-4 space-y-2 overflow-y-auto">
           {navItems.map((item, idx) => (
-            <div key={idx}>
+            <div key={idx} className="border-b border-gray-100 last:border-b-0 pb-2 last:pb-0">
               {item.dropdown ? (
                 <>
                   {/* Services with dropdown toggle */}
                   <div className="flex items-center justify-between">
                     <Link
                       to={item.path}
-                      className={`block py-2 text-base sm:text-lg ${
+                      className={`block py-2 text-base sm:text-lg font-medium transition-colors duration-150 ${
                         isActive(item.path)
                           ? "text-[#5aa6f8] font-semibold"
-                          : "text-[#1e1e2d]"
+                          : "text-[#1e1e2d] hover:text-[#5aa6f8]"
                       }`}
-                      onClick={() => setMenuOpen(false)}
+                      onClick={closeMobileMenu}
                     >
                       {item.name}
                     </Link>
                     <button
                       onClick={toggleMobileServices}
-                      className="p-2 text-[#1e1e2d] hover:text-[#5aa6f8]"
+                      className="p-2 text-[#1e1e2d] hover:text-[#5aa6f8] transition-colors duration-200"
+                      aria-label={mobileServicesOpen ? "Close services menu" : "Open services menu"}
                     >
                       <FaChevronDown
                         className={`text-sm transition-transform duration-200 ${
@@ -151,33 +168,36 @@ const Navbar = () => {
                   </div>
 
                   {/* Mobile Services Dropdown */}
-                  {mobileServicesOpen && (
-                    <div className="ml-4 mt-2 space-y-2 pb-2 border-l-2 border-[#5aa6f8] pl-4">
+                  <div 
+                    className={`ml-4 border-l-2 border-[#5aa6f8] pl-4 transition-all duration-300 overflow-hidden ${
+                      mobileServicesOpen 
+                        ? 'max-h-96 opacity-100 mt-2' 
+                        : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="space-y-1 py-1">
                       {servicesDropdown.map((service, sIdx) => (
                         <Link
                           key={sIdx}
                           to={service.path}
-                          className="block py-1 text-sm sm:text-base text-[#1e1e2d] hover:text-[#5aa6f8] transition-colors duration-150"
-                          onClick={() => {
-                            setMenuOpen(false);
-                            setMobileServicesOpen(false);
-                          }}
+                          className="block py-2 text-sm sm:text-base text-[#1e1e2d] hover:text-[#5aa6f8] transition-colors duration-150 hover:pl-2"
+                          onClick={closeMobileMenu}
                         >
                           {service.name}
                         </Link>
                       ))}
                     </div>
-                  )}
+                  </div>
                 </>
               ) : (
                 <Link
                   to={item.path}
-                  className={`block py-2 text-base sm:text-lg transition-colors duration-150 ${
+                  className={`block py-2 text-base sm:text-lg font-medium transition-colors duration-150 ${
                     isActive(item.path)
                       ? "text-[#5aa6f8] font-semibold"
                       : "text-[#1e1e2d] hover:text-[#5aa6f8]"
                   }`}
-                  onClick={() => setMenuOpen(false)}
+                  onClick={closeMobileMenu}
                 >
                   {item.name}
                 </Link>
@@ -186,18 +206,18 @@ const Navbar = () => {
           ))}
 
           {/* Mobile CTA Button */}
-          <div className="pt-3 border-t border-gray-200">
+          <div className="pt-4 mt-4 border-t border-gray-200">
             <Link
               to="/contact"
               className="flex items-center justify-center w-full bg-[#5aa6f8] text-white font-semibold text-sm sm:text-base rounded-full px-6 py-3 hover:bg-[#1467c0] transition-colors duration-200"
-              onClick={() => setMenuOpen(false)}
+              onClick={closeMobileMenu}
             >
               Free Consultation
               <FaArrowUpRightFromSquare className="ml-2 text-sm" />
             </Link>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

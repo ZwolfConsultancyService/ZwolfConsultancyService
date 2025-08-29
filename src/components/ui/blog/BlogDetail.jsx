@@ -1,73 +1,122 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowLeft, FaCalendar, FaChevronLeft, FaChevronRight, FaCopy, FaFacebook, FaLinkedin, FaShare, FaTwitter, FaWhatsapp } from "react-icons/fa";
-import { getBlogByTitle, getPreviousBlog, getNextBlog, createSlug } from './blogData';
+import axios from "axios";
 
 const BlogDetail = () => {
   const [blog, setBlog] = useState(null);
+  const [allBlogs, setAllBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const API_BASE_URL = 'https://zwolfconsultancyservice-backend.onrender.com/api/blogs/fetch';
+
+  const fetchBlogs = async () => {
+    try {
+      const response = await axios.get(API_BASE_URL, {
+        timeout: 8000,
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      console.log('API Response:', response.data);
+
+      let blogsData = response.data;
+
+      // Handle different response formats
+      if (blogsData.blogs && Array.isArray(blogsData.blogs)) {
+        blogsData = blogsData.blogs;
+      } else if (blogsData.data && Array.isArray(blogsData.data)) {
+        blogsData = blogsData.data;
+      } else if (!Array.isArray(blogsData)) {
+        console.error('Unexpected response format:', blogsData);
+        throw new Error('API response is not in expected format');
+      }
+      
+      return blogsData;
+    } catch (error) {
+      console.error('Error fetching blogs:', error.message);
+      throw error;
+    }
+  };
 
   useEffect(() => {
-    // Get blog data from sessionStorage (set by Blog list component)
-    const storedBlog = sessionStorage.getItem('selectedBlog');
-    if (storedBlog) {
-      const blogData = JSON.parse(storedBlog);
-      
-      // Get complete blog data using the title
-      const fullBlogData = getBlogByTitle(blogData.title);
-      
-      if (fullBlogData) {
-        setBlog(fullBlogData);
+    const loadBlogData = async () => {
+      try {
+        // Get stored blog data immediately
+        const storedBlog = sessionStorage.getItem('selectedBlog');
+        if (storedBlog) {
+          setBlog(JSON.parse(storedBlog));
+          setLoading(false);
+        }
+
+        // Fetch all blogs for navigation
+        const blogs = await fetchBlogs();
+        setAllBlogs(blogs);
+        
+        // Update with full blog data if available
+        if (storedBlog) {
+          const blogData = JSON.parse(storedBlog);
+          const fullBlogData = blogs.find(b => b.title === blogData.title);
+          if (fullBlogData) {
+            setBlog(fullBlogData);
+          }
+        }
+      } catch (error) {
+        console.error('Failed to load blog data:', error);
+      } finally {
+        setLoading(false);
       }
-    }
+    };
+
+    loadBlogData();
     window.scrollTo(0, 0);
   }, []);
 
-  // Navigation handlers
+  const createSlug = (title) => {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)+/g, "");
+  };
+
+  const getPreviousBlog = () => {
+    const currentIndex = allBlogs.findIndex(b => b.title === blog.title);
+    return currentIndex > 0 ? allBlogs[currentIndex - 1] : null;
+  };
+
+  const getNextBlog = () => {
+    const currentIndex = allBlogs.findIndex(b => b.title === blog.title);
+    return currentIndex < allBlogs.length - 1 ? allBlogs[currentIndex + 1] : null;
+  };
+
   const handleBackClick = () => {
     window.history.back();
-    // Or navigate to blog list: window.location.href = '/blog';
   };
 
-  const handlePrevious = () => {
-    const prevBlog = getPreviousBlog(blog.title);
-    if (prevBlog) {
-      const slug = createSlug(prevBlog.title);
-      // Store new blog data
-      sessionStorage.setItem('selectedBlog', JSON.stringify(prevBlog));
-      window.location.href = `/blog/${slug}`;
-    }
+  const handleNavigation = async (targetBlog) => {
+    if (!targetBlog) return;
+    
+    const slug = createSlug(targetBlog.title);
+    sessionStorage.setItem('selectedBlog', JSON.stringify(targetBlog));
+    window.location.href = `/blog/${slug}`;
   };
 
-  const handleNext = () => {
-    const nextBlog = getNextBlog(blog.title);
-    if (nextBlog) {
-      const slug = createSlug(nextBlog.title);
-      // Store new blog data
-      sessionStorage.setItem('selectedBlog', JSON.stringify(nextBlog));
-      window.location.href = `/blog/${slug}`;
-    }
-  };
-
-  // Share functionality
+  // Share functions
   const getCurrentPageUrl = () => {
-    if (typeof window !== 'undefined') {
-      return window.location.href;
-    }
-    // Fallback URL generation
-    const slug = createSlug(blog.title);
-    return `https://yourdomain.com/blog/${slug}`;
+    return window.location.href;
   };
 
   const shareOnTwitter = () => {
     const url = getCurrentPageUrl();
     const text = `Check out this article: "${blog.title}"`;
     const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
-    window.open(twitterUrl, '_blank', 'width=600,height=400');
+    window.open(twitterUrl, '_blank');
   };
 
   const shareOnLinkedIn = () => {
     const url = getCurrentPageUrl();
     const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
-    window.open(linkedInUrl, '_blank', 'width=600,height=400');
+    window.open(linkedInUrl, '_blank');
   };
 
   const shareOnWhatsApp = () => {
@@ -80,27 +129,19 @@ const BlogDetail = () => {
   const shareOnFacebook = () => {
     const url = getCurrentPageUrl();
     const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-    window.open(facebookUrl, '_blank', 'width=600,height=400');
+    window.open(facebookUrl, '_blank');
   };
 
   const copyToClipboard = async () => {
-    const url = getCurrentPageUrl();
     try {
+      const url = getCurrentPageUrl();
       await navigator.clipboard.writeText(url);
       alert('Link copied to clipboard!');
-    } catch (err) {
-      // Fallback for older browsers
-      const textArea = document.createElement('textarea');
-      textArea.value = url;
-      document.body.appendChild(textArea);
-      textArea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textArea);
-      alert('Link copied to clipboard!');
+    } catch (error) {
+      console.error('Failed to copy:', error);
     }
   };
 
-  // Loading state
   if (!blog) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -112,8 +153,8 @@ const BlogDetail = () => {
     );
   }
 
-  const previousBlog = getPreviousBlog(blog.title);
-  const nextBlog = getNextBlog(blog.title);
+  const previousBlog = getPreviousBlog();
+  const nextBlog = getNextBlog();
 
   return (
     <div className="bg-white">
@@ -126,7 +167,6 @@ const BlogDetail = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         
-        {/* Back Button */}
         <button
           onClick={handleBackClick}
           className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg hover:bg-white transition-all duration-200 group"
@@ -134,12 +174,11 @@ const BlogDetail = () => {
           <FaArrowLeft className="text-gray-700 group-hover:-translate-x-1 transition-transform" />
         </button>
         
-        {/* Hero Content */}
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
           <div className="max-w-4xl mx-auto">
             <div className="mb-4">
               <span className="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium">
-                {blog.category}
+                {blog.category || 'Article'}
               </span>
             </div>
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
@@ -148,16 +187,16 @@ const BlogDetail = () => {
             <div className="flex flex-wrap items-center text-white/90 gap-6">
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
-                  {blog.author.charAt(0)}
+                  {blog.author ? blog.author.charAt(0) : 'A'}
                 </div>
-                <span className="font-medium">{blog.author}</span>
+                <span className="font-medium">{blog.author || 'Author'}</span>
               </div>
               <div className="flex items-center">
                 <FaCalendar className="mr-2" />
                 <span>{blog.date}</span>
               </div>
               <div className="flex items-center">
-                <span>{blog.readTime}</span>
+                <span>{blog.readTime || '5 min read'}</span>
               </div>
             </div>
           </div>
@@ -166,7 +205,6 @@ const BlogDetail = () => {
 
       {/* Content Section */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Article Content */}
         <div className="prose prose-lg max-w-none">
           <div className="text-gray-700 leading-relaxed">
             <p className="text-lg leading-relaxed whitespace-pre-line">
@@ -199,7 +237,7 @@ const BlogDetail = () => {
               </button>
               <button
                 onClick={shareOnWhatsApp}
-                className="flex items-center bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-200"
+                className="flex items-center bg-green-500 text-white px-4 py-2 rounded-lg hover:green-600 transition-colors duration-200"
               >
                 <FaWhatsapp className="mr-2" />
                 WhatsApp
@@ -222,13 +260,13 @@ const BlogDetail = () => {
           </div>
         </div>
 
-        {/* Pagination Section */}
+        {/* Navigation Section */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex justify-between items-center">
             <div className="flex-1">
               {previousBlog && (
                 <button
-                  onClick={handlePrevious}
+                  onClick={() => handleNavigation(previousBlog)}
                   className="group flex items-center text-blue-600 hover:text-blue-700 transition-colors"
                 >
                   <FaChevronLeft className="mr-2 group-hover:-translate-x-1 transition-transform" />
@@ -248,7 +286,7 @@ const BlogDetail = () => {
             <div className="flex-1 text-right">
               {nextBlog && (
                 <button
-                  onClick={handleNext}
+                  onClick={() => handleNavigation(nextBlog)}
                   className="group flex items-center justify-end text-blue-600 hover:text-blue-700 transition-colors"
                 >
                   <div className="text-right">
