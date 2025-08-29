@@ -27,6 +27,7 @@ const logos = [
   client11
 ];
 
+
 const EsteemedClients = () => {
   useEffect(() => {
     AOS.init({ duration: 900, once: true });
