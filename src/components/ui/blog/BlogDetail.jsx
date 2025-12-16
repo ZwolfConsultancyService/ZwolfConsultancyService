@@ -72,6 +72,39 @@ const BlogDetail = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // Helper function to get blog image URL
+  const getBlogImage = (blog) => {
+    if (!blog) return 'https://via.placeholder.com/1200x600?text=Blog+Image';
+    
+    // Check if images array exists and has items
+    if (blog.images && Array.isArray(blog.images) && blog.images.length > 0) {
+      return blog.images[0].url;
+    }
+    // Fallback to blog.image if it exists
+    if (blog.image) {
+      return blog.image;
+    }
+    // Default placeholder
+    return 'https://via.placeholder.com/1200x600?text=Blog+Image';
+  };
+
+  // Helper function to format date
+  const formatDate = (dateString) => {
+    if (!dateString) return 'Recent';
+    
+    const date = new Date(dateString);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+  };
+
+  // Helper function to strip HTML tags from content
+  const stripHtmlTags = (html) => {
+    if (!html) return '';
+    const tmp = document.createElement('DIV');
+    tmp.innerHTML = html;
+    return tmp.textContent || tmp.innerText || '';
+  };
+
   const createSlug = (title) => {
     return title
       .toLowerCase()
@@ -161,9 +194,12 @@ const BlogDetail = () => {
       {/* Hero Section */}
       <div className="relative">
         <img
-          src={blog.image}
+          src={getBlogImage(blog)}
           alt={blog.title}
           className="w-full h-64 md:h-96 object-cover"
+          onError={(e) => {
+            e.target.src = 'https://via.placeholder.com/1200x600?text=Blog+Image';
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         
@@ -187,13 +223,13 @@ const BlogDetail = () => {
             <div className="flex flex-wrap items-center text-white/90 gap-6">
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-3">
-                  {blog.author ? blog.author.charAt(0) : 'A'}
+                  {blog.author ? blog.author.charAt(0).toUpperCase() : 'A'}
                 </div>
                 <span className="font-medium">{blog.author || 'Author'}</span>
               </div>
               <div className="flex items-center">
                 <FaCalendar className="mr-2" />
-                <span>{blog.date}</span>
+                <span>{formatDate(blog.publishedAt || blog.createdAt || blog.date)}</span>
               </div>
               <div className="flex items-center">
                 <span>{blog.readTime || '5 min read'}</span>
@@ -207,9 +243,17 @@ const BlogDetail = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="prose prose-lg max-w-none">
           <div className="text-gray-700 leading-relaxed">
-            <p className="text-lg leading-relaxed whitespace-pre-line">
-              {blog.content}
-            </p>
+            {/* Check if content has HTML tags */}
+            {blog.content && blog.content.includes('<') ? (
+              <div 
+                className="text-lg leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: blog.content }}
+              />
+            ) : (
+              <p className="text-lg leading-relaxed whitespace-pre-line">
+                {blog.content}
+              </p>
+            )}
           </div>
         </div>
 
@@ -237,7 +281,7 @@ const BlogDetail = () => {
               </button>
               <button
                 onClick={shareOnWhatsApp}
-                className="flex items-center bg-green-500 text-white px-4 py-2 rounded-lg hover:green-600 transition-colors duration-200"
+                className="flex items-center bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors duration-200"
               >
                 <FaWhatsapp className="mr-2" />
                 WhatsApp
