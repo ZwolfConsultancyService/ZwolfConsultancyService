@@ -1,17 +1,19 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import client1 from "../../../assets/clientimg/IMG-20250826-WA0012.jpg";
-import client2 from "../../../assets/clientimg/BMJ-Marble.jpg";
-import client3 from "../../../assets/clientimg/IMG-20250826-WA0009.jpg";
-import client4 from "../../../assets/clientimg/IMG-20250826-WA0010.jpg";
-import client5 from "../../../assets/clientimg/sunrise.jpg";
-import client6 from "../../../assets/clientimg/IMG-20250826-WA0007.jpg";
-import client7 from "../../../assets/clientimg/IMG-20250826-WA0005.jpg";
-import client8 from "../../../assets/clientimg/IMG-20250826-WA0006.jpg";
-import client9 from "../../../assets/clientimg/IMG-20250826-WA0004.jpg";
-import client10 from "../../../assets/clientimg/nartan-academy.jpg";
-import client11 from "../../../assets/clientimg/lawfirm.jpg";
+
+// ✅ Correct imports (case-sensitive, src/assets)
+import client1 from "../../../assets/clientImg/IMG-20250826-WA0012.jpg";
+import client2 from "../../../assets/clientImg/BMJ-Marble.jpg";
+import client3 from "../../../assets/clientImg/IMG-20250826-WA0009.jpg";
+import client4 from "../../../assets/clientImg/IMG-20250826-WA0010.jpg";
+import client5 from "../../../assets/clientImg/sunrise.jpg";
+import client6 from "../../../assets/clientImg/IMG-20250826-WA0007.jpg";
+import client7 from "../../../assets/clientImg/IMG-20250826-WA0005.jpg";
+import client8 from "../../../assets/clientImg/IMG-20250826-WA0006.jpg";
+import client9 from "../../../assets/clientImg/IMG-20250826-WA0004.jpg";
+import client10 from "../../../assets/clientImg/nartan-academy.jpg";
+import client11 from "../../../assets/clientImg/lawfirm.jpg";
 
 const logos = [
   client1,
@@ -24,9 +26,8 @@ const logos = [
   client8,
   client9,
   client10,
-  client11
+  client11,
 ];
-
 
 const EsteemedClients = () => {
   useEffect(() => {
@@ -42,6 +43,7 @@ const EsteemedClients = () => {
         >
           Esteemed Clients
         </h2>
+
         <p
           className="text-center max-w-3xl mx-auto text-sm md:text-base text-gray-600 mb-8"
           data-aos="fade-up"
@@ -51,25 +53,28 @@ const EsteemedClients = () => {
           expertise, leading to innovative solutions and exceptional results.
         </p>
 
-        {/* logo grid */}
+        {/* Clients Logo Grid */}
         <div
           data-aos="fade-up"
           data-aos-delay="200"
           className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5"
         >
-         {logos.map((src, idx) => (
-  <div
-    key={idx}
-    className="h-[140px] sm:h-[160px] md:h-[200px] lg:h-[240px] border border-[#dbe5ff] rounded-lg bg-white hover:shadow-md transition overflow-hidden"
-  >
-    <img
-      src={src}
-      alt={`client-${idx + 1}`}
-      className="h-full w-full object-cover"
-    />
-  </div>
-))}
-
+          {logos.map((src, idx) => (
+            <div
+              key={idx}
+              className="h-[140px] sm:h-[160px] md:h-[200px] lg:h-[240px]
+                         border border-[#dbe5ff] rounded-lg bg-white
+                         hover:shadow-md transition overflow-hidden
+                         flex items-center justify-center"
+            >
+              <img
+                src={src}
+                alt={`client-${idx + 1}`}
+                className="max-h-full max-w-full object-contain"
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -77,3 +82,4 @@ const EsteemedClients = () => {
 };
 
 export default EsteemedClients;
+      
