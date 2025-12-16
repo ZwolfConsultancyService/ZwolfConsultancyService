@@ -14,7 +14,7 @@ import client8 from "../../../assets/clientImg/IMG-20250826-WA0006.jpg";
 import client9 from "../../../assets/clientImg/IMG-20250826-WA0004.jpg";
 import client10 from "../../../assets/clientImg/nartan-academy.jpg";
 import client11 from "../../../assets/clientImg/lawfirm.jpg";
-
+  
 const logos = [
   client1,
   client2,
