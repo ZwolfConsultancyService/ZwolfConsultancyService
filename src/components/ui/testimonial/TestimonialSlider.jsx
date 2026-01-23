@@ -82,7 +82,7 @@ const TestimonialSlider = () => {
         {/* Heading */}
         <div className="text-center mb-12" data-aos="fade-up">
           <p className="text-[#5aa6f8] font-medium mb-2">Client Testimonials</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl  text-gray-900">
             Our customers love us.
           </h2>
         </div>

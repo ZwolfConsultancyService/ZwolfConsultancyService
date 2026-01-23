@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { FaCheck, FaArrowUpRightFromSquare, FaChevronDown, FaChevronUp } from "react-icons/fa6";
+import {
+  FaCheck,
+  FaArrowUpRightFromSquare,
+  FaChevronDown,
+  FaChevronUp,
+} from "react-icons/fa6";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
+import AboutImg from '../../../assets/AboutImg.jpeg'
 
 const About = () => {
   const [expanded, setExpanded] = useState(false);
 
   const navigate = useNavigate();
-
 
   useEffect(() => {
     AOS.init({ duration: 1200, once: true, easing: "ease-in-out" });
@@ -41,31 +46,24 @@ const About = () => {
             <img
               alt="Team collaborating at office"
               className="rounded-3xl w-full h-full lg:h-[600px] xl:h-[500px] object-contain lg:object-cover"
-              src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNvcnBvcmF0ZSUyMG9mZmljZXxlbnwwfHwwfHx8MA%3D%3D"
+              src={AboutImg}
             />
           </div>
 
           {/* Text Section */}
           <div className="flex-1 max-w-2xl mt-0 md:mt-4" data-aos="fade-left">
             <p className="text-gray-500 mb-6 leading-relaxed">
-              We are a full-stack IT solutions company committed to turning
-              ambitious ideas into impactful digital realities. From powerful
-              websites and user-friendly mobile apps to data-driven marketing
-              and enterprise-grade software, we help businesses grow smarter,
-              faster, and stronger in the digital world.
+             Zwolf Consultancy ek modern digital solutions company hai jo businesses ke liye end-to-end digital services provide karti hai, including Website Development, Mobile App Development, Graphic Designing, Branding, Digital Marketing aur SEO. Hum technology, creativity aur marketing ko combine karke aise digital experiences create karte hain jo business ko online grow karne, leads generate karne aur brand presence build karne me help karte hain.
             </p>
             <p className="text-gray-500 mb-6 leading-relaxed">
-              Our approach is simple — listen, understand, and deliver. We
-              don’t believe in one-size-fits-all solutions. Every project is a
-              fresh canvas, and every client’s vision deserves a custom strategy
-              backed by cutting-edge technology and creativity.
+             Humara focus sirf services deliver karna nahi, balki clients ke business ko long-term digital success ke liye ready karna hai. Har project hum tailored strategy, quality-driven design aur transparent communication ke saath execute karte hain, taaki output impactful ho aur result measurable. Competitive digital world me, Zwolf Consultancy brands ko smarter strategies, powerful design aur scalable technology ke through stand out karne me help karta hai.
             </p>
 
             {/* Content that expands on Read More */}
             {expanded && (
               <>
                 {/* What Makes Us Different */}
-                <h3 className="text-xl font-bold text-black mb-4">
+                <h3 className="text-xl  text-black mb-4">
                   What Makes Us Different?
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3 mb-8">
@@ -92,14 +90,14 @@ const About = () => {
                 </div>
 
                 {/* Mission */}
-                <h3 className="text-xl font-bold text-black mb-2">Our Mission</h3>
+                <h3 className="text-xl  text-black mb-2">Our Mission</h3>
                 <p className="text-gray-500 mb-6 leading-relaxed">
-                  To empower businesses with innovative, efficient, and future-ready
-                  digital solutions that drive measurable growth.
+                  To empower businesses with innovative, efficient, and
+                  future-ready digital solutions that drive measurable growth.
                 </p>
 
                 {/* Vision */}
-                <h3 className="text-xl font-bold text-black mb-2">Our Vision</h3>
+                <h3 className="text-xl  text-black mb-2">Our Vision</h3>
                 <p className="text-gray-500 mb-8 leading-relaxed">
                   To become the most trusted technology partner for businesses
                   worldwide, known for creativity, quality, and results.

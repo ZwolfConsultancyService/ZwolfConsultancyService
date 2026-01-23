@@ -23,7 +23,7 @@ const BlogHero = () => {
         <p className="text-[#5aa6f8] font-medium text-lg mb-3">
           Welcome to Our Blog
         </p>
-        <h1 className="text-white text-4xl sm:text-5xl font-bold leading-tight mb-4">
+        <h1 className="text-white text-4xl sm:text-5xl tight mb-4">
           Latest Blogs & Articles
         </h1>
         <p className="text-gray-200 text-lg max-w-2xl mx-auto">

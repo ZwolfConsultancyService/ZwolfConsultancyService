@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaPaperPlane } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -21,13 +21,13 @@ const cardData = [
       "https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-2.jpg",
   },
   {
-    title: "Email Us",
-    icon: FaPaperPlane,
-    text: "zwolfconsultancy@gmail.com",
-    link: "mailto:zwolfconsultancy@gmail.com",
-    image:
-      "https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-3.jpg",
-  },
+  title: "Email Us",
+  icon: FaEnvelope,
+  text: "zwolfconsultancy@gmail.com",
+  link: "mailto:zwolfconsultancy@gmail.com",
+  image:
+    "https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-3.jpg",
+}
 ];
 
 const ContactInfoCards = () => {
@@ -57,11 +57,7 @@ const ContactInfoCards = () => {
       </div>
       <hr />
       <p className="text-gray-500 whitespace-pre-line">{card.text}</p>
-      <img
-        src={card.image}
-        alt={card.title}
-        className="rounded-xl w-full h-40 object-cover transition-transform duration-300 hover:scale-105"
-      />
+     
     </a>
   );
 })}

@@ -57,7 +57,7 @@ const OurPortfolio = () => {
   return (
     <section className="bg-[#f9fafb] py-12 mt-4">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-center text-gray-800 font-semibold md:font-bold text-3xl md:text-4xl xl:text-5xl mb-8">
+        <h2 className="text-center text-gray-800 font-semibold md:4xl xl:text-5xl mb-8">
           Our Portfolio
         </h2>
 

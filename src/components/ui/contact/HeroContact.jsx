@@ -20,7 +20,7 @@ const HeroContact = () => {
 
       {/* Text */}
       <h1
-        className="relative text-white text-3xl sm:text-4xl lg:text-5xl font-bold text-center"
+        className="relative text-white text-3xl sm:text-4xl lg:text-5xl  text-center"
         data-aos="zoom-in"
       >
         Get in Touch

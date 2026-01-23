@@ -13,11 +13,13 @@ const HomePage = () => {
     <div>
 	<Hero />
   <About />
+    <WhyChooseUs />
   <Services />
+  
   <EsteemedClients />
-  <WhyChooseUs />
+
   {/* <OurPortfolio /> */}
-  <TestimonialSlider />
+  {/* <TestimonialSlider /> */}
   <LatestBlog />
     </div>
   )

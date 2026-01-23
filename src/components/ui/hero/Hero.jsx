@@ -3,6 +3,7 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import BannerCompany from '../../../assets/BannerCompany.png'
 
 const Hero = () => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const Hero = () => {
         alt="Office background with people working, laptop on table, and woman on phone in wheelchair"
         aria-hidden="true"
         className="absolute inset-0 w-full h-full object-cover"
-        src="https://storage.googleapis.com/a1aa/image/e4cbfe4c-2949-45a5-7b28-274d8c60ff83.jpg"
+        src={BannerCompany}
       />
 
       {/* Black Overlay */}
@@ -36,16 +37,15 @@ const Hero = () => {
         </p> */}
 
         <h1
-          className="text-white font-extrabold leading-tight sm:leading-tight text-2xl md:text-3xl lg:text-4xl xl:text-6xl max-w-5xl mx-auto"
+          className="text-black font-extrabold leading-tight mb-44 sm:leading-tight text-2xl md:text-3xl lg:text-4xl xl:text-6xl max-w-5xl mx-auto"
           data-aos="zoom-in"
         >
           Web Design, SEO &<br />
           Internet Marketing For <br />
           <span style={{ color: "#5aa6f8" }}>Your Business</span>
-        </h1>
 
-        <p
-          className="text-black font-medium md:font-semibold text-xs sm:text-sm md:text-base max-w-3xl mx-auto mt-6"
+          <p
+          className="text-gray-700   text-xs sm:text-sm md:text-base max-w-3xl mx-auto mt-6"
           data-aos="fade-up"
           data-aos-delay="200"
         >
@@ -53,9 +53,12 @@ const Hero = () => {
           accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
           ab illo veritatis et quasi architecto beatae vitae dicta sunt.
         </p>
+        </h1>
+
+        
 
         {/* Buttons */}
-        <div
+        {/* <div
           className="mt-8 flex flex-col sm:flex-row justify-center gap-5 max-w-md mx-auto"
           data-aos="fade-up"
           data-aos-delay="400"
@@ -71,18 +74,9 @@ const Hero = () => {
             <FaArrowUpRightFromSquare className="ml-2" />
           </Link>
 
-          {/* <a
-            href="#"
-            className="inline-flex items-center justify-center font-semibold rounded-full px-6 py-3 text-sm sm:text-base transition"
-            style={{ backgroundColor: "#5aa6f8", color: "#fff" }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#4892e2")}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#5aa6f8")}
-          >
-            View Portfolio
-            <FaArrowUpRightFromSquare className="ml-2" />
-          </a> */}
+        
 
-        </div>
+        </div> */}
       </div>
     </div>
   );

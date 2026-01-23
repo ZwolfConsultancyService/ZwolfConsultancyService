@@ -4,7 +4,7 @@ import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { slugify } from "../../../lib/slugify";
 import { servicesData } from "../../ui/service/servicesData";
-import Logo from "../../../assets/Logo.png"
+import Logo from "../../../assets/Logo.png";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,9 +19,9 @@ const Navbar = () => {
     { name: "Blog", path: "/blog" },
   ];
 
-  const servicesDropdown = servicesData.map(service => ({
+  const servicesDropdown = servicesData.map((service) => ({
     name: service.title,
-    path: `/services/${slugify(service.title)}`
+    path: `/services/${slugify(service.title)}`,
   }));
 
   const isActive = (path) => location.pathname === path;
@@ -38,7 +38,6 @@ const Navbar = () => {
   return (
     <div className="bg-[#f7f8fc] w-full fixed top-0 left-0 shadow-sm z-50">
       <nav className="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4">
-        
         {/* Logo with Circle & Brand Name */}
         <Link
           to="/"
@@ -47,24 +46,23 @@ const Navbar = () => {
         >
           {/* Circle Logo */}
           <div className="relative rounded-full bg-white shadow-md p-1.5 sm:p-2">
-            <img 
+            <img
               src={Logo}
-              alt="ZWOLF Logo" 
+              alt="ZWOLF Logo"
               className="h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 rounded-full object-cover"
             />
           </div>
-          
+
           {/* Brand Name */}
           <div className="flex flex-col leading-tight">
-            <span className="text-[#5aa6f8] font-bold text-lg sm:text-xl lg:text-2xl tracking-tight">
+            <span className="text-[#5aa6f8]  text-lg sm:text-xl lg:text-2xl tracking-tight">
               ZWOLF
             </span>
             <span className="text-gray-600 font-medium text-xs sm:text-sm lg:text-base -mt-1">
               Consultancy
             </span>
-          </div>  
-        </Link> 
-       
+          </div>
+        </Link>
 
         {/* Desktop Menu - Shows from lg (1024px) and up */}
         <ul className="hidden lg:flex items-center space-x-6 xl:space-x-8 text-sm xl:text-base font-medium text-[#1e1e2d]">
@@ -131,16 +129,19 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile/Tablet Menu */}
-      <div 
+      <div
         className={`lg:hidden bg-[#f7f8fc] border-t border-gray-200 transition-all duration-300 overflow-hidden ${
-          menuOpen 
-            ? 'max-h-[calc(100vh-64px)] opacity-100' 
-            : 'max-h-0 opacity-0'
+          menuOpen
+            ? "max-h-[calc(100vh-64px)] opacity-100"
+            : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-4 sm:px-6 py-3 space-y-1 overflow-y-auto max-h-[calc(100vh-64px)]">
           {navItems.map((item, idx) => (
-            <div key={idx} className="border-b border-gray-100 last:border-b-0 pb-1 last:pb-0">
+            <div
+              key={idx}
+              className="border-b border-gray-100 last:border-b-0 pb-1 last:pb-0"
+            >
               {item.dropdown ? (
                 <>
                   {/* Services with dropdown toggle */}
@@ -159,7 +160,11 @@ const Navbar = () => {
                     <button
                       onClick={toggleMobileServices}
                       className="p-2 text-[#1e1e2d] hover:text-[#5aa6f8] transition-colors duration-200"
-                      aria-label={mobileServicesOpen ? "Close services menu" : "Open services menu"}
+                      aria-label={
+                        mobileServicesOpen
+                          ? "Close services menu"
+                          : "Open services menu"
+                      }
                     >
                       <FaChevronDown
                         className={`text-sm transition-transform duration-200 ${
@@ -170,11 +175,11 @@ const Navbar = () => {
                   </div>
 
                   {/* Mobile Services Dropdown */}
-                  <div 
+                  <div
                     className={`ml-3 border-l-2 border-[#5aa6f8] pl-3 transition-all duration-300 overflow-hidden ${
-                      mobileServicesOpen 
-                        ? 'max-h-96 opacity-100 mt-1' 
-                        : 'max-h-0 opacity-0'
+                      mobileServicesOpen
+                        ? "max-h-96 opacity-100 mt-1"
+                        : "max-h-0 opacity-0"
                     }`}
                   >
                     <div className="space-y-0.5 py-1">

@@ -39,11 +39,11 @@
 
 //       setBlogs(blogsData);
 //       console.log(`Successfully loaded ${blogsData.length} blogs`);
-      
+
 //     } catch (error) {
 //       console.error('Error fetching blogs:', error.message);
-//       const errorMsg = error.code === 'ECONNABORTED' ? 
-//         'Request timeout - Please check your internet connection' : 
+//       const errorMsg = error.code === 'ECONNABORTED' ?
+//         'Request timeout - Please check your internet connection' :
 //         `Failed to load blogs: ${error.message}`;
 //       setError(errorMsg);
 //     } finally {
@@ -52,8 +52,8 @@
 //   };
 
 //   useEffect(() => {
-//     AOS.init({ 
-//       duration: 800, 
+//     AOS.init({
+//       duration: 800,
 //       once: true,
 //       offset: 100
 //     });
@@ -98,7 +98,7 @@
 
 //   if (error && blogs.length === 0) {
 //     return (
-//       <>  
+//       <>
 //         <BlogHero />
 //         <section className="bg-white py-16">
 //           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -127,7 +127,7 @@
 //       <section className="bg-white py-16">
 //         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 //           <div className="mb-8 text-center">
-//             <h2 className="text-3xl font-bold text-gray-900 mb-2">
+//             <h2 className="text-3xl  text-gray-900 mb-2">
 //               Our Latest Articles
 //             </h2>
 //             <p className="text-gray-600">
@@ -176,7 +176,7 @@
 //                     )}
 //                     {blog.author && (
 //                       <div className="flex items-center mt-3 pt-3 border-t border-gray-200">
-//                         <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold mr-2">
+//                         <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs  mr-2">
 //                           {blog.author.charAt(0)}
 //                         </div>
 //                         <span className="text-gray-500 text-xs">{blog.author}</span>
@@ -201,8 +201,6 @@
 
 // export default Blog;
 
-
-
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -214,7 +212,8 @@ const Blog = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const API_BASE_URL = 'https://zwolfconsultancyservice-backend.onrender.com/api/blogs/fetch';
+  const API_BASE_URL =
+    "https://zwolfconsultancyservice-backend.onrender.com/api/blogs/fetch";
 
   const fetchBlogs = async () => {
     try {
@@ -224,11 +223,11 @@ const Blog = () => {
       const response = await axios.get(API_BASE_URL, {
         timeout: 10000,
         headers: {
-          'Content-Type': 'application/json'
-        }
+          "Content-Type": "application/json",
+        },
       });
 
-      console.log('API Response:', response.data);
+      console.log("API Response:", response.data);
 
       let blogsData = response.data;
 
@@ -238,18 +237,18 @@ const Blog = () => {
       } else if (blogsData.data && Array.isArray(blogsData.data)) {
         blogsData = blogsData.data;
       } else if (!Array.isArray(blogsData)) {
-        console.error('Unexpected response format:', blogsData);
-        throw new Error('API response is not in expected format');
+        console.error("Unexpected response format:", blogsData);
+        throw new Error("API response is not in expected format");
       }
 
       setBlogs(blogsData);
       console.log(`Successfully loaded ${blogsData.length} blogs`);
-      
     } catch (error) {
-      console.error('Error fetching blogs:', error.message);
-      const errorMsg = error.code === 'ECONNABORTED' ? 
-        'Request timeout - Please check your internet connection' : 
-        `Failed to load blogs: ${error.message}`;
+      console.error("Error fetching blogs:", error.message);
+      const errorMsg =
+        error.code === "ECONNABORTED"
+          ? "Request timeout - Please check your internet connection"
+          : `Failed to load blogs: ${error.message}`;
       setError(errorMsg);
     } finally {
       setLoading(false);
@@ -257,10 +256,10 @@ const Blog = () => {
   };
 
   useEffect(() => {
-    AOS.init({ 
-      duration: 800, 
+    AOS.init({
+      duration: 800,
       once: true,
-      offset: 100
+      offset: 100,
     });
 
     fetchBlogs();
@@ -279,7 +278,7 @@ const Blog = () => {
       sessionStorage.setItem("selectedBlog", JSON.stringify(blog));
       window.location.href = `/blog/${slug}`;
     } catch (error) {
-      console.error('Error handling blog click:', error);
+      console.error("Error handling blog click:", error);
     }
   };
 
@@ -294,16 +293,16 @@ const Blog = () => {
       return blog.image;
     }
     // Default placeholder
-    return 'https://via.placeholder.com/400x200?text=Blog+Image';
+    return "https://via.placeholder.com/400x200?text=Blog+Image";
   };
 
   // Helper function to format date
   const formatDate = (dateString) => {
-    if (!dateString) return 'Recent';
-    
+    if (!dateString) return "Recent";
+
     const date = new Date(dateString);
-    const options = { year: 'numeric', month: 'short', day: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
+    const options = { year: "numeric", month: "short", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
   };
 
   if (loading) {
@@ -333,7 +332,9 @@ const Blog = () => {
             <div className="flex items-center justify-center min-h-[400px]">
               <div className="text-center">
                 <div className="text-red-500 text-6xl mb-4">⚠️</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Failed to Load Blogs</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Failed to Load Blogs
+                </h3>
                 <p className="text-gray-600 mb-4">{error}</p>
                 <button
                   onClick={fetchBlogs}
@@ -355,11 +356,11 @@ const Blog = () => {
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+            <h2 className="text-3xl  text-gray-900 mb-2">
               Our Latest Articles
             </h2>
             <p className="text-gray-600">
-              {blogs.length} article{blogs.length !== 1 ? 's' : ''} available
+              {blogs.length} article{blogs.length !== 1 ? "s" : ""} available
             </p>
           </div>
 
@@ -379,7 +380,8 @@ const Blog = () => {
                       alt={blog.title}
                       className="w-full h-52 object-cover transition-transform duration-300 hover:scale-105"
                       onError={(e) => {
-                        e.target.src = 'https://via.placeholder.com/400x200?text=Blog+Image';
+                        e.target.src =
+                          "https://via.placeholder.com/400x200?text=Blog+Image";
                       }}
                     />
                     {blog.category && (
@@ -392,7 +394,10 @@ const Blog = () => {
                   </div>
                   <div className="p-5">
                     <p className="text-gray-400 text-sm mb-2">
-                      {formatDate(blog.publishedAt || blog.createdAt || blog.date)} • {blog.readTime || '5 min read'}
+                      {formatDate(
+                        blog.publishedAt || blog.createdAt || blog.date,
+                      )}{" "}
+                      • {blog.readTime || "5 min read"}
                     </p>
                     <h3 className="text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors duration-200 line-clamp-2">
                       {blog.title}
@@ -404,10 +409,12 @@ const Blog = () => {
                     )}
                     {blog.author && (
                       <div className="flex items-center mt-3 pt-3 border-t border-gray-200">
-                        <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold mr-2">
+                        <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs  mr-2">
                           {blog.author.charAt(0).toUpperCase()}
                         </div>
-                        <span className="text-gray-500 text-xs">{blog.author}</span>
+                        <span className="text-gray-500 text-xs">
+                          {blog.author}
+                        </span>
                       </div>
                     )}
                   </div>
@@ -417,8 +424,12 @@ const Blog = () => {
           ) : (
             <div className="text-center py-16">
               <div className="text-gray-400 text-6xl mb-4">📝</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">No Blogs Found</h3>
-              <p className="text-gray-600">Check back later for new articles!</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                No Blogs Found
+              </h3>
+              <p className="text-gray-600">
+                Check back later for new articles!
+              </p>
             </div>
           )}
         </div>
@@ -427,4 +438,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;  
+export default Blog;

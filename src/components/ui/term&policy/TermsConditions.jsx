@@ -30,7 +30,7 @@ const TermsConditions = () => {
             <FaHandshake />
           </div>
         </div>
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl  text-gray-900">
           Terms & Conditions
         </h1>
         <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
@@ -44,7 +44,7 @@ const TermsConditions = () => {
       <div className="max-w-5xl mx-auto px-4 text-gray-700 space-y-10">
         {/* 1. Our Services */}
         <div data-aos="fade-up">
-          <h2 className="flex items-center text-xl font-bold mb-3">
+          <h2 className="flex items-center text-xl  mb-3">
             <FaHandshake className="text-[#5aa6f8] mr-3" /> 1. Our Services
           </h2>
           <ul className="list-disc pl-6 space-y-2">
@@ -66,7 +66,7 @@ const TermsConditions = () => {
 
         {/* 2. Payments */}
         <div data-aos="fade-up">
-          <h2 className="flex items-center text-xl font-bold mb-3">
+          <h2 className="flex items-center text-xl  mb-3">
             <FaMoneyBillWave className="text-[#5aa6f8] mr-3" /> 2. Payments
           </h2>
           <ul className="list-disc pl-6 space-y-2">
@@ -85,7 +85,7 @@ const TermsConditions = () => {
 
         {/* 3. Client Responsibilities */}
         <div data-aos="fade-up">
-          <h2 className="flex items-center text-xl font-bold mb-3">
+          <h2 className="flex items-center text-xl  mb-3">
             <FaUserTie className="text-[#5aa6f8] mr-3" /> 3. Client Responsibilities
           </h2>
           <ul className="list-disc pl-6 space-y-2">
@@ -98,7 +98,7 @@ const TermsConditions = () => {
 
         {/* 4. Project Timelines */}
         <div data-aos="fade-up">
-          <h2 className="flex items-center text-xl font-bold mb-3">
+          <h2 className="flex items-center text-xl  mb-3">
             <FaClock className="text-[#5aa6f8] mr-3" /> 4. Project Timelines & Delivery
           </h2>
           <ul className="list-disc pl-6 space-y-2">
@@ -110,7 +110,7 @@ const TermsConditions = () => {
 
         {/* 5. Revisions & Scope Changes */}
         <div data-aos="fade-up">
-          <h2 className="flex items-center text-xl font-bold mb-3">
+          <h2 className="flex items-center text-xl  mb-3">
             <FaSync className="text-[#5aa6f8] mr-3" /> 5. Revisions & Scope Changes
           </h2>
           <ul className="list-disc pl-6 space-y-2">
@@ -123,7 +123,7 @@ const TermsConditions = () => {
 
         {/* 6. Intellectual Property */}
         <div data-aos="fade-up">
-          <h2 className="flex items-center text-xl font-bold mb-3">
+          <h2 className="flex items-center text-xl  mb-3">
             <FaCopyright className="text-[#5aa6f8] mr-3" /> 6. Intellectual Property
           </h2>
           <p>
@@ -135,7 +135,7 @@ const TermsConditions = () => {
 
         {/* 7. Warranties & Limitations */}
         <div data-aos="fade-up">
-          <h2 className="flex items-center text-xl font-bold mb-3">
+          <h2 className="flex items-center text-xl  mb-3">
             <FaExclamationTriangle className="text-[#5aa6f8] mr-3" /> 7. Warranties & Limitations
           </h2>
           <ul className="list-disc pl-6 space-y-2">
@@ -147,7 +147,7 @@ const TermsConditions = () => {
 
         {/* 8. Termination */}
         <div data-aos="fade-up">
-          <h2 className="flex items-center text-xl font-bold mb-3">
+          <h2 className="flex items-center text-xl  mb-3">
             <FaBan className="text-[#5aa6f8] mr-3" /> 8. Termination
           </h2>
           <p>
@@ -159,7 +159,7 @@ const TermsConditions = () => {
 
         {/* 9. Governing Law */}
         <div data-aos="fade-up">
-          <h2 className="flex items-center text-xl font-bold mb-3">
+          <h2 className="flex items-center text-xl  mb-3">
             <FaGavel className="text-[#5aa6f8] mr-3" /> 9. Governing Law
           </h2>
           <p>
@@ -170,7 +170,7 @@ const TermsConditions = () => {
 
         {/* 10. Contact Us */}
         <div data-aos="fade-up">
-          <h2 className="flex items-center text-xl font-bold mb-3">
+          <h2 className="flex items-center text-xl  mb-3">
             <FaEnvelope className="text-[#5aa6f8] mr-3" /> 10. Contact Us
           </h2>
           <ul className="space-y-2">
