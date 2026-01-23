@@ -49,9 +49,7 @@ const Hero = () => {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-          ab illo veritatis et quasi architecto beatae vitae dicta sunt.
+          Zwolf Consultancy provides web, app, design and digital marketing solutions. We combine creativity and technology to deliver smart, result-driven digital experiences.
         </p>
         </h1>
 
