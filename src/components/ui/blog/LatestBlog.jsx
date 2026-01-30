@@ -277,8 +277,7 @@ const LatestBlog = () => {
   const [error, setError] = useState(null);
 
   // ⭐ UPDATED - Use environment variable
-  const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
-
+const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
   const LATEST_BLOGS_COUNT = 3;
 
   const fetchLatestBlogs = async () => {
