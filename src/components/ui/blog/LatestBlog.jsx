@@ -10,7 +10,10 @@ const LatestBlog = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const API_BASE_URL = 'https://zwolfconsultancyservice-backend.onrender.com/api/blogs/fetch';
+  // const API_BASE_URL = 'https://zwolfconsultancyservice-backend.onrender.com/api/blogs/fetch';
+
+  const API_BASE_URL = "/api/blogs/fetch";
+
   const LATEST_BLOGS_COUNT = 3;
 
   const fetchLatestBlogs = async () => {

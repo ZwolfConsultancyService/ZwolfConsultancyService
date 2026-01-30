@@ -18,8 +18,11 @@ const BlogDetail = () => {
   const [allBlogs, setAllBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const API_BASE_URL =
-    "https://zwolfconsultancyservice-backend.onrender.com/api/blogs/fetch";
+  // const API_BASE_URL =
+  //   "https://zwolfconsultancyservice-backend.onrender.com/api/blogs/fetch";
+
+  const API_BASE_URL = "/api/blogs/fetch";
+
 
   const fetchBlogs = async () => {
     try {
