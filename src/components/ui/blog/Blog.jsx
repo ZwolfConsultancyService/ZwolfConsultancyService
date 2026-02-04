@@ -465,6 +465,7 @@ const Blog = () => {
 // const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
 const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
 
+console.log(import.meta.env.VITE_API_BASE_URL)
 
   const fetchBlogs = async () => {
     try {
