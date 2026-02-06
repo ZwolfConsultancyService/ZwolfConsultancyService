@@ -264,11 +264,11 @@ const Navbar = () => {
     { name: "Services", path: "/services", dropdown: true },
     { name: "Blog", path: "/blog" },
   ];
+const servicesDropdown = servicesData.map((service) => ({
+  name: service.title,
+  path: `/${slugify(service.title, { lower: true })}`, // ✅ SEO URL
+}));
 
-  const servicesDropdown = servicesData.map((service) => ({
-    name: service.title,
-    path: `/services/${slugify(service.title)}`,
-  }));
 
   const isActive = (path) => location.pathname === path;
 

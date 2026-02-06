@@ -442,10 +442,10 @@ const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10">
           <div>
-            <p className="text-[#5aa6f8] font-medium mb-2">
+            <p className="text-[#5aa6f8]  mb-2">
               Latest Blog & Articles
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl sm:text-4xl  text-gray-900">
               The latest insights you need to know
             </h2>
           </div>

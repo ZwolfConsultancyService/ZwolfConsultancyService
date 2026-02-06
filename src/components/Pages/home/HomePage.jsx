@@ -7,12 +7,14 @@ import LatestBlog from '../../ui/blog/LatestBlog';
 import TestimonialSlider from '../../ui/testimonial/TestimonialSlider';
 import EsteemedClients from '../../ui/portfolio/EsteemedClients';
 import OurPortfolio from '../../ui/portfolio/OurPortfolio';
+import AboutSection from '../../ui/about/AboutSection';
 
 const HomePage = () => {
   return (
     <div>
+  
 	<Hero />
-  <About />
+  <AboutSection />
     <WhyChooseUs />
   <Services />
   
