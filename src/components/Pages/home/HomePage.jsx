@@ -8,6 +8,7 @@ import TestimonialSlider from '../../ui/testimonial/TestimonialSlider';
 import EsteemedClients from '../../ui/portfolio/EsteemedClients';
 import OurPortfolio from '../../ui/portfolio/OurPortfolio';
 import AboutSection from '../../ui/about/AboutSection';
+import ServicesSection from '../../ui/ServicesSection/ServicesSection';
 
 const HomePage = () => {
   return (
@@ -16,7 +17,8 @@ const HomePage = () => {
 	<Hero />
   <AboutSection />
     <WhyChooseUs />
-  <Services />
+    <ServicesSection />
+  {/* <Services /> */}
   
   <EsteemedClients />
 
