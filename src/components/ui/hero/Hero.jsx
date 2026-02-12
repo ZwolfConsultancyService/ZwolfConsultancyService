@@ -679,7 +679,7 @@ import React, { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "./Hero.css";
+import "./hero.css";
 
 function Hero() {
   const canvasRef = useRef(null);
