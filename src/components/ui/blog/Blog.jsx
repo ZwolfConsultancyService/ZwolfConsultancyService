@@ -450,7 +450,255 @@
 
 
 
+
+
+// import React, { useEffect, useState } from "react";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
+// import BlogHero from "./BlogHero";
+// import axios from "axios";
+
+// const Blog = () => {
+//   const [blogs, setBlogs] = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error, setError] = useState(null);
+
+//   // ⭐ UPDATED - Use environment variable
+// // const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
+// const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
+
+// console.log(import.meta.env.VITE_API_BASE_URL)
+
+//   const fetchBlogs = async () => {
+//     try {
+//       setLoading(true);
+//       setError(null);
+
+//       const response = await axios.get(API_BASE_URL, {
+//         timeout: 10000,
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//       });
+
+//       console.log("API Response:", response.data);
+
+//       let blogsData = response.data;
+
+//       // Handle different response formats
+//       if (blogsData.blogs && Array.isArray(blogsData.blogs)) {
+//         blogsData = blogsData.blogs;
+//       } else if (blogsData.data && Array.isArray(blogsData.data)) {
+//         blogsData = blogsData.data;
+//       } else if (!Array.isArray(blogsData)) {
+//         console.error("Unexpected response format:", blogsData);
+//         throw new Error("API response is not in expected format");
+//       }
+
+//       setBlogs(blogsData);
+//       console.log(`Successfully loaded ${blogsData.length} blogs`);
+//     } catch (error) {
+//       console.error("Error fetching blogs:", error.message);
+//       const errorMsg =
+//         error.code === "ECONNABORTED"
+//           ? "Request timeout - Please check your internet connection"
+//           : `Failed to load blogs: ${error.message}`;
+//       setError(errorMsg);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   useEffect(() => {
+//     AOS.init({
+//       duration: 800,
+//       once: true,
+//       offset: 100,
+//     });
+
+//     fetchBlogs();
+//   }, []);
+
+//   const createSlug = (title) => {
+//     return title
+//       .toLowerCase()
+//       .replace(/[^a-z0-9]+/g, "-")
+//       .replace(/(^-|-$)+/g, "");
+//   };
+
+//   const handleBlogClick = async (blog) => {
+//     try {
+//       const slug = createSlug(blog.title);
+//       sessionStorage.setItem("selectedBlog", JSON.stringify(blog));
+//       window.location.href = `/blog/${slug}`;
+//     } catch (error) {
+//       console.error("Error handling blog click:", error);
+//     }
+//   };
+
+//   // Helper function to get blog image URL
+//   const getBlogImage = (blog) => {
+//     // Check if images array exists and has items
+//     if (blog.images && Array.isArray(blog.images) && blog.images.length > 0) {
+//       return blog.images[0].url;
+//     }
+//     // Fallback to blog.image if it exists
+//     if (blog.image) {
+//       return blog.image;
+//     }
+//     // Default placeholder
+//     return "https://via.placeholder.com/400x200?text=Blog+Image";
+//   };
+
+//   // Helper function to format date
+//   const formatDate = (dateString) => {
+//     if (!dateString) return "Recent";
+
+//     const date = new Date(dateString);
+//     const options = { year: "numeric", month: "short", day: "numeric" };
+//     return date.toLocaleDateString("en-US", options);
+//   };
+
+//   if (loading) {
+//     return (
+//       <>
+//         <BlogHero />
+//         <section className="bg-white py-16">
+//           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//             <div className="flex items-center justify-center min-h-[400px]">
+//               <div className="text-center">
+//                 <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-600 mx-auto"></div>
+//                 <p className="mt-4 text-gray-600 text-lg">Loading blogs...</p>
+//               </div>
+//             </div>
+//           </div>
+//         </section>
+//       </>
+//     );
+//   }
+
+//   if (error && blogs.length === 0) {
+//     return (
+//       <>
+//         <BlogHero />
+//         <section className="bg-white py-16">
+//           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//             <div className="flex items-center justify-center min-h-[400px]">
+//               <div className="text-center">
+//                 <div className="text-red-500 text-6xl mb-4">⚠️</div>
+//                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
+//                   Failed to Load Blogs
+//                 </h3>
+//                 <p className="text-gray-600 mb-4">{error}</p>
+//                 <button
+//                   onClick={fetchBlogs}
+//                   className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+//                 >
+//                   Try Again
+//                 </button>
+//               </div>
+//             </div>
+//           </div>
+//         </section>
+//       </>
+//     );
+//   }
+
+//   return (
+//     <>
+//       <BlogHero />
+//       <section className="bg-white py-16">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <div className="mb-8 text-center">
+//             <h2 className="text-3xl  text-gray-900 mb-2">
+//               Our Latest Articles
+//             </h2>
+//             <p className="text-gray-600">
+//               {blogs.length} article{blogs.length !== 1 ? "s" : ""} available
+//             </p>
+//           </div>
+
+//           {blogs.length > 0 ? (
+//             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+//               {blogs.map((blog, index) => (
+//                 <div
+//                   key={blog._id || blog.id || index}
+//                   className="bg-[#f9fbff] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+//                   data-aos="fade-up"
+//                   data-aos-delay={index * 100}
+//                   onClick={() => handleBlogClick(blog)}
+//                 >
+//                   <div className="relative overflow-hidden">
+//                     <img
+//                       src={getBlogImage(blog)}
+//                       alt={blog.title}
+//                       className="w-full h-52 object-cover transition-transform duration-300 hover:scale-105"
+//                       onError={(e) => {
+//                         e.target.src =
+//                           "https://via.placeholder.com/400x200?text=Blog+Image";
+//                       }}
+//                     />
+//                     {blog.category && (
+//                       <div className="absolute top-4 left-4">
+//                         <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+//                           {blog.category}
+//                         </span>
+//                       </div>
+//                     )}
+//                   </div>
+//                   <div className="p-5">
+//                     <p className="text-gray-400 text-sm mb-2">
+//                       {formatDate(
+//                         blog.publishedAt || blog.createdAt || blog.date,
+//                       )}{" "}
+//                       • {blog.readTime || "5 min read"}
+//                     </p>
+//                     <h3 className="text-lg font-semibold text-gray-900 hover:text-blue-600 transition-colors duration-200 line-clamp-2">
+//                       {blog.title}
+//                     </h3>
+//                     {blog.excerpt && (
+//                       <p className="text-gray-600 text-sm mt-2 line-clamp-2">
+//                         {blog.excerpt}
+//                       </p>
+//                     )}
+//                     {blog.author && (
+//                       <div className="flex items-center mt-3 pt-3 border-t border-gray-200">
+//                         <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs  mr-2">
+//                           {blog.author.charAt(0).toUpperCase()}
+//                         </div>
+//                         <span className="text-gray-500 text-xs">
+//                           {blog.author}
+//                         </span>
+//                       </div>
+//                     )}
+//                   </div>
+//                 </div>
+//               ))}
+//             </div>
+//           ) : (
+//             <div className="text-center py-16">
+//               <div className="text-gray-400 text-6xl mb-4">📝</div>
+//               <h3 className="text-xl font-semibold text-gray-900 mb-2">
+//                 No Blogs Found
+//               </h3>
+//               <p className="text-gray-600">
+//                 Check back later for new articles!
+//               </p>
+//             </div>
+//           )}
+//         </div>
+//       </section>
+//     </>
+//   );
+// };
+
+// export default Blog;
+
+
+
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import BlogHero from "./BlogHero";
@@ -460,12 +708,11 @@ const Blog = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-  // ⭐ UPDATED - Use environment variable
-// const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
-const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
+  const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
 
-console.log(import.meta.env.VITE_API_BASE_URL)
+  console.log(import.meta.env.VITE_API_BASE_URL)
 
   const fetchBlogs = async () => {
     try {
@@ -524,11 +771,13 @@ console.log(import.meta.env.VITE_API_BASE_URL)
       .replace(/(^-|-$)+/g, "");
   };
 
-  const handleBlogClick = async (blog) => {
+  const handleBlogClick = (blog) => {
     try {
       const slug = createSlug(blog.title);
+      // Store blog data in sessionStorage
       sessionStorage.setItem("selectedBlog", JSON.stringify(blog));
-      window.location.href = `/blog/${slug}`;
+      // Use React Router navigate instead of window.location.href
+      navigate(`/blog/${slug}`);
     } catch (error) {
       console.error("Error handling blog click:", error);
     }
@@ -560,6 +809,13 @@ console.log(import.meta.env.VITE_API_BASE_URL)
   if (loading) {
     return (
       <>
+        <Helmet>
+          <title>SEO & Website Development Blogs | Zwolf Consultancy Delhi</title>
+          <meta 
+            name="description" 
+            content="Read expert blogs by Zwolf Consultancy, a leading Website Development and SEO Company in Delhi. Get tips, strategies, and guides to grow your business online." 
+          />
+        </Helmet>
         <BlogHero />
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -578,6 +834,13 @@ console.log(import.meta.env.VITE_API_BASE_URL)
   if (error && blogs.length === 0) {
     return (
       <>
+        <Helmet>
+          <title>SEO & Website Development Blogs | Zwolf Consultancy Delhi</title>
+          <meta 
+            name="description" 
+            content="Read expert blogs by Zwolf Consultancy, a leading Website Development and SEO Company in Delhi. Get tips, strategies, and guides to grow your business online." 
+          />
+        </Helmet>
         <BlogHero />
         <section className="bg-white py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -604,11 +867,60 @@ console.log(import.meta.env.VITE_API_BASE_URL)
 
   return (
     <>
+      {/* SEO Meta Tags */}
+      <Helmet>
+        <title>SEO & Website Development Blogs | Zwolf Consultancy Delhi</title>
+        <meta 
+          name="description" 
+          content="Read expert blogs by Zwolf Consultancy, a leading Website Development and SEO Company in Delhi. Get tips, strategies, and guides to grow your business online." 
+        />
+        <meta 
+          name="keywords" 
+          content="SEO Blogs, Website Development Blogs, Digital Marketing Blogs Delhi, SEO Tips Delhi, Zwolf Consultancy Blog, Web Design Tips, Digital Marketing Strategies" 
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Zwolf Consultancy" />
+        <link rel="canonical" href="https://zwolfconsultancy.com/blog" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://zwolfconsultancy.com/blog" />
+        <meta property="og:title" content="SEO & Website Development Blogs | Zwolf Consultancy Delhi" />
+        <meta property="og:description" content="Read expert blogs by Zwolf Consultancy, a leading Website Development and SEO Company in Delhi. Get tips, strategies, and guides to grow your business online." />
+        <meta property="og:image" content="https://zwolfconsultancy.com/blog-og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://zwolfconsultancy.com/blog" />
+        <meta property="twitter:title" content="SEO & Website Development Blogs | Zwolf Consultancy Delhi" />
+        <meta property="twitter:description" content="Read expert blogs by Zwolf Consultancy, a leading Website Development and SEO Company in Delhi. Get tips, strategies, and guides to grow your business online." />
+        <meta property="twitter:image" content="https://zwolfconsultancy.com/blog-og-image.jpg" />
+
+        {/* Structured Data - Blog */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Zwolf Consultancy Blog",
+            "description": "Expert blogs on SEO, Website Development, and Digital Marketing",
+            "url": "https://zwolfconsultancy.com/blog",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Zwolf Consultancy",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://zwolfconsultancy.com/logo.png"
+              }
+            }
+          })}
+        </script>
+      </Helmet>
+
       <BlogHero />
       <section className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8 text-center">
-            <h2 className="text-3xl  text-gray-900 mb-2">
+            <h2 className="text-3xl text-gray-900 mb-2">
               Our Latest Articles
             </h2>
             <p className="text-gray-600">
@@ -619,7 +931,7 @@ console.log(import.meta.env.VITE_API_BASE_URL)
           {blogs.length > 0 ? (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {blogs.map((blog, index) => (
-                <div
+                <article
                   key={blog._id || blog.id || index}
                   className="bg-[#f9fbff] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
                   data-aos="fade-up"
@@ -629,8 +941,9 @@ console.log(import.meta.env.VITE_API_BASE_URL)
                   <div className="relative overflow-hidden">
                     <img
                       src={getBlogImage(blog)}
-                      alt={blog.title}
+                      alt={`${blog.title} - Zwolf Consultancy Blog`}
                       className="w-full h-52 object-cover transition-transform duration-300 hover:scale-105"
+                      loading="lazy"
                       onError={(e) => {
                         e.target.src =
                           "https://via.placeholder.com/400x200?text=Blog+Image";
@@ -661,7 +974,7 @@ console.log(import.meta.env.VITE_API_BASE_URL)
                     )}
                     {blog.author && (
                       <div className="flex items-center mt-3 pt-3 border-t border-gray-200">
-                        <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs  mr-2">
+                        <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs mr-2">
                           {blog.author.charAt(0).toUpperCase()}
                         </div>
                         <span className="text-gray-500 text-xs">
@@ -670,7 +983,7 @@ console.log(import.meta.env.VITE_API_BASE_URL)
                       </div>
                     )}
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           ) : (

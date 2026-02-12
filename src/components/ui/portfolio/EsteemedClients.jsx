@@ -91,7 +91,7 @@ const EsteemedClients = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         @keyframes infiniteScroll {
           from {
             transform: translateX(0);

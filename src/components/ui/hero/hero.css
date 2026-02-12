@@ -1,0 +1,161 @@
+/* ============================= */
+/* KEYFRAMES */
+/* ============================= */
+
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(20px, -20px) scale(1.1); }
+  50% { transform: translate(-20px, 20px) scale(0.9); }
+  75% { transform: translate(10px, 10px) scale(1.05); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: rotate(-8deg) translateY(8px); }
+  50% { transform: rotate(-8deg) translateY(-8px); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: rotate(4deg) translateY(4px); }
+  50% { transform: rotate(4deg) translateY(-12px); }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-16px); }
+}
+
+@keyframes float-up-down {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-left-right {
+  0%, 100% { transform: translateX(0px); }
+  50% { transform: translateX(15px); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progress-95 {
+  from { width: 0%; }
+  to { width: 95%; }
+}
+
+@keyframes progress-90 {
+  from { width: 0%; }
+  to { width: 90%; }
+}
+
+@keyframes progress-88 {
+  from { width: 0%; }
+  to { width: 88%; }
+}
+
+
+/* ============================= */
+/* ANIMATION CLASSES */
+/* ============================= */
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 5s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 4s ease-in-out infinite;
+}
+
+.animate-float-up-down {
+  animation: float-up-down 3s ease-in-out infinite;
+}
+
+.animate-float-left-right {
+  animation: float-left-right 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+.animate-draw-line {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: draw-line 2s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.animate-progress-95 {
+  animation: progress-95 1.5s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.animate-progress-90 {
+  animation: progress-90 1.5s ease-out forwards;
+  animation-delay: 0.7s;
+}
+
+.animate-progress-88 {
+  animation: progress-88 1.5s ease-out forwards;
+  animation-delay: 0.9s;
+}
+
+
+/* ============================= */
+/* DELAY CLASSES */
+/* ============================= */
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
