@@ -1282,7 +1282,7 @@ const ServiceLocationDetail = () => {
 
   // Handle nearby area navigation with proper SEO
   const handleLocationClick = (area) => {
-    const newUrl = `/${service.slug}-in-${slugify(area)}.html`;
+    const newUrl = `/${service.slug}-in-${slugify(area)}`;
     
     // Use window.location for full page reload to ensure SEO tags update
     // This is better for SEO than React Router navigation
@@ -1536,7 +1536,7 @@ const ServiceLocationDetail = () => {
                   {locationData.nearbyAreas.map((area, index) => (
                     <a
                       key={index}
-                      href={`/${service.slug}-in-${slugify(area)}.html`}
+                      href={`/${service.slug}-in-${slugify(area)}`}
                       className="block p-3 bg-gray-50 rounded-lg hover:bg-[#5aa6f8]/5 transition-colors cursor-pointer"
                       onClick={(e) => {
                         e.preventDefault();

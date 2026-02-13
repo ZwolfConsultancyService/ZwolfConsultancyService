@@ -660,6 +660,9 @@ import {
 import {
   FaReact,
   FaNodeJs,
+  FaFileAlt,
+  FaCogs,
+  FaLink,
   FaPython,
   FaPhp,
   FaHtml5,
@@ -670,9 +673,11 @@ import {
   FaWordpress,
   FaShopify,
   FaAws,
+  FaMapMarkerAlt,
+  FaBug,
   FaGoogle as FaGoogleCloud
 } from 'react-icons/fa';
-
+import seo from '../../../assets/seo.png'
 // Common locations for all services
 const serviceLocations = [
   "Badarpur",
@@ -1284,7 +1289,79 @@ export const servicesData = [
       "User-friendly design",
       "Strong focus on performance & security"
     ]
-  }
+  },
+  {
+  id: 10,
+  title: "SEO Services",
+  slug: "seo-services-company",
+  tagline: "Rank Higher, Get Found, Grow Faster",
+  description: "Data-driven SEO strategies that bring your website to the top of search results and drive consistent organic traffic.",
+  detailedDescription: "In today’s competitive digital world, just having a website is not enough — you need to be visible. Our SEO services help your business rank higher on search engines, attract quality traffic, and convert visitors into customers. From keyword research to on-page optimization and high-quality backlinks, we create a long-term SEO strategy that delivers measurable growth and sustainable results.",
+  icon: FaSearch,
+  image: seo,
+  category: "Marketing",
+  locations: serviceLocations,
+  offerings: [
+    {
+      title: "Keyword Research & Strategy",
+      description: "Finding high-impact keywords your customers are searching for.",
+      icon: FaSearch
+    },
+    {
+      title: "On-Page SEO Optimization",
+      description: "Optimizing content, meta tags, and structure for better rankings.",
+      icon: FaFileAlt
+    },
+    {
+      title: "Technical SEO",
+      description: "Improving site speed, indexing, crawlability, and mobile performance.",
+      icon: FaCogs
+    },
+    {
+      title: "Link Building",
+      description: "High-quality backlinks to boost authority and domain strength.",
+      icon: FaLink
+    },
+    {
+      title: "Local SEO",
+      description: "Rank your business higher in local search and Google Maps.",
+      icon: FaMapMarkerAlt
+    },
+    {
+      title: "SEO Audits & Reporting",
+      description: "Detailed reports with insights, performance tracking, and growth plans.",
+      icon: FaChartLine
+    }
+  ],
+  process: [
+    "Website Audit & Competitor Analysis",
+    "Keyword Research & Planning",
+    "On-Page & Technical Optimization",
+    "Content Creation & Link Building",
+    "Performance Tracking & Continuous Improvement"
+  ],
+  technologies: [
+    { name: "Google Analytics", icon: FaGoogle },
+    { name: "Google Search Console", icon: FaSearch },
+    { name: "Ahrefs", icon: FaLink },
+    { name: "SEMrush", icon: FaChartLine },
+    { name: "Screaming Frog", icon: FaBug },
+    { name: "Yoast SEO", icon: FaWordpress }
+  ],
+  benefits: [
+    "Higher search engine rankings",
+    "Consistent organic traffic growth",
+    "Better brand visibility & trust",
+    "Long-term ROI without paid ads"
+  ],
+  whyChooseUs: [
+    "Proven SEO strategies that deliver results",
+    "White-hat techniques for long-term success",
+    "Transparent reporting and communication",
+    "Dedicated experts focused on your growth"
+  ]
+}
+
 ];
 
 // Helper function to get service by ID

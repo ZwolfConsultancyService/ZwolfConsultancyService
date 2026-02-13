@@ -36,7 +36,7 @@ const ServicesSection = () => {
           {featuredServices.map((service) => (
             <Link
               key={service.id}
-              to={`/services/${slugify(service.title, { lower: true })}`}
+              to={`/${slugify(service.title, { lower: true })}`}
               className="group block"
             >
               <div className="bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 p-6 flex flex-col h-full border border-gray-100 overflow-hidden relative">
