@@ -103,10 +103,10 @@ export const seoMetadata = {
       }
     },
     "surajkund": {
-      title: "Website Development in Surajkund | Professional Web Design Agency",
-      metaDescription: "Professional website development agency in Surajkund. Custom web design, WordPress development, and SEO optimization. Build your online success with us!",
-      keywords: "website development Surajkund, web design Surajkund, Surajkund web agency, WordPress development Surajkund",
-      h1: "Professional Website Development Agency in Surajkund",
+      title: "Website Development in Surajkund | Professional Web Design company",
+      metaDescription: "Professional website development company in Surajkund. Custom web design, WordPress development, and SEO optimization. Build your online success with us!",
+      keywords: "website development Surajkund, web design Surajkund, Surajkund web company, WordPress development Surajkund",
+      h1: "Professional Website Development company in Surajkund",
       schema: {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -199,9 +199,9 @@ export const seoMetadata = {
       }
     },
     "delhi-ncr": {
-      title: "Website Development Company in Delhi NCR | Top Web Design Agency",
+      title: "Website Development Company in Delhi NCR | Top Web Design company",
       metaDescription: "Premier website development company in Delhi NCR. Award-winning web design, e-commerce solutions, and digital transformation services. Serving 100+ satisfied clients!",
-      keywords: "website development Delhi NCR, web design Delhi NCR, NCR web company, website development agency Delhi",
+      keywords: "website development Delhi NCR, web design Delhi NCR, NCR web company, website development company Delhi",
       h1: "Premier Website Development Company in Delhi NCR",
       schema: {
         "@context": "https://schema.org",
@@ -399,7 +399,7 @@ export function generateFullSEOData() {
         `${service.name} in ${location} | Professional Services`,
         `Best ${service.name} Company in ${location}`,
         `${service.variations[0]} Services in ${location}`,
-        `Top ${service.name} Agency in ${location}`,
+        `${service.name} company in ${location}`,
         `Expert ${service.name} in ${location}`
       ];
       

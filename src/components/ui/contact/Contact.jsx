@@ -37,7 +37,7 @@ const Contact = () => {
         />
         <meta 
           name="keywords" 
-          content="Contact Zwolf Consultancy, SEO Company Delhi, Website Development Delhi, Digital Agency Delhi, Web Design Company Contact, SEO Services Contact Delhi" 
+          content="Contact Zwolf Consultancy, SEO Company Delhi, Website Development Delhi, Digital company Delhi, Web Design Company Contact, SEO Services Contact Delhi" 
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Zwolf Consultancy" />

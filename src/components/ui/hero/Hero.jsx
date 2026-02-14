@@ -766,7 +766,7 @@ function Hero() {
           name="description" 
           content="Zwolf Consultancy is a leading Website Development and SEO Company in Delhi helping businesses grow with high-performance websites and result-driven SEO strategies." 
         />
-        <meta name="keywords" content="Website Development Company in Delhi, SEO Company in Delhi, Website Design Delhi, SEO Services Delhi, Digital Marketing Delhi, Web Design Agency Delhi" />
+        <meta name="keywords" content="Website Development Company in Delhi, SEO Company in Delhi, Website Design Delhi, SEO Services Delhi, Digital Marketing Delhi, Web Design company Delhi" />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Zwolf Consultancy" />
         <link rel="canonical" href="https://zwolfconsultancy.com" />

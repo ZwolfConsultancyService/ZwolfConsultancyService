@@ -30,7 +30,7 @@ const About = () => {
         />
         <meta 
           name="keywords" 
-          content="About Zwolf Consultancy, SEO Company in Delhi, Website Development Company in Delhi, Digital Agency Delhi, Web Design Company Delhi" 
+          content="About Zwolf Consultancy, SEO Company in Delhi, Website Development Company in Delhi, Digital company Delhi, Web Design Company Delhi" 
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Zwolf Consultancy" />
