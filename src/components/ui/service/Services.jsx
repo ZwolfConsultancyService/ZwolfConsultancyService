@@ -470,7 +470,7 @@ const Services = () => {
                   )}
                   
                   <Link
-                    to={`/${slugify(service.title, { lower: true })}`}
+                    to={`/${service.slug}`}
                     className="group block"
                   >
                     <article className="bg-white rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 p-6 flex flex-col h-full border border-gray-100 overflow-hidden relative">

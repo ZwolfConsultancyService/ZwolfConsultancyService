@@ -301,8 +301,11 @@
 
 
 
+
+
 import React, { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { FaArrowLeft, FaCheck, FaMapMarkerAlt } from "react-icons/fa";
 import { servicesData } from "./servicesData";
 import AOS from "aos";
@@ -325,6 +328,12 @@ const ServiceDetail = () => {
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 
   const navigate = useNavigate();
+
+  // Check if this service should NOT be indexed
+  // Only Website Development and SEO Services should be indexed
+  const shouldNotIndex = service && 
+    service.slug !== "website-development-company" && 
+    service.slug !== "seo-services-company";
 
   useEffect(() => {
     AOS.init({
@@ -355,6 +364,11 @@ const ServiceDetail = () => {
 
   return (
     <>
+      {/* Add noindex meta tag for all services EXCEPT Website Development and SEO Services */}
+      <Helmet>
+        {shouldNotIndex && <meta name="robots" content="noindex, follow" />}
+      </Helmet>
+
       <ServiceDetailHero title={service.title} />
 
       <div className="min-h-screen bg-gray-50">
