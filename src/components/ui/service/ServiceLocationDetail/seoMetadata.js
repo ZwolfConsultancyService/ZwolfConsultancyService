@@ -383,7 +383,7 @@ export function generateFullSEOData() {
     "Badarpur", "Faridabad", "Greater Faridabad", "Ballabgarh", "Palwal",
     "Sohna", "Surajkund", "Tigaon", "NIT Faridabad", "Sector 15 Faridabad",
     "Old Faridabad", "New Industrial Town", "Delhi NCR", "Gurgaon", "Noida",
-    "Greater Noida", "South Delhi", "East Delhi", "Nehru Place", "Jasola"
+    "Greater Noida", "South Delhi", "East Delhi", "Nehru Place", "Jasola","Vrindavan", "Mathura"
   ];
 
   const seoData = {};

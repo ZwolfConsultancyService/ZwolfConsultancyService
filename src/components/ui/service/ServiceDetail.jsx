@@ -264,7 +264,7 @@
 //               {/* Extra Info */}
 //               <div className="mt-8 text-center" data-aos="fade-up" data-aos-delay="400">
 //                 <p className="text-gray-600 text-sm">
-//                   Looking for {service.title.toLowerCase()} services in your area? 
+//                   Looking for {service.title.toLowerCase()} services in your area?
 //                   <Link to="/contact" className="text-[#5aa6f8] hover:underline ml-1 font-semibold">
 //                     Contact us today
 //                   </Link>
@@ -299,10 +299,6 @@
 
 // export default ServiceDetail;
 
-
-
-
-
 import React, { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -315,15 +311,20 @@ import { slugify } from "../../../lib/slugify";
 
 const ServiceDetail = () => {
   const { slug } = useParams();
-  
+
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
   console.log("🔍 SERVICE DETAIL PAGE");
   console.log("Looking for slug:", slug);
-  console.log("Available slugs:", servicesData.map(s => s.slug));
-  
+  console.log(
+    "Available slugs:",
+    servicesData.map((s) => s.slug),
+  );
+
   // Try to find by slug property first, then fallback to slugify(title)
-  const service = servicesData.find((s) => s.slug === slug || slugify(s.title) === slug);
-  
+  const service = servicesData.find(
+    (s) => s.slug === slug || slugify(s.title) === slug,
+  );
+
   console.log("Service found:", service ? service.title : "NOT FOUND");
   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 
@@ -331,8 +332,9 @@ const ServiceDetail = () => {
 
   // Check if this service should NOT be indexed
   // Only Website Development and SEO Services should be indexed
-  const shouldNotIndex = service && 
-    service.slug !== "website-development-company" && 
+  const shouldNotIndex =
+    service &&
+    service.slug !== "website-development-company" &&
     service.slug !== "seo-services-company";
 
   useEffect(() => {
@@ -348,7 +350,10 @@ const ServiceDetail = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl text-gray-900 mb-4">Service Not Found</h1>
-          <p className="text-gray-600 mb-4">Looking for: <code className="bg-gray-100 px-2 py-1 rounded">{slug}</code></p>
+          <p className="text-gray-600 mb-4">
+            Looking for:{" "}
+            <code className="bg-gray-100 px-2 py-1 rounded">{slug}</code>
+          </p>
           <Link
             to="/services"
             className="inline-flex items-center gap-2 text-[#5aa6f8] hover:underline"
@@ -557,18 +562,25 @@ const ServiceDetail = () => {
               <div className="text-center mb-12" data-aos="fade-up">
                 <div className="inline-flex items-center gap-2 bg-blue-50 text-[#5aa6f8] px-4 py-2 rounded-full mb-4">
                   <FaMapMarkerAlt className="w-4 h-4" />
-                  <span className="text-sm font-semibold">Our Service Areas</span>
+                  <span className="text-sm font-semibold">
+                    Our Service Areas
+                  </span>
                 </div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                   {service.title} Near You
                 </h2>
                 <p className="text-gray-600 max-w-2xl mx-auto">
-                  We provide professional {service.title.toLowerCase()} services across Faridabad and nearby areas
+                  We provide professional {service.title.toLowerCase()} services
+                  across Faridabad and nearby areas
                 </p>
               </div>
 
               {/* Location Cards */}
-              <div className="bg-white rounded-3xl shadow-lg p-8 sm:p-12" data-aos="fade-up" data-aos-delay="200">
+              <div
+                className="bg-white rounded-3xl shadow-lg p-8 sm:p-12"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <div className="flex flex-wrap gap-3 justify-center">
                   {service.locations.map((location, index) => (
                     <Link
@@ -589,10 +601,18 @@ const ServiceDetail = () => {
               </div>
 
               {/* Extra Info */}
-              <div className="mt-8 text-center" data-aos="fade-up" data-aos-delay="400">
+              <div
+                className="mt-8 text-center"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
                 <p className="text-gray-600 text-sm">
-                  Looking for {service.title.toLowerCase()} services in your area? 
-                  <Link to="/contact" className="text-[#5aa6f8] hover:underline ml-1 font-semibold">
+                  Looking for {service.title.toLowerCase()} services in your
+                  area?
+                  <Link
+                    to="/contact"
+                    className="text-[#5aa6f8] hover:underline ml-1 font-semibold"
+                  >
                     Contact us today
                   </Link>
                 </p>
