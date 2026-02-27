@@ -1,24 +1,3 @@
-// import React from 'react'
-// import ContactForm from './ContactForm'
-// import ContactInfoCards from './ContactInfoCards'
-// import HeroContact from './HeroContact'
-
-
-// const Contact = () => {
-//   return (
-//     <div className='mt-2'>
-// 	<HeroContact />
-// 	<ContactInfoCards />
-//       <ContactForm />
-//     </div>
-//   )
-// }
-
-// export default Contact
-
-
-
-
 import React from 'react'
 import { Helmet } from "react-helmet-async";
 import ContactForm from './ContactForm'
@@ -96,6 +75,24 @@ const Contact = () => {
         <HeroContact />
         <ContactInfoCards />
         <ContactForm />
+
+        {/* Google Maps Section */}
+        <div className='w-full mt-8 px-4 md:px-10 lg:px-20 pb-12'>
+          <h2 className='text-2xl font-semibold text-center mb-4'>Find Us Here</h2>
+          <div className='w-full rounded-xl overflow-hidden shadow-lg'>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14025.514404203166!2d77.2759541497963!3d28.498254851596315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2a661351b3d47225%3A0xe042acdef89d2e48!2sZwolf%20Consultancy!5e0!3m2!1sen!2sin!4v1772169208295!5m2!1sen!2sin"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Zwolf Consultancy Location"
+            ></iframe>
+          </div>
+        </div>
+
       </div>
     </>
   )
