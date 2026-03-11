@@ -23,8 +23,8 @@ const cardData = [
   {
   title: "Email Us",
   icon: FaEnvelope,
-  text: "zwolfconsultancy@gmail.com",
-  link: "mailto:zwolfconsultancy@gmail.com",
+  text: "zwolfconsultancyservice@gmail.com",
+  link: "mailto:zwolfconsultancyservice@gmail.com",
   image:
     "https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-3.jpg",
 }
