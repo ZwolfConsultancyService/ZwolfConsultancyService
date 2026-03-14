@@ -1,9 +1,7 @@
-
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// ✅ Correct imports (case-sensitive, src/assets)
 import client1 from "../../../assets/clientImg/IMG-20250826-WA0012.jpg";
 import client2 from "../../../assets/clientImg/BMJ-Marble.jpg";
 import client3 from "../../../assets/clientImg/IMG-20250826-WA0009.jpg";
@@ -15,19 +13,26 @@ import client8 from "../../../assets/clientImg/IMG-20250826-WA0007.jpg";
 import client9 from "../../../assets/clientImg/IMG-20250826-WA0004.jpg";
 import client10 from "../../../assets/clientImg/nartan-academy.jpg";
 import client11 from "../../../assets/clientImg/lawfirm.jpg";
-
+import client12 from "../../../assets/clientImg/Advance.png";
+import client13 from "../../../assets/clientImg/maapitambara.png";
+import client14 from "../../../assets/clientImg/Omarch.png";
+// ✅ Yahan har client ka website link daalo
 const logos = [
-  client1,
-  client2,
-  client3,
-  client4,
-  client5,
-  client6,
-  client7,
-  client8,
-  client9,
-  client10,
-  client11,
+  { img: client1,    name: "Client 1"  },
+  { img: client2,    name: "Client 2"  },
+  { img: client3,  name: "Client 3"  },
+  { img: client4,   name: "Client 4"  },
+  { img: client5,  name: "Client 5"  },
+  { img: client6,   name: "Client 6"  },
+  { img: client7,   name: "Client 7"  },
+  { img: client8,    name: "Client 8"  },
+  { img: client9,   name: "Client 9"  },
+  { img: client10,  name: "Client 10" },
+  { img: client11,  name: "Client 11" },
+  { img: client12, url: "https://advancepainphysiotherapy.com/", name: "Client 12" },
+   { img: client13, url: "https://maapitambaratourandtravels.com/", name: "Client 13" },
+    { img: client14, url: "https://omarch.in/", name: "Client 14" },
+
 ];
 
 const EsteemedClients = () => {
@@ -35,7 +40,7 @@ const EsteemedClients = () => {
     AOS.init({ duration: 900, once: true });
   }, []);
 
-  // Double the logos for perfect loop (more copies = smoother)
+  // Double karo smooth loop ke liye
   const infiniteLogos = [...logos, ...logos];
 
   return (
@@ -58,33 +63,37 @@ const EsteemedClients = () => {
 
         {/* Infinite Scroll Container */}
         <div className="relative" data-aos="fade-up" data-aos-delay="200">
-          {/* Gradient overlays for fade effect */}
+          {/* Gradient overlays */}
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#f9fbff] to-transparent z-10 pointer-events-none"></div>
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#f9fbff] to-transparent z-10 pointer-events-none"></div>
 
           {/* Scrolling wrapper */}
           <div className="overflow-hidden py-8">
             <div className="flex gap-8 sm:gap-12 animate-infinite-scroll items-center">
-              {infiniteLogos.map((src, idx) => (
-                <div
+              {infiniteLogos.map((client, idx) => (
+                <a
                   key={idx}
-                  className="flex-shrink-0 group relative"
+                  href={client.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={client.name}
+                  className="flex-shrink-0 group relative cursor-pointer"
                 >
                   <img
-                    src={src}
-                    alt={`client-${(idx % logos.length) + 1}`}
+                    src={client.img}
+                    alt={client.name}
                     className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain
-                               opacity-80 hover:opacity-100 
+                               opacity-80 hover:opacity-100
                                hover:scale-110 transition-all duration-300
                                drop-shadow-md hover:drop-shadow-2xl"
                     loading="lazy"
                   />
-                  
-                  {/* Enhanced shadow effect on hover */}
+
+                  {/* Glow effect on hover */}
                   <div className="absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute inset-0 blur-2xl bg-gradient-to-br from-[#5aa6f8]/30 to-purple-500/30 scale-150"></div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
@@ -93,34 +102,21 @@ const EsteemedClients = () => {
 
       <style>{`
         @keyframes infiniteScroll {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-50%);
-          }
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
         }
-
         .animate-infinite-scroll {
           animation: infiniteScroll 25s linear infinite;
           width: max-content;
         }
-
         .animate-infinite-scroll:hover {
           animation-play-state: paused;
         }
-
-        /* Responsive speeds */
         @media (max-width: 640px) {
-          .animate-infinite-scroll {
-            animation-duration: 15s;
-          }
+          .animate-infinite-scroll { animation-duration: 15s; }
         }
-
         @media (min-width: 641px) and (max-width: 1024px) {
-          .animate-infinite-scroll {
-            animation-duration: 20s;
-          }
+          .animate-infinite-scroll { animation-duration: 20s; }
         }
       `}</style>
     </section>
