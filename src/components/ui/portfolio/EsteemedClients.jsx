@@ -41,7 +41,7 @@ const logos = [
     name: "Client 13",
   },
   { img: client14, url: "https://omarch.in/", name: "Client 14" },
-   { img: client14, name: "Client 14" }
+   { img: client15, name: "Client 15" }
 ];
 
 const EsteemedClients = () => {
