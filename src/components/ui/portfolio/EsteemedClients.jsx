@@ -16,23 +16,32 @@ import client11 from "../../../assets/clientImg/lawfirm.jpg";
 import client12 from "../../../assets/clientImg/Advance.png";
 import client13 from "../../../assets/clientImg/maapitambara.png";
 import client14 from "../../../assets/clientImg/Omarch.png";
+import client15 from "../../../assets/clientImg/chandra.jpeg";
 // ✅ Yahan har client ka website link daalo
 const logos = [
-  { img: client1,    name: "Client 1"  },
-  { img: client2,    name: "Client 2"  },
-  { img: client3,  name: "Client 3"  },
-  { img: client4,   name: "Client 4"  },
-  { img: client5,  name: "Client 5"  },
-  { img: client6,   name: "Client 6"  },
-  { img: client7,   name: "Client 7"  },
-  { img: client8,    name: "Client 8"  },
-  { img: client9,   name: "Client 9"  },
-  { img: client10,  name: "Client 10" },
-  { img: client11,  name: "Client 11" },
-  { img: client12, url: "https://advancepainphysiotherapy.com/", name: "Client 12" },
-   { img: client13, url: "https://maapitambaratourandtravels.com/", name: "Client 13" },
-    { img: client14, url: "https://omarch.in/", name: "Client 14" },
-
+  { img: client1, name: "Client 1" },
+  { img: client2, name: "Client 2" },
+  { img: client3, name: "Client 3" },
+  { img: client4, name: "Client 4" },
+  { img: client5, name: "Client 5" },
+  { img: client6, name: "Client 6" },
+  { img: client7, name: "Client 7" },
+  { img: client8, name: "Client 8" },
+  { img: client9, name: "Client 9" },
+  { img: client10, name: "Client 10" },
+  { img: client11, name: "Client 11" },
+  {
+    img: client12,
+    url: "https://advancepainphysiotherapy.com/",
+    name: "Client 12",
+  },
+  {
+    img: client13,
+    url: "https://maapitambaratourandtravels.com/",
+    name: "Client 13",
+  },
+  { img: client14, url: "https://omarch.in/", name: "Client 14" },
+   { img: client14, name: "Client 14" }
 ];
 
 const EsteemedClients = () => {
