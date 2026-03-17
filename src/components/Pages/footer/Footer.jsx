@@ -35,7 +35,9 @@ const Footer = () => {
                       />
                     </Link> */}
           <p className="mt-3">Creative company Based on Country name</p>
-          <p className="font-semibold mt-5">zwolfconsultancy@gmail.com</p>
+          <p className="font-semibold mt-5">
+            zwolfconsultancyservice@gmail.com
+          </p>
           <p>(+91) 952 098 9744</p>
         </div>
 

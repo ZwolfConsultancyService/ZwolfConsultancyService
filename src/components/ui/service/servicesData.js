@@ -74,6 +74,7 @@ import seo from "../../../assets/seo.png";
 
 const serviceLocations = [
   // ───── FARIDABAD SECTORS ─────
+  
   "Sector 1 Faridabad",
   "Sector 2 Faridabad",
   "Sector 3 Faridabad",
@@ -201,14 +202,7 @@ const serviceLocations = [
   "Bhaini Faridabad",
 
   // ───── GREATER FARIDABAD / NEARBY ─────
-  "Greater Faridabad",
-  "Faridabad Extension",
-  "Palwal",
-  "Sohna",
-  "Hodal",
-  "Hathin",
-  "Prithla",
-  "Aurangabad Haryana",
+
   "Nuh",
   "Rewari",
   "Bhiwani",

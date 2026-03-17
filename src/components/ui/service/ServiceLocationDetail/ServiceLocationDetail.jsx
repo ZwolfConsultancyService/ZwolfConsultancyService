@@ -33,22 +33,22 @@
 // //   // Find the service - flexible matching
 // //   const service = servicesData.find((s) => {
 // //     const titleSlug = slugify(s.title);
-    
+
 // //     // Direct match
 // //     if (titleSlug === serviceSlug) return true;
-    
+
 // //     // Check if serviceSlug contains the title slug (for cases like "website-development-company" vs "website-development")
 // //     if (serviceSlug.includes(titleSlug)) return true;
-    
+
 // //     // Check if title slug contains service slug
 // //     if (titleSlug.includes(serviceSlug)) return true;
-    
+
 // //     // Check if slug property exists
 // //     if (s.slug && s.slug === serviceSlug) return true;
-    
+
 // //     return false;
 // //   });
-  
+
 // //   if (!service) {
 // //     console.log("Looking for service:", serviceSlug);
 // //     console.log("Available services:", servicesData.map(s => ({
@@ -56,7 +56,7 @@
 // //       slug: slugify(s.title),
 // //       customSlug: s.slug
 // //     })));
-    
+
 // //     return (
 // //       <div className="min-h-screen flex items-center justify-center bg-gray-50">
 // //         <div className="text-center max-w-md mx-auto p-8">
@@ -88,7 +88,7 @@
 // //       name: loc,
 // //       slug: slugify(loc)
 // //     })));
-    
+
 // //     return (
 // //       <div className="min-h-screen flex items-center justify-center bg-gray-50">
 // //         <div className="text-center max-w-md mx-auto p-8">
@@ -121,7 +121,7 @@
 // //           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
 // //           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
 // //         </div>
-        
+
 // //         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 // //           {/* Breadcrumb */}
 // //           <div className="mb-8" data-aos="fade-down">
@@ -142,11 +142,11 @@
 // //                 <FaMapMarkerAlt className="text-white" />
 // //                 <span className="text-white font-medium">{location}</span>
 // //               </div>
-              
+
 // //               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
 // //                 {locationData.heroTitle}
 // //               </h1>
-              
+
 // //               <p className="text-xl text-white/90 mb-8">
 // //                 {locationData.heroDescription}
 // //               </p>
@@ -203,7 +203,7 @@
 // //                   <span className="text-sm text-gray-500">{service.category}</span>
 // //                 </div>
 // //               </div>
-              
+
 // //               <p className="text-gray-600 leading-relaxed mb-6">
 // //                 {service.detailedDescription}
 // //               </p>
@@ -285,7 +285,7 @@
 // //             {/* Contact Card */}
 // //             <div className="bg-white rounded-3xl shadow-lg p-8 mb-8 sticky top-4" data-aos="fade-left">
 // //               <h3 className="text-xl font-bold text-gray-900 mb-6">Get Started Today</h3>
-              
+
 // //               <div className="space-y-4 mb-6">
 // //                 <a
 // //                   href="tel:+919999999999"
@@ -298,7 +298,7 @@
 // //                   </div>
 // //                 </a>
 // // <a
-                
+
 // //                   href="mailto:info@example.com"
 // //                   className="flex items-center gap-3 p-4 bg-[#5aa6f8]/10 rounded-xl hover:bg-[#5aa6f8]/20 transition-colors"
 // //                 >
@@ -373,10 +373,6 @@
 
 // // export default ServiceLocationDetail;
 
-
-
-
-
 // import React, { useEffect } from "react";
 // import { useParams, Link, useNavigate } from "react-router-dom";
 // import {
@@ -397,17 +393,16 @@
 // const ServiceLocationDetail = () => {
 //   const params = useParams();
 //   const navigate = useNavigate();
-  
+
 //   // Extract and clean slugs
 //   const serviceSlug = params.serviceSlug;
 //   let locationSlug = params.locationSlug;
-  
+
 //   // Remove .html extension if present
 //   if (locationSlug?.endsWith('.html')) {
 //     locationSlug = locationSlug.replace('.html', '');
 //   }
-  
- 
+
 // console.log("RAW params:", params);
 // console.log("Service Slug:", serviceSlug);
 // console.log("Location Slug:", locationSlug);
@@ -423,7 +418,7 @@
 
 //   // Find the service using slug property
 //   const service = servicesData.find((s) => s.slug === serviceSlug);
-  
+
 //   if (!service) {
 //     return (
 //       <div className="min-h-screen flex items-center justify-center bg-gray-50">
@@ -493,7 +488,7 @@
 //           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
 //           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
 //         </div>
-        
+
 //         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 //           {/* Breadcrumb */}
 //           <div className="mb-8" data-aos="fade-down">
@@ -514,11 +509,11 @@
 //                 <FaMapMarkerAlt className="text-white" />
 //                 <span className="text-white font-medium">{location}</span>
 //               </div>
-              
+
 //               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
 //                 {locationData.heroTitle}
 //               </h1>
-              
+
 //               <p className="text-xl text-white/90 mb-8">
 //                 {locationData.heroDescription}
 //               </p>
@@ -575,7 +570,7 @@
 //                   <span className="text-sm text-gray-500">{service.category}</span>
 //                 </div>
 //               </div>
-              
+
 //               <p className="text-gray-600 leading-relaxed mb-6">
 //                 {service.detailedDescription}
 //               </p>
@@ -657,7 +652,7 @@
 //             {/* Contact Card */}
 //             <div className="bg-white rounded-3xl shadow-lg p-8 mb-8 sticky top-4" data-aos="fade-left">
 //               <h3 className="text-xl font-bold text-gray-900 mb-6">Get Started Today</h3>
-              
+
 //               <div className="space-y-4 mb-6">
 //                 <a
 //                   href="tel:+919999999999"
@@ -745,9 +740,6 @@
 
 // export default ServiceLocationDetail;
 
-
-
-
 // import React, { useEffect } from "react";
 // import { useParams, useLocation, Link, useNavigate } from "react-router-dom";
 // import {
@@ -769,22 +761,22 @@
 //   const params = useParams();
 //   const location = useLocation();
 //   const navigate = useNavigate();
-  
+
 //   // Get the slug
 //   let slug = params.slug || "";
-  
+
 //   console.log("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
 //   console.log("🔍 SERVICE LOCATION DETAIL");
 //   console.log("Full URL:", location.pathname);
 //   console.log("Raw Slug:", slug);
-  
+
 //   // Remove .html extension
 //   slug = slug.replace('.html', '');
 //   console.log("Clean Slug:", slug);
-  
+
 //   // Split by "-in-"
 //   const parts = slug.split('-in-');
-  
+
 //   if (parts.length !== 2) {
 //     console.log("❌ Invalid format");
 //     return (
@@ -803,10 +795,10 @@
 //       </div>
 //     );
 //   }
-  
+
 //   const serviceSlug = parts[0];
 //   const locationSlug = parts[1];
-  
+
 //   console.log("✅ Service Slug:", serviceSlug);
 //   console.log("✅ Location Slug:", locationSlug);
 
@@ -823,9 +815,9 @@
 //   console.log("\n🔍 Searching for service...");
 //   console.log("Available services:");
 //   servicesData.forEach(s => console.log(`  - ${s.slug}`));
-  
+
 //   const service = servicesData.find((s) => s.slug === serviceSlug);
-  
+
 //   if (!service) {
 //     console.log("❌ Service NOT FOUND");
 //     return (
@@ -835,7 +827,7 @@
 //             <FaArrowLeft className="text-3xl" />
 //           </div>
 //           <h1 className="text-3xl font-bold text-gray-900 mb-4">Service Not Found</h1>
-          
+
 //           <div className="bg-gray-100 p-6 rounded-lg mb-6 text-left text-sm">
 //             <div className="mb-2"><strong>URL:</strong> {location.pathname}</div>
 //             <div className="mb-2"><strong>Looking for:</strong> {serviceSlug}</div>
@@ -846,7 +838,7 @@
 //               ))}
 //             </div>
 //           </div>
-          
+
 //           <Link
 //             to="/services"
 //             className="inline-flex items-center gap-2 bg-[#5aa6f8] text-white px-6 py-3 rounded-full hover:bg-[#4a96e8] transition-all"
@@ -864,7 +856,7 @@
 //   console.log("\n🔍 Searching for location...");
 //   console.log("Available locations:");
 //   service.locations?.forEach(loc => console.log(`  - ${slugify(loc)} (${loc})`));
-  
+
 //   const locationMatch = service.locations?.find((loc) => {
 //     return slugify(loc) === locationSlug;
 //   });
@@ -878,7 +870,7 @@
 //             <FaMapMarkerAlt className="text-3xl" />
 //           </div>
 //           <h1 className="text-3xl font-bold text-gray-900 mb-4">Location Not Found</h1>
-          
+
 //           <div className="bg-gray-100 p-6 rounded-lg mb-6 text-left text-sm">
 //             <div className="mb-2"><strong>Service:</strong> {service.title}</div>
 //             <div className="mb-2"><strong>Looking for:</strong> {locationSlug}</div>
@@ -889,7 +881,7 @@
 //               ))}
 //             </div>
 //           </div>
-          
+
 //           <Link
 //             to={`/services/${service.slug}`}
 //             className="inline-flex items-center gap-2 bg-[#5aa6f8] text-white px-6 py-3 rounded-full hover:bg-[#4a96e8] transition-all"
@@ -916,20 +908,20 @@
 //           <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
 //           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
 //         </div>
-        
+
 //         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-         
+
 //           <div className="grid lg:grid-cols-2 gap-12 items-center">
 //             <div data-aos="fade-right">
 //               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
 //                 <FaMapMarkerAlt className="text-white" />
 //                 <span className="text-white font-medium">{locationMatch}</span>
 //               </div>
-              
+
 //               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
 //                 {locationData.heroTitle}
 //               </h1>
-              
+
 //               <p className="text-xl text-white/90 mb-8">
 //                 {locationData.heroDescription}
 //               </p>
@@ -986,7 +978,7 @@
 //                   <span className="text-sm text-gray-500">{service.category}</span>
 //                 </div>
 //               </div>
-              
+
 //               <p className="text-gray-600 leading-relaxed mb-6">
 //                 {service.detailedDescription}
 //               </p>
@@ -1068,9 +1060,9 @@
 //             {/* Contact Card */}
 //             <div className="bg-white rounded-3xl shadow-lg p-8 mb-8 sticky top-4" data-aos="fade-left">
 //               <h3 className="text-xl font-bold text-gray-900 mb-6">Get Started Today</h3>
-              
+
 //               <div className="space-y-4 mb-6">
-                
+
 //                 <a href="tel:+919520989744"
 //                   className="flex items-center gap-3 p-4 bg-[#5aa6f8]/10 rounded-xl hover:bg-[#5aa6f8]/20 transition-colors"
 //                 >
@@ -1082,13 +1074,13 @@
 //                 </a>
 
 //                 <a
-//                   href="zwolfconsultancy@gmail.com"
+//                   href="zwolfconsultancyservice@gmail.com"
 //                   className="flex items-center gap-3 p-4 bg-[#5aa6f8]/10 rounded-xl hover:bg-[#5aa6f8]/20 transition-colors"
 //                 >
 //                   <FaEnvelope className="text-[#5aa6f8]" />
 //                   <div>
 //                     <div className="text-sm text-gray-600">Email Us</div>
-//                     <div className="font-semibold text-gray-900">zwolfconsultancy@gmail.com</div>
+//                     <div className="font-semibold text-gray-900">zwolfconsultancyservice@gmail.com</div>
 //                   </div>
 //                 </a>
 
@@ -1156,10 +1148,6 @@
 
 // export default ServiceLocationDetail;
 
-
-
-
-
 import React, { useEffect, useRef } from "react";
 import { useParams, useLocation, Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -1184,18 +1172,22 @@ const ServiceLocationDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const previousSlug = useRef("");
-  
+
   let slug = params.slug || "";
-  slug = slug.replace('.html', '');
-  
-  const parts = slug.split('-in-');
-  
+  slug = slug.replace(".html", "");
+
+  const parts = slug.split("-in-");
+
   if (parts.length !== 2) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center max-w-2xl mx-auto p-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Invalid URL Format</h1>
-          <p className="text-gray-600 mb-6">Expected: service-slug-in-location-slug.html</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            Invalid URL Format
+          </h1>
+          <p className="text-gray-600 mb-6">
+            Expected: service-slug-in-location-slug.html
+          </p>
           <Link
             to="/services"
             className="inline-flex items-center gap-2 bg-[#5aa6f8] text-white px-6 py-3 rounded-full hover:bg-[#4a96e8] transition-all"
@@ -1206,7 +1198,7 @@ const ServiceLocationDetail = () => {
       </div>
     );
   }
-  
+
   const serviceSlug = parts[0];
   const locationSlug = parts[1];
 
@@ -1215,17 +1207,17 @@ const ServiceLocationDetail = () => {
     // Check if slug actually changed
     if (previousSlug.current !== slug) {
       previousSlug.current = slug;
-      
+
       // Reinitialize AOS
       AOS.init({
         duration: 1000,
         once: true,
         easing: "ease-out-cubic",
       });
-      
+
       // Scroll to top
       window.scrollTo(0, 0);
-      
+
       // Force meta tag update by triggering a small delay
       // This ensures Helmet processes the new meta tags
       setTimeout(() => {
@@ -1240,12 +1232,14 @@ const ServiceLocationDetail = () => {
   }, [slug, serviceSlug, locationSlug]);
 
   const service = servicesData.find((s) => s.slug === serviceSlug);
-  
+
   if (!service) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center max-w-2xl mx-auto p-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Service Not Found</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            Service Not Found
+          </h1>
           <Link
             to="/services"
             className="inline-flex items-center gap-2 bg-[#5aa6f8] text-white px-6 py-3 rounded-full hover:bg-[#4a96e8] transition-all"
@@ -1257,13 +1251,17 @@ const ServiceLocationDetail = () => {
     );
   }
 
-  const locationMatch = service.locations?.find((loc) => slugify(loc) === locationSlug);
+  const locationMatch = service.locations?.find(
+    (loc) => slugify(loc) === locationSlug,
+  );
 
   if (!locationMatch) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center max-w-2xl mx-auto p-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Location Not Found</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">
+            Location Not Found
+          </h1>
           <Link
             to={`/services/${service.slug}`}
             className="inline-flex items-center gap-2 bg-[#5aa6f8] text-white px-6 py-3 rounded-full hover:bg-[#4a96e8] transition-all"
@@ -1280,13 +1278,16 @@ const ServiceLocationDetail = () => {
   const pageSEO = seoData[serviceSlug]?.[locationSlug] || {};
 
   // Generate location-specific data
-  const locationData = locationServiceData.generateLocationData(service, locationMatch);
+  const locationData = locationServiceData.generateLocationData(
+    service,
+    locationMatch,
+  );
   const IconComponent = service.icon;
 
   // Handle nearby area navigation with proper SEO
   const handleLocationClick = (area) => {
     const newUrl = `/${service.slug}-in-${slugify(area)}`;
-    
+
     // Use window.location for full page reload to ensure SEO tags update
     // This is better for SEO than React Router navigation
     window.location.href = newUrl;
@@ -1296,33 +1297,61 @@ const ServiceLocationDetail = () => {
     <>
       {/* SEO Meta Tags - Key prop forces re-render when slug changes */}
       <Helmet key={slug}>
-        <title>{pageSEO.title || `${service.title} in ${locationMatch} | Zwolf Consultancy`}</title>
-        <meta name="description" content={pageSEO.metaDescription || locationData.metaDescription} />
-        <meta name="keywords" content={pageSEO.keywords || `${service.title.toLowerCase()}, ${locationMatch}`} />
-        
+        <title>
+          {pageSEO.title ||
+            `${service.title} in ${locationMatch} | Zwolf Consultancy`}
+        </title>
+        <meta
+          name="description"
+          content={pageSEO.metaDescription || locationData.metaDescription}
+        />
+        <meta
+          name="keywords"
+          content={
+            pageSEO.keywords ||
+            `${service.title.toLowerCase()}, ${locationMatch}`
+          }
+        />
+
         {/* Open Graph Tags */}
-        <meta property="og:title" content={pageSEO.title || `${service.title} in ${locationMatch}`} />
-        <meta property="og:description" content={pageSEO.metaDescription || locationData.metaDescription} />
+        <meta
+          property="og:title"
+          content={pageSEO.title || `${service.title} in ${locationMatch}`}
+        />
+        <meta
+          property="og:description"
+          content={pageSEO.metaDescription || locationData.metaDescription}
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={pageSEO.canonicalUrl || `https://zwolfconsutlancy.com/${slug}.html`} />
+        <meta
+          property="og:url"
+          content={
+            pageSEO.canonicalUrl || `https://zwolfconsutlancy.com/${slug}.html`
+          }
+        />
         <meta property="og:image" content={service.image} />
-        
+
         {/* Twitter Card Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageSEO.title} />
         <meta name="twitter:description" content={pageSEO.metaDescription} />
         <meta name="twitter:image" content={service.image} />
-        
+
         {/* Canonical URL */}
-        <link rel="canonical" href={pageSEO.canonicalUrl || `https://zwolfconsutlancy.com/${slug}.html`} />
-        
+        <link
+          rel="canonical"
+          href={
+            pageSEO.canonicalUrl || `https://zwolfconsutlancy.com/${slug}.html`
+          }
+        />
+
         {/* Structured Data */}
         {pageSEO.schema && (
           <script type="application/ld+json">
             {JSON.stringify(pageSEO.schema)}
           </script>
         )}
-        
+
         {/* Additional SEO Tags */}
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
@@ -1339,19 +1368,21 @@ const ServiceLocationDetail = () => {
             <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           </div>
-          
+
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div data-aos="fade-right">
                 <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
                   <FaMapMarkerAlt className="text-white" />
-                  <span className="text-white font-medium">{locationMatch}</span>
+                  <span className="text-white font-medium">
+                    {locationMatch}
+                  </span>
                 </div>
-                
+
                 <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
                   {pageSEO.h1 || locationData.heroTitle}
                 </h1>
-                
+
                 <p className="text-xl text-white/90 mb-8">
                   {locationData.heroDescription}
                 </p>
@@ -1378,9 +1409,12 @@ const ServiceLocationDetail = () => {
                     {locationData.localStats.map((stat, index) => (
                       <div key={index} className="text-center">
                         <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
-                          {stat.value}{stat.suffix}
+                          {stat.value}
+                          {stat.suffix}
                         </div>
-                        <div className="text-white/80 text-sm">{stat.label}</div>
+                        <div className="text-white/80 text-sm">
+                          {stat.label}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -1396,7 +1430,10 @@ const ServiceLocationDetail = () => {
             {/* Left Column - Main Content */}
             <div className="lg:col-span-2">
               {/* About Section */}
-              <div className="bg-white rounded-3xl shadow-lg p-8 mb-8" data-aos="fade-up">
+              <div
+                className="bg-white rounded-3xl shadow-lg p-8 mb-8"
+                data-aos="fade-up"
+              >
                 <div className="flex items-center gap-3 mb-6">
                   <div className="bg-[#5aa6f8] text-white p-3 rounded-xl">
                     <IconComponent className="w-8 h-8" />
@@ -1405,23 +1442,31 @@ const ServiceLocationDetail = () => {
                     <h2 className="text-2xl font-bold text-gray-900">
                       About Our {service.title} in {locationMatch}
                     </h2>
-                    <span className="text-sm text-gray-500">{service.category}</span>
+                    <span className="text-sm text-gray-500">
+                      {service.category}
+                    </span>
                   </div>
                 </div>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-6">
                   {service.detailedDescription}
                 </p>
 
                 <div className="bg-[#5aa6f8]/10 border-l-4 border-[#5aa6f8] p-6 rounded-r-xl">
                   <p className="text-gray-700">
-                    <strong className="text-[#5aa6f8]">Local Expertise:</strong> Our {locationMatch}-based team brings deep understanding of the local market and personalized service to every project.
+                    <strong className="text-[#5aa6f8]">Local Expertise:</strong>{" "}
+                    Our {locationMatch}-based team brings deep understanding of
+                    the local market and personalized service to every project.
                   </p>
                 </div>
               </div>
 
               {/* Why Choose Us Local */}
-              <div className="bg-white rounded-3xl shadow-lg p-8 mb-8" data-aos="fade-up" data-aos-delay="100">
+              <div
+                className="bg-white rounded-3xl shadow-lg p-8 mb-8"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Why Choose Us in {locationMatch}?
                 </h2>
@@ -1438,7 +1483,11 @@ const ServiceLocationDetail = () => {
               </div>
 
               {/* What We Offer */}
-              <div className="bg-white rounded-3xl shadow-lg p-8 mb-8" data-aos="fade-up" data-aos-delay="200">
+              <div
+                className="bg-white rounded-3xl shadow-lg p-8 mb-8"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
                   Our Services in {locationMatch}
                 </h2>
@@ -1457,7 +1506,9 @@ const ServiceLocationDetail = () => {
                           <h3 className="font-semibold text-gray-900 mb-1">
                             {offering.title}
                           </h3>
-                          <p className="text-sm text-gray-600">{offering.description}</p>
+                          <p className="text-sm text-gray-600">
+                            {offering.description}
+                          </p>
                         </div>
                       </div>
                     );
@@ -1466,20 +1517,30 @@ const ServiceLocationDetail = () => {
               </div>
 
               {/* Testimonial */}
-              <div className="bg-gradient-to-br from-[#5aa6f8] to-[#4a96e8] rounded-3xl shadow-lg p-8 text-white" data-aos="fade-up" data-aos-delay="300">
+              <div
+                className="bg-gradient-to-br from-[#5aa6f8] to-[#4a96e8] rounded-3xl shadow-lg p-8 text-white"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <div className="flex gap-1 mb-4">
                   {[...Array(locationData.testimonial.rating)].map((_, i) => (
                     <FaStar key={i} className="text-white" />
                   ))}
                 </div>
-                <p className="text-lg mb-6 italic">"{locationData.testimonial.text}"</p>
+                <p className="text-lg mb-6 italic">
+                  "{locationData.testimonial.text}"
+                </p>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
                     <FaUsers className="text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold">{locationData.testimonial.author}</div>
-                    <div className="text-sm text-white/80">{locationData.testimonial.location}</div>
+                    <div className="font-semibold">
+                      {locationData.testimonial.author}
+                    </div>
+                    <div className="text-sm text-white/80">
+                      {locationData.testimonial.location}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1488,28 +1549,38 @@ const ServiceLocationDetail = () => {
             {/* Right Column - Sidebar */}
             <div className="lg:col-span-1">
               {/* Contact Card */}
-              <div className="bg-white rounded-3xl shadow-lg p-8 mb-8 sticky top-4" data-aos="fade-left">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">Get Started Today</h3>
-                
+              <div
+                className="bg-white rounded-3xl shadow-lg p-8 mb-8 sticky top-4"
+                data-aos="fade-left"
+              >
+                <h3 className="text-xl font-bold text-gray-900 mb-6">
+                  Get Started Today
+                </h3>
+
                 <div className="space-y-4 mb-6">
-                  <a href="tel:+919520989744"
+                  <a
+                    href="tel:+919520989744"
                     className="flex items-center gap-3 p-4 bg-[#5aa6f8]/10 rounded-xl hover:bg-[#5aa6f8]/20 transition-colors"
                   >
                     <FaPhone className="text-[#5aa6f8]" />
                     <div>
                       <div className="text-sm text-gray-600">Call Us</div>
-                      <div className="font-semibold text-gray-900">+91 9520989744</div>
+                      <div className="font-semibold text-gray-900">
+                        +91 9520989744
+                      </div>
                     </div>
                   </a>
 
                   <a
-                    href="mailto:zwolfconsultancy@gmail.com"
+                    href="mailto:zwolfconsultancyservice@gmail.com"
                     className="flex items-center gap-3 p-4 bg-[#5aa6f8]/10 rounded-xl hover:bg-[#5aa6f8]/20 transition-colors"
                   >
                     <FaEnvelope className="text-[#5aa6f8]" />
                     <div>
                       <div className="text-sm text-gray-600">Email Us</div>
-                      <div className="font-semibold text-gray-900">zwolfconsultancy@gmail.com</div>
+                      <div className="font-semibold text-gray-900">
+                        zwolfconsultancyservice@gmail.com
+                      </div>
                     </div>
                   </a>
 
@@ -1517,7 +1588,9 @@ const ServiceLocationDetail = () => {
                     <FaClock className="text-[#5aa6f8]" />
                     <div>
                       <div className="text-sm text-gray-600">Working Hours</div>
-                      <div className="font-semibold text-gray-900">Mon-Sat: 9AM-6PM</div>
+                      <div className="font-semibold text-gray-900">
+                        Mon-Sat: 9AM-6PM
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1531,7 +1604,11 @@ const ServiceLocationDetail = () => {
               </div>
 
               {/* Nearby Areas - Using full page reload for SEO */}
-              <div className="bg-white rounded-3xl shadow-lg p-8" data-aos="fade-left" data-aos-delay="200">
+              <div
+                className="bg-white rounded-3xl shadow-lg p-8"
+                data-aos="fade-left"
+                data-aos-delay="200"
+              >
                 <h3 className="text-xl font-bold text-gray-900 mb-6">
                   We Also Serve
                 </h3>
@@ -1547,7 +1624,9 @@ const ServiceLocationDetail = () => {
                       }}
                     >
                       <div className="flex items-center justify-between">
-                        <span className="text-gray-700">{service.title} in {area}</span>
+                        <span className="text-gray-700">
+                          {service.title} in {area}
+                        </span>
                         <FaArrowLeft className="rotate-180 text-[#5aa6f8]" />
                       </div>
                     </a>
@@ -1565,7 +1644,8 @@ const ServiceLocationDetail = () => {
               Ready to Transform Your Business in {locationMatch}?
             </h2>
             <p className="text-white/90 text-lg mb-8">
-              Get expert {service.title.toLowerCase()} services tailored for {locationMatch} businesses
+              Get expert {service.title.toLowerCase()} services tailored for{" "}
+              {locationMatch} businesses
             </p>
             <button
               onClick={() => navigate("/contact")}

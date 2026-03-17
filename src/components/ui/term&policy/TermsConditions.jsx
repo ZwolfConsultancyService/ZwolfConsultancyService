@@ -11,7 +11,7 @@ import {
   FaGavel,
   FaEnvelope,
   FaPhone,
-  FaMapMarkerAlt
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -34,9 +34,9 @@ const TermsConditions = () => {
           Terms & Conditions
         </h1>
         <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-          Welcome to Zwolf Consultancy. These Terms & Conditions govern the use of our
-          website, digital platforms, and IT services. By engaging with us, you agree to
-          comply with these terms.
+          Welcome to Zwolf Consultancy. These Terms & Conditions govern the use
+          of our website, digital platforms, and IT services. By engaging with
+          us, you agree to comply with these terms.
         </p>
       </div>
 
@@ -59,8 +59,8 @@ const TermsConditions = () => {
             <li>Lead Generation</li>
           </ul>
           <p className="mt-2">
-            All services are provided as per the scope outlined in a formal proposal,
-            quotation, or agreement.
+            All services are provided as per the scope outlined in a formal
+            proposal, quotation, or agreement.
           </p>
         </div>
 
@@ -71,14 +71,16 @@ const TermsConditions = () => {
           </h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              A 50% advance payment is required before starting any project unless
-              otherwise agreed in writing.
+              A 50% advance payment is required before starting any project
+              unless otherwise agreed in writing.
             </li>
-            <li>The remaining 50% is due upon completion before final delivery.</li>
+            <li>
+              The remaining 50% is due upon completion before final delivery.
+            </li>
             <li>Invoices must be paid within agreed terms.</li>
             <li>
-              Payments are non-refundable once work has commenced, except if Zwolf
-              Consultancy fails to deliver the agreed scope.
+              Payments are non-refundable once work has commenced, except if
+              Zwolf Consultancy fails to deliver the agreed scope.
             </li>
           </ul>
         </div>
@@ -86,7 +88,8 @@ const TermsConditions = () => {
         {/* 3. Client Responsibilities */}
         <div data-aos="fade-up">
           <h2 className="flex items-center text-xl  mb-3">
-            <FaUserTie className="text-[#5aa6f8] mr-3" /> 3. Client Responsibilities
+            <FaUserTie className="text-[#5aa6f8] mr-3" /> 3. Client
+            Responsibilities
           </h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>Provide complete and accurate project details.</li>
@@ -99,7 +102,8 @@ const TermsConditions = () => {
         {/* 4. Project Timelines */}
         <div data-aos="fade-up">
           <h2 className="flex items-center text-xl  mb-3">
-            <FaClock className="text-[#5aa6f8] mr-3" /> 4. Project Timelines & Delivery
+            <FaClock className="text-[#5aa6f8] mr-3" /> 4. Project Timelines &
+            Delivery
           </h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>Estimated timelines are provided in proposals.</li>
@@ -111,7 +115,8 @@ const TermsConditions = () => {
         {/* 5. Revisions & Scope Changes */}
         <div data-aos="fade-up">
           <h2 className="flex items-center text-xl  mb-3">
-            <FaSync className="text-[#5aa6f8] mr-3" /> 5. Revisions & Scope Changes
+            <FaSync className="text-[#5aa6f8] mr-3" /> 5. Revisions & Scope
+            Changes
           </h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>Revisions are included as per the agreed scope.</li>
@@ -124,24 +129,30 @@ const TermsConditions = () => {
         {/* 6. Intellectual Property */}
         <div data-aos="fade-up">
           <h2 className="flex items-center text-xl  mb-3">
-            <FaCopyright className="text-[#5aa6f8] mr-3" /> 6. Intellectual Property
+            <FaCopyright className="text-[#5aa6f8] mr-3" /> 6. Intellectual
+            Property
           </h2>
           <p>
-            Work remains property of Zwolf Consultancy until full payment is received.
-            After payment, ownership is transferred to the client (except licensed tools
-            or third-party assets).
+            Work remains property of Zwolf Consultancy until full payment is
+            received. After payment, ownership is transferred to the client
+            (except licensed tools or third-party assets).
           </p>
         </div>
 
         {/* 7. Warranties & Limitations */}
         <div data-aos="fade-up">
           <h2 className="flex items-center text-xl  mb-3">
-            <FaExclamationTriangle className="text-[#5aa6f8] mr-3" /> 7. Warranties & Limitations
+            <FaExclamationTriangle className="text-[#5aa6f8] mr-3" /> 7.
+            Warranties & Limitations
           </h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>We ensure work matches the agreed scope & specifications.</li>
-            <li>Not liable for hosting failures, downtime, or client-side changes.</li>
-            <li>Not liable for data loss due to client or third-party actions.</li>
+            <li>
+              Not liable for hosting failures, downtime, or client-side changes.
+            </li>
+            <li>
+              Not liable for data loss due to client or third-party actions.
+            </li>
           </ul>
         </div>
 
@@ -151,9 +162,9 @@ const TermsConditions = () => {
             <FaBan className="text-[#5aa6f8] mr-3" /> 8. Termination
           </h2>
           <p>
-            Either party may terminate the project with written notice if obligations
-            aren’t met. Payments made are non-refundable, and incomplete work remains our
-            property until cleared.
+            Either party may terminate the project with written notice if
+            obligations aren’t met. Payments made are non-refundable, and
+            incomplete work remains our property until cleared.
           </p>
         </div>
 
@@ -163,8 +174,8 @@ const TermsConditions = () => {
             <FaGavel className="text-[#5aa6f8] mr-3" /> 9. Governing Law
           </h2>
           <p>
-            These terms are governed by the laws of India, with disputes handled in New
-            Delhi.
+            These terms are governed by the laws of India, with disputes handled
+            in New Delhi.
           </p>
         </div>
 
@@ -175,13 +186,15 @@ const TermsConditions = () => {
           </h2>
           <ul className="space-y-2">
             <li className="flex items-center">
-              <FaEnvelope className="text-[#5aa6f8] mr-2" /> zwolfconsultancy@gmail.com
+              <FaEnvelope className="text-[#5aa6f8] mr-2" />{" "}
+              zwolfconsultancyservice@gmail.com
             </li>
             <li className="flex items-center">
               <FaPhone className="text-[#5aa6f8] mr-2" /> 9520989744
             </li>
             <li className="flex items-center">
-              <FaMapMarkerAlt className="text-[#5aa6f8] mr-2" /> C-285 Pul Pehladpur, New Delhi 110044
+              <FaMapMarkerAlt className="text-[#5aa6f8] mr-2" /> C-285 Pul
+              Pehladpur, New Delhi 110044
             </li>
           </ul>
         </div>

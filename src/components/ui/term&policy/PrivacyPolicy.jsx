@@ -172,7 +172,7 @@ const PrivacyPolicy = () => {
             <ul className="space-y-2">
               <li className="flex items-center">
                 <FaEnvelope className="text-[#5aa6f8] mr-2" />{" "}
-                zwolfconsultancy@gmail.com
+                zwolfconsultancyservice@gmail.com
               </li>
               <li className="flex items-center">
                 <FaPhone className="text-[#5aa6f8] mr-2" /> 9520989744
