@@ -61447,7 +61447,712 @@ export const seoMetadata = {
         }
       }
     },
-  }
+  },
+  // ─────────────────────────────────────────────────────────────────────────────
+// seoMetadata_new_locations.js
+// NEW locations ONLY — paste these inside seoMetadata["website-development-company"]
+// after existing entries. Add a comma after last existing entry then paste.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ══════════════════════════════════════════════════════
+// SOUTH DELHI — PREMIUM AREAS
+// ══════════════════════════════════════════════════════
+
+    "defence-colony": {
+      title: "Website Development in Defence Colony | Zwolf Consultancy",
+      metaDescription: "Premium website development in Defence Colony, South Delhi. Zwolf Consultancy builds elegant, high-performance websites for businesses in Defence Colony. Get a free consultation today!",
+      keywords: "website development Defence Colony, web design Defence Colony, web developer Defence Colony Delhi, best website company Defence Colony, custom website Defence Colony",
+      h1: "Premium Website Development in Defence Colony",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-defence-colony.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Defence Colony",
+        "address": { "@type": "PostalAddress", "addressLocality": "Defence Colony", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "jangpura": {
+      title: "Website Development in Jangpura Delhi | Zwolf Consultancy",
+      metaDescription: "Expert website development in Jangpura, South Delhi. Zwolf Consultancy delivers fast, SEO-ready websites for local businesses. Affordable pricing & quick turnaround. Contact us now!",
+      keywords: "website development Jangpura, web design Jangpura Delhi, web developer Jangpura, website company Jangpura South Delhi",
+      h1: "Expert Website Development in Jangpura Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-jangpura.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Jangpura",
+        "address": { "@type": "PostalAddress", "addressLocality": "Jangpura", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "bhogal": {
+      title: "Website Development in Bhogal South Delhi | Zwolf Consultancy",
+      metaDescription: "Professional website development in Bhogal, South Delhi. Custom websites, e-commerce & CMS development. Zwolf Consultancy — trusted by businesses across Delhi NCR. Free quote available!",
+      keywords: "website development Bhogal, web design Bhogal Delhi, website company Bhogal, web developer Bhogal South Delhi",
+      h1: "Website Development Services in Bhogal South Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-bhogal.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Bhogal",
+        "address": { "@type": "PostalAddress", "addressLocality": "Bhogal", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "nizamuddin": {
+      title: "Website Development in Nizamuddin Delhi | Zwolf Consultancy",
+      metaDescription: "Top-rated website development in Nizamuddin, Delhi. Zwolf Consultancy creates stunning, conversion-focused websites. Serving businesses in Nizamuddin East & West. Get started today!",
+      keywords: "website development Nizamuddin, web design Nizamuddin Delhi, website company Nizamuddin, web developer Nizamuddin East West Delhi",
+      h1: "Website Development Company in Nizamuddin Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-nizamuddin.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Nizamuddin",
+        "address": { "@type": "PostalAddress", "addressLocality": "Nizamuddin", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "khan-market": {
+      title: "Website Development near Khan Market Delhi | Zwolf Consultancy",
+      metaDescription: "Premium website development near Khan Market, Central Delhi. High-end web design for retail, hospitality & service businesses. Zwolf Consultancy — where design meets performance!",
+      keywords: "website development Khan Market Delhi, web design Khan Market, website company near Khan Market, premium web development Central Delhi",
+      h1: "Premium Website Development near Khan Market Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-khan-market.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Khan Market",
+        "address": { "@type": "PostalAddress", "addressLocality": "Khan Market", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "lodhi-colony": {
+      title: "Website Development in Lodhi Colony Delhi | Zwolf Consultancy",
+      metaDescription: "Professional website development in Lodhi Colony, Delhi. Expert web designers crafting modern, SEO-optimized websites. Zwolf Consultancy — your digital growth partner!",
+      keywords: "website development Lodhi Colony, web design Lodhi Colony Delhi, website company Lodhi Colony, web developer Lodhi Colony",
+      h1: "Website Development Services in Lodhi Colony Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-lodhi-colony.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Lodhi Colony",
+        "address": { "@type": "PostalAddress", "addressLocality": "Lodhi Colony", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "chanakyapuri": {
+      title: "Website Development in Chanakyapuri Delhi | Zwolf Consultancy",
+      metaDescription: "Elite website development in Chanakyapuri, Delhi's diplomatic hub. Zwolf Consultancy builds world-class websites for embassies, NGOs, corporates & businesses. Contact us now!",
+      keywords: "website development Chanakyapuri, web design Chanakyapuri Delhi, website company Chanakyapuri, diplomatic enclave web development",
+      h1: "Elite Website Development in Chanakyapuri Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-chanakyapuri.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Chanakyapuri",
+        "address": { "@type": "PostalAddress", "addressLocality": "Chanakyapuri", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "vasant-vihar": {
+      title: "Website Development in Vasant Vihar Delhi | Zwolf Consultancy",
+      metaDescription: "Premium website development in Vasant Vihar, South West Delhi. Zwolf Consultancy delivers luxury web design & high-performance websites. Trusted by 100+ Delhi NCR businesses!",
+      keywords: "website development Vasant Vihar, web design Vasant Vihar Delhi, website company Vasant Vihar, premium web development South West Delhi",
+      h1: "Premium Website Development in Vasant Vihar Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-vasant-vihar.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Vasant Vihar",
+        "address": { "@type": "PostalAddress", "addressLocality": "Vasant Vihar", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+// ══════════════════════════════════════════════════════
+// SOUTH DELHI — CENTRAL AREAS (NEW)
+// ══════════════════════════════════════════════════════
+
+    "chittaranjan-park": {
+      title: "Website Development in Chittaranjan Park Delhi | Zwolf Consultancy",
+      metaDescription: "Expert website development in Chittaranjan Park (CR Park), South Delhi. Custom websites for businesses, shops & professionals in CR Park. Zwolf Consultancy. Free consultation!",
+      keywords: "website development Chittaranjan Park, web design CR Park Delhi, website company CR Park, web developer Chittaranjan Park South Delhi",
+      h1: "Website Development in Chittaranjan Park (CR Park) Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-chittaranjan-park.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Chittaranjan Park",
+        "address": { "@type": "PostalAddress", "addressLocality": "Chittaranjan Park", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "alaknanda": {
+      title: "Website Development in Alaknanda Delhi | Zwolf Consultancy",
+      metaDescription: "Professional website development in Alaknanda, South Delhi. Zwolf Consultancy builds mobile-responsive, SEO-optimized websites. Quick delivery & affordable rates. Get your free quote!",
+      keywords: "website development Alaknanda, web design Alaknanda Delhi, website company Alaknanda, web developer Alaknanda South Delhi",
+      h1: "Website Development Services in Alaknanda Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-alaknanda.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Alaknanda",
+        "address": { "@type": "PostalAddress", "addressLocality": "Alaknanda", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "panchsheel-park": {
+      title: "Website Development in Panchsheel Park Delhi | Zwolf Consultancy",
+      metaDescription: "Top-rated website development in Panchsheel Park, South Delhi. Zwolf Consultancy — custom web design, CMS development & e-commerce solutions. Start your digital journey today!",
+      keywords: "website development Panchsheel Park, web design Panchsheel Park Delhi, website company Panchsheel Park, web developer Panchsheel",
+      h1: "Website Development Company in Panchsheel Park Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-panchsheel-park.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Panchsheel Park",
+        "address": { "@type": "PostalAddress", "addressLocality": "Panchsheel Park", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "green-park": {
+      title: "Website Development in Green Park Delhi | Zwolf Consultancy",
+      metaDescription: "Professional website development in Green Park, South Delhi. Beautiful, fast & SEO-ready websites built by expert developers. Zwolf Consultancy — Launch your website in 7 days!",
+      keywords: "website development Green Park Delhi, web design Green Park, website company Green Park South Delhi, web developer Green Park",
+      h1: "Professional Website Development in Green Park Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-green-park.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Green Park",
+        "address": { "@type": "PostalAddress", "addressLocality": "Green Park", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "munirka": {
+      title: "Website Development in Munirka Delhi | Zwolf Consultancy",
+      metaDescription: "Affordable website development in Munirka, South Delhi. Zwolf Consultancy builds websites for startups, students & small businesses near JNU & IIT. Free consultation available!",
+      keywords: "website development Munirka, web design Munirka Delhi, affordable website Munirka, web company near JNU Delhi",
+      h1: "Affordable Website Development in Munirka Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-munirka.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Munirka",
+        "address": { "@type": "PostalAddress", "addressLocality": "Munirka", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "rk-puram": {
+      title: "Website Development in RK Puram Delhi | Zwolf Consultancy",
+      metaDescription: "Expert website development in RK Puram, South West Delhi. Zwolf Consultancy creates government-ready, corporate & business websites. Trusted by 100+ clients across Delhi NCR!",
+      keywords: "website development RK Puram, web design RK Puram Delhi, website company RK Puram, web developer South West Delhi",
+      h1: "Website Development Services in RK Puram Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-rk-puram.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development RK Puram",
+        "address": { "@type": "PostalAddress", "addressLocality": "RK Puram", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "safdarjung-enclave": {
+      title: "Website Development in Safdarjung Enclave Delhi | Zwolf Consultancy",
+      metaDescription: "Premium website development in Safdarjung Enclave, South Delhi. Zwolf Consultancy delivers sleek, high-converting websites for businesses & professionals. Get a free quote now!",
+      keywords: "website development Safdarjung Enclave, web design Safdarjung Delhi, website company Safdarjung Enclave, web developer South Delhi",
+      h1: "Website Development in Safdarjung Enclave Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-safdarjung-enclave.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Safdarjung Enclave",
+        "address": { "@type": "PostalAddress", "addressLocality": "Safdarjung Enclave", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "mehrauli": {
+      title: "Website Development in Mehrauli Delhi | Zwolf Consultancy",
+      metaDescription: "Trusted website development company in Mehrauli, South Delhi. Custom web design, WordPress & e-commerce solutions for businesses in Mehrauli. Zwolf Consultancy — call now!",
+      keywords: "website development Mehrauli, web design Mehrauli Delhi, website company Mehrauli, web developer Mehrauli South Delhi",
+      h1: "Trusted Website Development in Mehrauli Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-mehrauli.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Mehrauli",
+        "address": { "@type": "PostalAddress", "addressLocality": "Mehrauli", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "chattarpur": {
+      title: "Website Development in Chattarpur Delhi | Zwolf Consultancy",
+      metaDescription: "Affordable website development in Chattarpur, South Delhi. Zwolf Consultancy builds fast, beautiful websites for businesses near Chattarpur temple & extension. Free consultation!",
+      keywords: "website development Chattarpur, web design Chattarpur Delhi, website company Chattarpur, affordable web development South Delhi",
+      h1: "Website Development Services in Chattarpur Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-chattarpur.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Chattarpur",
+        "address": { "@type": "PostalAddress", "addressLocality": "Chattarpur", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "lado-sarai": {
+      title: "Website Development in Lado Sarai Delhi | Zwolf Consultancy",
+      metaDescription: "Professional website development in Lado Sarai, South Delhi. Zwolf Consultancy — custom websites for art galleries, boutiques, businesses & professionals. Fast & SEO-ready!",
+      keywords: "website development Lado Sarai, web design Lado Sarai Delhi, website company Lado Sarai, web developer South Delhi Lado Sarai",
+      h1: "Professional Website Development in Lado Sarai Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-lado-sarai.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Lado Sarai",
+        "address": { "@type": "PostalAddress", "addressLocality": "Lado Sarai", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "sultanpur": {
+      title: "Website Development in Sultanpur Delhi | Zwolf Consultancy",
+      metaDescription: "Expert website development in Sultanpur, South Delhi. Zwolf Consultancy delivers mobile-first, conversion-focused websites. Serving businesses across Sultanpur & nearby areas!",
+      keywords: "website development Sultanpur Delhi, web design Sultanpur, website company Sultanpur South Delhi, web developer Sultanpur",
+      h1: "Website Development Company in Sultanpur Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-sultanpur.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Sultanpur",
+        "address": { "@type": "PostalAddress", "addressLocality": "Sultanpur", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "ghitorni": {
+      title: "Website Development in Ghitorni Delhi | Zwolf Consultancy",
+      metaDescription: "Local website development in Ghitorni, South West Delhi. Zwolf Consultancy — professional web design, e-commerce & business websites near Ghitorni Metro. Get started today!",
+      keywords: "website development Ghitorni, web design Ghitorni Delhi, website company Ghitorni, web developer near Ghitorni Metro",
+      h1: "Local Website Development in Ghitorni Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-ghitorni.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Ghitorni",
+        "address": { "@type": "PostalAddress", "addressLocality": "Ghitorni", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "aya-nagar": {
+      title: "Website Development in Aya Nagar Delhi | Zwolf Consultancy",
+      metaDescription: "Affordable website development in Aya Nagar, South Delhi. Custom business websites, landing pages & e-commerce stores. Zwolf Consultancy — quality web solutions at best prices!",
+      keywords: "website development Aya Nagar, web design Aya Nagar Delhi, affordable website Aya Nagar, web company Aya Nagar South Delhi",
+      h1: "Affordable Website Development in Aya Nagar Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-aya-nagar.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Aya Nagar",
+        "address": { "@type": "PostalAddress", "addressLocality": "Aya Nagar", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+// ══════════════════════════════════════════════════════
+// SOUTH DELHI — SOUTH-EAST (BADARPUR CORRIDOR) — HIGH PRIORITY
+// ══════════════════════════════════════════════════════
+
+    "khanpur": {
+      title: "Website Development in Khanpur Delhi | Zwolf Consultancy",
+      metaDescription: "Professional website development in Khanpur, South Delhi. Zwolf Consultancy builds SEO-optimized websites for businesses near Khanpur & Sangam Vihar. Get your free quote today!",
+      keywords: "website development Khanpur Delhi, web design Khanpur, website company Khanpur South Delhi, web developer Khanpur",
+      h1: "Website Development Services in Khanpur Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-khanpur.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Khanpur",
+        "address": { "@type": "PostalAddress", "addressLocality": "Khanpur", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "dakshinpuri": {
+      title: "Website Development in Dakshinpuri Delhi | Zwolf Consultancy",
+      metaDescription: "Expert website development in Dakshinpuri, South Delhi. Zwolf Consultancy offers affordable, professional web design for local businesses. Fast delivery & lifetime support!",
+      keywords: "website development Dakshinpuri, web design Dakshinpuri Delhi, website company Dakshinpuri, web developer South Delhi Dakshinpuri",
+      h1: "Website Development in Dakshinpuri South Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-dakshinpuri.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Dakshinpuri",
+        "address": { "@type": "PostalAddress", "addressLocality": "Dakshinpuri", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "ambedkar-nagar-delhi": {
+      title: "Website Development in Ambedkar Nagar Delhi | Zwolf Consultancy",
+      metaDescription: "Trusted website development in Ambedkar Nagar, South Delhi. Zwolf Consultancy builds custom websites for small businesses, startups & professionals. Affordable pricing. Free consultation!",
+      keywords: "website development Ambedkar Nagar Delhi, web design Ambedkar Nagar, website company Ambedkar Nagar South Delhi, web developer",
+      h1: "Website Development Company in Ambedkar Nagar Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-ambedkar-nagar-delhi.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Ambedkar Nagar Delhi",
+        "address": { "@type": "PostalAddress", "addressLocality": "Ambedkar Nagar", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "pushp-vihar": {
+      title: "Website Development in Pushp Vihar Delhi | Zwolf Consultancy",
+      metaDescription: "Professional website development in Pushp Vihar, South Delhi. Zwolf Consultancy — modern, mobile-friendly websites for businesses near Saket & Malviya Nagar. Call now for free demo!",
+      keywords: "website development Pushp Vihar Delhi, web design Pushp Vihar, website company Pushp Vihar South Delhi, web developer near Saket",
+      h1: "Professional Website Development in Pushp Vihar Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-pushp-vihar.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Pushp Vihar",
+        "address": { "@type": "PostalAddress", "addressLocality": "Pushp Vihar", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "sheikh-sarai": {
+      title: "Website Development in Sheikh Sarai Delhi | Zwolf Consultancy",
+      metaDescription: "Expert website development in Sheikh Sarai, South Delhi. Custom business websites, portfolios & e-commerce stores. Zwolf Consultancy — quality web solutions near Malviya Nagar!",
+      keywords: "website development Sheikh Sarai, web design Sheikh Sarai Delhi, website company Sheikh Sarai, web developer near Malviya Nagar",
+      h1: "Website Development in Sheikh Sarai South Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-sheikh-sarai.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Sheikh Sarai",
+        "address": { "@type": "PostalAddress", "addressLocality": "Sheikh Sarai", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "deoli": {
+      title: "Website Development in Deoli Delhi | Zwolf Consultancy",
+      metaDescription: "Affordable website development in Deoli, South Delhi. Zwolf Consultancy helps local businesses in Deoli go online with professional websites. Fast delivery & great support. Get a free quote!",
+      keywords: "website development Deoli Delhi, web design Deoli, website company Deoli South Delhi, affordable web development Deoli",
+      h1: "Affordable Website Development in Deoli Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-deoli.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Deoli",
+        "address": { "@type": "PostalAddress", "addressLocality": "Deoli", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "tigri": {
+      title: "Website Development in Tigri Delhi | Zwolf Consultancy",
+      metaDescription: "Local website development in Tigri, South Delhi. Zwolf Consultancy — professional web design & development for businesses near Badarpur & Sangam Vihar. Free consultation!",
+      keywords: "website development Tigri Delhi, web design Tigri, website company Tigri South Delhi, local web developer near Badarpur",
+      h1: "Website Development Services in Tigri Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-tigri.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Tigri",
+        "address": { "@type": "PostalAddress", "addressLocality": "Tigri", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+// ══════════════════════════════════════════════════════
+// BADARPUR NEARBY — HIGH PRIORITY NEW LOCATIONS
+// ══════════════════════════════════════════════════════
+
+    "madanpur-khadar": {
+      title: "Website Development in Madanpur Khadar Delhi | Zwolf Consultancy",
+      metaDescription: "Professional website development in Madanpur Khadar, near Badarpur Delhi. Zwolf Consultancy builds SEO-ready, fast websites for local businesses. Affordable pricing. Call now!",
+      keywords: "website development Madanpur Khadar, web design Madanpur Khadar Delhi, website company near Badarpur, web developer Madanpur Khadar",
+      h1: "Website Development in Madanpur Khadar Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-madanpur-khadar.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Madanpur Khadar",
+        "address": { "@type": "PostalAddress", "addressLocality": "Madanpur Khadar", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "jaitpur": {
+      title: "Website Development in Jaitpur Delhi | Zwolf Consultancy",
+      metaDescription: "Affordable website development in Jaitpur, near Badarpur Delhi. Zwolf Consultancy delivers custom, mobile-friendly websites for small businesses & shops. Get your free quote today!",
+      keywords: "website development Jaitpur Delhi, web design Jaitpur, website company Jaitpur near Badarpur, web developer Jaitpur Delhi",
+      h1: "Website Development Services in Jaitpur Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-jaitpur.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Jaitpur",
+        "address": { "@type": "PostalAddress", "addressLocality": "Jaitpur", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "tajpur": {
+      title: "Website Development in Tajpur Delhi | Zwolf Consultancy",
+      metaDescription: "Expert website development in Tajpur, near Badarpur Border. Zwolf Consultancy — professional web design for businesses in Tajpur & surrounding areas. Launch in 7 days!",
+      keywords: "website development Tajpur Delhi, web design Tajpur, website company Tajpur, web developer near Badarpur Border",
+      h1: "Website Development in Tajpur near Badarpur Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-tajpur.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Tajpur",
+        "address": { "@type": "PostalAddress", "addressLocality": "Tajpur", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "pul-pehladpur": {
+      title: "Website Development in Pul Pehladpur Delhi | Zwolf Consultancy",
+      metaDescription: "Local website development in Pul Pehladpur, South Delhi. Zwolf Consultancy builds custom websites for businesses near Pul Pehladpur Metro. Affordable rates & fast delivery!",
+      keywords: "website development Pul Pehladpur, web design Pul Pehladpur Delhi, website company Pul Pehladpur, web developer near Pul Pehladpur Metro",
+      h1: "Website Development in Pul Pehladpur Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-pul-pehladpur.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Pul Pehladpur",
+        "address": { "@type": "PostalAddress", "addressLocality": "Pul Pehladpur", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "mohan-estate": {
+      title: "Website Development in Mohan Estate Delhi | Zwolf Consultancy",
+      metaDescription: "Industrial & commercial website development in Mohan Estate, South Delhi. Zwolf Consultancy builds B2B websites, product catalogs & corporate portals. Expert team, fast delivery!",
+      keywords: "website development Mohan Estate Delhi, web design Mohan Estate, industrial website Mohan Estate, web company Mohan Estate South Delhi",
+      h1: "Website Development for Businesses in Mohan Estate Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-mohan-estate.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Mohan Estate",
+        "address": { "@type": "PostalAddress", "addressLocality": "Mohan Estate", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "mithapur": {
+      title: "Website Development in Mithapur Delhi | Zwolf Consultancy",
+      metaDescription: "Affordable website development in Mithapur, near Badarpur Delhi. Zwolf Consultancy — custom websites, landing pages & e-commerce for local businesses. Free consultation available!",
+      keywords: "website development Mithapur Delhi, web design Mithapur, website company Mithapur near Badarpur, web developer Mithapur",
+      h1: "Website Development in Mithapur near Badarpur Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-mithapur.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Mithapur",
+        "address": { "@type": "PostalAddress", "addressLocality": "Mithapur", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "devli": {
+      title: "Website Development in Devli Delhi | Zwolf Consultancy",
+      metaDescription: "Expert website development in Devli, South Delhi. Zwolf Consultancy builds professional websites for businesses in Devli & nearby Sangam Vihar. Mobile-first, SEO-optimized. Call now!",
+      keywords: "website development Devli Delhi, web design Devli, website company Devli South Delhi, web developer near Sangam Vihar",
+      h1: "Website Development Services in Devli Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-devli.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Devli",
+        "address": { "@type": "PostalAddress", "addressLocality": "Devli", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "fatehpur-beri": {
+      title: "Website Development in Fatehpur Beri Delhi | Zwolf Consultancy",
+      metaDescription: "Local website development in Fatehpur Beri, South Delhi. Zwolf Consultancy — professional web design for businesses near Chattarpur & Aya Nagar. Affordable & fast delivery!",
+      keywords: "website development Fatehpur Beri Delhi, web design Fatehpur Beri, website company Fatehpur Beri, web developer South Delhi",
+      h1: "Website Development in Fatehpur Beri South Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-fatehpur-beri.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Fatehpur Beri",
+        "address": { "@type": "PostalAddress", "addressLocality": "Fatehpur Beri", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "tughlakabad-extension": {
+      title: "Website Development in Tughlakabad Extension Delhi | Zwolf Consultancy",
+      metaDescription: "Professional website development in Tughlakabad Extension, South Delhi. Zwolf Consultancy builds SEO-ready websites for businesses near Badarpur & Faridabad Border. Free quote!",
+      keywords: "website development Tughlakabad Extension, web design Tughlakabad Extension Delhi, website company near Badarpur, web developer South Delhi",
+      h1: "Website Development in Tughlakabad Extension Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-tughlakabad-extension.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Tughlakabad Extension",
+        "address": { "@type": "PostalAddress", "addressLocality": "Tughlakabad Extension", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "sangam-vihar-extension": {
+      title: "Website Development in Sangam Vihar Delhi | Zwolf Consultancy",
+      metaDescription: "Affordable website development in Sangam Vihar, South Delhi — Delhi's largest residential colony. Zwolf Consultancy builds websites for shops, businesses & professionals. Call today!",
+      keywords: "website development Sangam Vihar Delhi, web design Sangam Vihar, website company Sangam Vihar, web developer largest colony South Delhi",
+      h1: "Website Development in Sangam Vihar South Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-sangam-vihar.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Sangam Vihar",
+        "address": { "@type": "PostalAddress", "addressLocality": "Sangam Vihar", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+// ══════════════════════════════════════════════════════
+// LAJPAT NAGAR DETAILED (ALREADY IN LIST, NEW INDIVIDUAL ENTRIES)
+// ══════════════════════════════════════════════════════
+
+    "lajpat-nagar-1": {
+      title: "Website Development in Lajpat Nagar 1 Delhi | Zwolf Consultancy",
+      metaDescription: "Professional website development in Lajpat Nagar 1, South Delhi. Zwolf Consultancy — custom websites for retail, fashion & service businesses. SEO-optimized & mobile-friendly!",
+      keywords: "website development Lajpat Nagar 1, web design Lajpat Nagar 1 Delhi, website company Lajpat Nagar, web developer South Delhi",
+      h1: "Website Development in Lajpat Nagar 1 Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-lajpat-nagar-1.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Lajpat Nagar 1",
+        "address": { "@type": "PostalAddress", "addressLocality": "Lajpat Nagar 1", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "lajpat-nagar-2": {
+      title: "Website Development in Lajpat Nagar 2 Delhi | Zwolf Consultancy",
+      metaDescription: "Expert website development in Lajpat Nagar 2, South Delhi. Custom web design for market shops, clothing stores & businesses. Zwolf Consultancy — call now for best quote!",
+      keywords: "website development Lajpat Nagar 2, web design Lajpat Nagar 2 Delhi, website company Lajpat Nagar Central Market",
+      h1: "Website Development in Lajpat Nagar 2 Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-lajpat-nagar-2.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Lajpat Nagar 2",
+        "address": { "@type": "PostalAddress", "addressLocality": "Lajpat Nagar 2", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "greater-kailash-1": {
+      title: "Website Development in Greater Kailash 1 Delhi | Zwolf Consultancy",
+      metaDescription: "Premium website development in Greater Kailash 1 (GK1), South Delhi. Zwolf Consultancy builds luxury websites for boutiques, clinics & corporate offices in GK1. Contact us!",
+      keywords: "website development Greater Kailash 1, web design GK1 Delhi, website company Greater Kailash, premium web development South Delhi",
+      h1: "Premium Website Development in Greater Kailash 1 Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-greater-kailash-1.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Greater Kailash 1",
+        "address": { "@type": "PostalAddress", "addressLocality": "Greater Kailash 1", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "greater-kailash-2": {
+      title: "Website Development in Greater Kailash 2 Delhi | Zwolf Consultancy",
+      metaDescription: "Professional website development in Greater Kailash 2 (GK2), South Delhi. Expert web design for businesses, schools & professionals in GK2. Zwolf Consultancy. Get free demo!",
+      keywords: "website development Greater Kailash 2, web design GK2 Delhi, website company GK2, web developer Greater Kailash South Delhi",
+      h1: "Website Development in Greater Kailash 2 (GK2) Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-greater-kailash-2.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Greater Kailash 2",
+        "address": { "@type": "PostalAddress", "addressLocality": "Greater Kailash 2", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "okhla-industrial-area": {
+      title: "Website Development in Okhla Industrial Area Delhi | Zwolf Consultancy",
+      metaDescription: "Industrial website development in Okhla Industrial Area, South Delhi. B2B websites, manufacturer portals & corporate web solutions. Zwolf Consultancy — trusted by Delhi NCR industries!",
+      keywords: "website development Okhla Industrial Area, web design Okhla Industrial Delhi, B2B website Okhla, industrial web development Delhi",
+      h1: "Industrial Website Development in Okhla Industrial Area Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-okhla-industrial-area.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Okhla Industrial Area",
+        "address": { "@type": "PostalAddress", "addressLocality": "Okhla Industrial Area", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    }
+
+// ══════════════════════════════════════════════════════
+// END OF NEW LOCATIONS
+// Add comma after last existing entry before pasting.
+// ══════════════════════════════════════════════════════
+
+    ,"prahladpur": {
+      title: "Website Development in Prahladpur Delhi | Zwolf Consultancy",
+      metaDescription: "Professional website development in Prahladpur, near Badarpur Delhi. Zwolf Consultancy builds fast, SEO-ready websites for local businesses in Prahladpur. Affordable pricing & quick delivery. Get a free quote today!",
+      keywords: "website development Prahladpur, web design Prahladpur Delhi, website company Prahladpur, web developer Prahladpur near Badarpur, custom website Prahladpur Delhi",
+      h1: "Website Development in Prahladpur Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-prahladpur.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Prahladpur",
+        "address": { "@type": "PostalAddress", "addressLocality": "Prahladpur", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    },
+
+    "prahladpur-bangar": {
+      title: "Website Development in Prahladpur Bangar Delhi | Zwolf Consultancy",
+      metaDescription: "Trusted website development in Prahladpur Bangar, near Badarpur Border Delhi. Zwolf Consultancy delivers mobile-friendly, SEO-optimized websites for businesses in Prahladpur Bangar. Free consultation available!",
+      keywords: "website development Prahladpur Bangar, web design Prahladpur Bangar Delhi, website company Prahladpur Bangar, web developer near Badarpur Border, custom website Prahladpur Bangar",
+      h1: "Website Development in Prahladpur Bangar Delhi",
+      canonicalUrl: "https://zwolfconsultancy.com/website-development-company-in-prahladpur-bangar.html",
+      schema: {
+        "@context": "https://schema.org", "@type": "LocalBusiness",
+        "name": "Zwolf Consultancy - Website Development Prahladpur Bangar",
+        "address": { "@type": "PostalAddress", "addressLocality": "Prahladpur Bangar", "addressRegion": "Delhi", "addressCountry": "IN" },
+        "telephone": "+919520989744", "priceRange": "$$",
+        "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "18:00" }
+      }
+    }
 };
 
 // Generate SEO data for all services and locations
