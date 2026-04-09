@@ -6,7 +6,7 @@ import WhyChooseUs from '../../ui/whochoose/WhyChooseUs';
 import LatestBlog from '../../ui/blog/LatestBlog';
 import TestimonialSlider from '../../ui/testimonial/TestimonialSlider';
 import EsteemedClients from '../../ui/portfolio/EsteemedClients';
-import OurPortfolio from '../../ui/portfolio/OurPortfolio';
+//import OurPortfolio from '../../ui/portfolio/OurPortfolio';
 import AboutSection from '../../ui/about/AboutSection';
 import ServicesSection from '../../ui/ServicesSection/ServicesSection';
 
@@ -15,6 +15,7 @@ const HomePage = () => {
     <div>
   
 	<Hero />
+   {/* <OurPortfolio /> */}
   <AboutSection />
     <WhyChooseUs />
     <ServicesSection />
@@ -22,7 +23,7 @@ const HomePage = () => {
   
   <EsteemedClients />
 
-  {/* <OurPortfolio /> */}
+ 
   {/* <TestimonialSlider /> */}
   <LatestBlog />
     </div>

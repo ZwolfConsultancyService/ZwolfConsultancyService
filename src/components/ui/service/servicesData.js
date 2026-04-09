@@ -71,14 +71,12 @@ import seo from "../../../assets/seo.png";
 //   "Mathura",
 // ];
 
-
 // ─────────────────────────────────────────────────────────────────────────────
 // serviceLocations.js — Complete Location List
 // Organized: Faridabad (bottom) → Badarpur Nearby → South Delhi → Rest of Delhi NCR
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const serviceLocations = [
-
   // ───── SOUTH DELHI — PREMIUM AREAS ─────
   "Defence Colony",
   "Jangpura",
@@ -178,7 +176,7 @@ export const serviceLocations = [
   "Tigri",
 
   // ───── BADARPUR & NEARBY — HIGH PRIORITY ─────
-  
+
   "Madanpur Khadar",
   "Jaitpur",
   "Tajpur",
@@ -415,6 +413,17 @@ export const serviceLocations = [
   "Harijanwas Faridabad",
   "Chhainsa Faridabad",
   "Bhaini Faridabad",
+  // ───── AGRA — HIGH PRIORITY SEO LOCATIONS ─────
+  "Agra",
+  "Sanjay Place Agra",
+  "Kamla Nagar Agra",
+  "Sikandra Agra",
+  "Fatehabad Road Agra",
+  "Tajganj Agra",
+  "Civil Lines Agra",
+  "Dayal Bagh Agra",
+  "Shahganj Agra",
+  "MG Road Agra",
 ];
 export const servicesData = [
   {
