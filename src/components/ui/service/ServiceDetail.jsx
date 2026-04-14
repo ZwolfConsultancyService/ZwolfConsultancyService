@@ -57,7 +57,7 @@ const ServiceDetail = () => {
   return (
     <>
       <Helmet>
-        {shouldNotIndex && <meta name="robots" content="noindex, follow" />}
+        {shouldNotIndex && <meta name="robots" content="index, follow" />}
       </Helmet>
 
       <ServiceDetailHero title={service.title} />

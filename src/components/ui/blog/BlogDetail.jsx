@@ -1,3 +1,6 @@
+
+
+
 // import React, { useEffect, useState } from "react";
 // import {
 //   FaArrowLeft,
@@ -18,12 +21,8 @@
 //   const [allBlogs, setAllBlogs] = useState([]);
 //   const [loading, setLoading] = useState(true);
 
-//   // const API_BASE_URL =
-//   //   "https://zwolfconsultancyservice-backend.onrender.com/api/blogs/fetch";
-
-//   const API_BASE_URL = "/api/blogs/fetch";
-
-
+//   // ⭐ UPDATED - Use environment variable
+// const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
 //   const fetchBlogs = async () => {
 //     try {
 //       const response = await axios.get(API_BASE_URL, {
@@ -378,9 +377,6 @@
 // export default BlogDetail;
 
 
-
-
-
 import React, { useEffect, useState } from "react";
 import {
   FaArrowLeft,
@@ -401,8 +397,8 @@ const BlogDetail = () => {
   const [allBlogs, setAllBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // ⭐ UPDATED - Use environment variable
-const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
+  const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
+
   const fetchBlogs = async () => {
     try {
       const response = await axios.get(API_BASE_URL, {
@@ -416,7 +412,6 @@ const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
 
       let blogsData = response.data;
 
-      // Handle different response formats
       if (blogsData.blogs && Array.isArray(blogsData.blogs)) {
         blogsData = blogsData.blogs;
       } else if (blogsData.data && Array.isArray(blogsData.data)) {
@@ -436,18 +431,15 @@ const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
   useEffect(() => {
     const loadBlogData = async () => {
       try {
-        // Get stored blog data immediately
         const storedBlog = sessionStorage.getItem("selectedBlog");
         if (storedBlog) {
           setBlog(JSON.parse(storedBlog));
           setLoading(false);
         }
 
-        // Fetch all blogs for navigation
         const blogs = await fetchBlogs();
         setAllBlogs(blogs);
 
-        // Update with full blog data if available
         if (storedBlog) {
           const blogData = JSON.parse(storedBlog);
           const fullBlogData = blogs.find((b) => b.title === blogData.title);
@@ -466,37 +458,24 @@ const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
     window.scrollTo(0, 0);
   }, []);
 
-  // Helper function to get blog image URL
   const getBlogImage = (blog) => {
     if (!blog) return "https://via.placeholder.com/1200x600?text=Blog+Image";
 
-    // Check if images array exists and has items
     if (blog.images && Array.isArray(blog.images) && blog.images.length > 0) {
       return blog.images[0].url;
     }
-    // Fallback to blog.image if it exists
     if (blog.image) {
       return blog.image;
     }
-    // Default placeholder
     return "https://via.placeholder.com/1200x600?text=Blog+Image";
   };
 
-  // Helper function to format date
   const formatDate = (dateString) => {
     if (!dateString) return "Recent";
 
     const date = new Date(dateString);
     const options = { year: "numeric", month: "long", day: "numeric" };
     return date.toLocaleDateString("en-US", options);
-  };
-
-  // Helper function to strip HTML tags from content
-  const stripHtmlTags = (html) => {
-    if (!html) return "";
-    const tmp = document.createElement("DIV");
-    tmp.innerHTML = html;
-    return tmp.textContent || tmp.innerText || "";
   };
 
   const createSlug = (title) => {
@@ -527,10 +506,9 @@ const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
 
     const slug = createSlug(targetBlog.title);
     sessionStorage.setItem("selectedBlog", JSON.stringify(targetBlog));
-    window.location.href = `/blog/${slug}`;
+    window.location.href = `/blogs/${slug}`;
   };
 
-  // Share functions
   const getCurrentPageUrl = () => {
     return window.location.href;
   };
@@ -614,12 +592,12 @@ const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
                 {blog.category || "Article"}
               </span>
             </div>
-            <h1 className="text-3xl md:text-5xl  text-white mb-4 leading-tight">
+            <h1 className="text-3xl md:text-5xl text-white mb-4 leading-tight">
               {blog.title}
             </h1>
             <div className="flex flex-wrap items-center text-white/90 gap-6">
               <div className="flex items-center">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white  mr-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white mr-3">
                   {blog.author ? blog.author.charAt(0).toUpperCase() : "A"}
                 </div>
                 <span className="font-medium">{blog.author || "Author"}</span>
@@ -642,7 +620,6 @@ const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/blogs/fetch`;
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="prose prose-lg max-w-none">
           <div className="text-gray-700 leading-relaxed">
-            {/* Check if content has HTML tags */}
             {blog.content && blog.content.includes("<") ? (
               <div
                 className="text-lg leading-relaxed"

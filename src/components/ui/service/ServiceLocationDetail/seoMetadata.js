@@ -82279,6 +82279,8 @@ export function generateFullSEOData() {
     "Mathura",
 
     // ── FARIDABAD SECTORS (NEW) ──
+    "Faridabad",
+    "Greater Faridabad",
     "Sector 1 Faridabad",
     "Sector 2 Faridabad",
     "Sector 3 Faridabad",

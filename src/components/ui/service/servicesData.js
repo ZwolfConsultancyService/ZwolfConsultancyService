@@ -288,6 +288,8 @@ export const serviceLocations = [
   "Palwal",
 
   // ───── FARIDABAD SECTORS ─────  (intentionally at bottom — less priority)
+  "Faridabad",
+  "Greater Faridabad",
   "Sector 1 Faridabad",
   "Sector 2 Faridabad",
   "Sector 3 Faridabad",
