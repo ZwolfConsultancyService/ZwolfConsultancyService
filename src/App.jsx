@@ -91,7 +91,7 @@ function App() {
           <Route path="/blogs/:slug" element={<BlogDetail />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contacts" element={<Contact />} />
 
           {/* Service detail — e.g. /services/mobile-app-development */}
           <Route path="/services/:slug" element={<ServiceDetail />} />

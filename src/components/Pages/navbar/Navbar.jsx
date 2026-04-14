@@ -361,7 +361,7 @@ const servicesDropdown = servicesData.map((service) => ({
 
         {/* CTA Button - Compact */}
         <Link
-          to="/contact"
+          to="/contacts"
           className="hidden lg:inline-flex items-center justify-center bg-[#5aa6f8] text-white font-semibold text-sm rounded-full px-5 py-2.5 hover:bg-[#1467c0] transition-all duration-200 hover:shadow-md whitespace-nowrap z-10"
         >
           Free Consultation
@@ -465,7 +465,7 @@ const servicesDropdown = servicesData.map((service) => ({
           {/* Mobile CTA Button - Compact */}
           <div className="pt-3 mt-3 border-t border-gray-200">
             <Link
-              to="/contact"
+              to="/contacts"
               className="flex items-center justify-center w-full bg-[#5aa6f8] text-white font-semibold text-sm rounded-full px-5 py-2.5 hover:bg-[#1467c0] transition-colors duration-200"
               onClick={closeMobileMenu}
             >

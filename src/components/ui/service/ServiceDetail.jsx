@@ -280,7 +280,7 @@ const ServiceDetail = () => {
             </p>
             <button
               className="bg-white text-[#5aa6f8] px-8 py-3 rounded-full font-medium hover:bg-gray-100 transition"
-              onClick={() => navigate("/contact")}
+              onClick={() => navigate("/contacts")}
             >
               Get Free Consultation
             </button>

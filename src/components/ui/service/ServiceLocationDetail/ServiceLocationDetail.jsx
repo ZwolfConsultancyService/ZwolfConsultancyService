@@ -510,7 +510,7 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
                   </div>
                 </div>
                 <button
-                  onClick={() => navigate("/contact")}
+                  onClick={() => navigate("/contacts")}
                   className="w-full bg-gradient-to-r from-[#5aa6f8] to-[#4a96e8] text-white py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
                 >
                   Request Free Consultation
