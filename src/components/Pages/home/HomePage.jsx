@@ -1,33 +1,31 @@
-import React from 'react'
-import Hero from '../../ui/hero/Hero';
-import About from '../../ui/about/About';
-import Services from '../../ui/service/Services';
-import WhyChooseUs from '../../ui/whochoose/WhyChooseUs';
-import LatestBlog from '../../ui/blog/LatestBlog';
-import TestimonialSlider from '../../ui/testimonial/TestimonialSlider';
-import EsteemedClients from '../../ui/portfolio/EsteemedClients';
+import React from "react";
+import Hero from "../../ui/hero/Hero";
+import About from "../../ui/about/About";
+import Services from "../../ui/service/Services";
+import WhyChooseUs from "../../ui/whochoose/WhyChooseUs";
+import LatestBlog from "../../ui/blog/LatestBlog";
+import TestimonialSlider from "../../ui/testimonial/TestimonialSlider";
+import EsteemedClients from "../../ui/portfolio/EsteemedClients";
 //import OurPortfolio from '../../ui/portfolio/OurPortfolio';
-import AboutSection from '../../ui/about/AboutSection';
-import ServicesSection from '../../ui/ServicesSection/ServicesSection';
+import AboutSection from "../../ui/about/AboutSection";
+import ServicesSection from "../../ui/ServicesSection/ServicesSection";
 
 const HomePage = () => {
   return (
     <div>
-  
-	<Hero />
-   {/* <OurPortfolio /> */}
-  <AboutSection />
-    <WhyChooseUs />
-    <ServicesSection />
-  {/* <Services /> */}
-  
-  <EsteemedClients />
+      <Hero />
+      {/* <OurPortfolio /> */}
+      <AboutSection />
+      <WhyChooseUs />
+      <ServicesSection />
+      {/* <Services /> */}
 
- 
-  {/* <TestimonialSlider /> */}
-  <LatestBlog />
+      <EsteemedClients />
+
+      {/* <TestimonialSlider /> */}
+      <LatestBlog />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

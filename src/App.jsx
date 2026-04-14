@@ -239,7 +239,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogDetail />} />
 
           {/* 🔥 Service routes - SPECIFIC routes FIRST */}
-          <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/:slug" element={<ServiceDetail />} />
 
           {/* 🔥 CATCH-ALL for location and service pages - GENERIC routes LAST */}
           <Route path="/:slug" element={<LocationOrServiceRouter />} />
