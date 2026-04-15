@@ -262,7 +262,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Services", path: "/services", dropdown: true },
-    { name: "Blog", path: "/blog" },
+    { name: "Blogs", path: "/blogs" },
   ];
 const servicesDropdown = servicesData.map((service) => ({
   name: service.title,
