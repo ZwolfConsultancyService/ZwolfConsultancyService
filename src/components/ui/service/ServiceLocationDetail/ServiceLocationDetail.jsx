@@ -1,4 +1,4 @@
- import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
@@ -67,7 +67,7 @@ const ServiceLocationDetail = () => {
   // ✅ Invalid URL — hooks ke BAAD return
   if (!isValidSlug) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 overflow-x-hidden px-4">
         <div className="text-center max-w-2xl mx-auto p-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">
             Invalid URL Format
@@ -90,12 +90,12 @@ const ServiceLocationDetail = () => {
 
   if (!service) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 overflow-x-hidden px-4">
         <div className="text-center max-w-2xl mx-auto p-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">
             Service Not Found
           </h1>
-          <p className="text-gray-600 mb-4 text-sm text-gray-400">
+          <p className="text-gray-600 mb-4 text-sm text-gray-400 break-words">
             Debug: slug received = "{serviceSlug}"
           </p>
           <Link
@@ -115,7 +115,7 @@ const ServiceLocationDetail = () => {
 
   if (!locationMatch) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 overflow-x-hidden px-4">
         <div className="text-center max-w-2xl mx-auto p-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-4">
             Location Not Found
@@ -140,9 +140,7 @@ const ServiceLocationDetail = () => {
   const IconComponent = service.icon;
 
   // ✅ FAQ data fetch
- const faqItems = getFaqData(serviceSlug, locationMatch);
-console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
-
+  const faqItems = getFaqData(serviceSlug, locationMatch);
 
   // FAQ Schema for Google rich results
   const faqSchema =
@@ -228,27 +226,30 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
         <meta name="revisit-after" content="7 days" />
       </Helmet>
 
-      <div className="min-h-screen bg-gray-50">
+      {/* 🔧 overflow-x-hidden + w-full added on root wrapper so nothing can ever push the page sideways on mobile */}
+      <div className="min-h-screen w-full bg-gray-50 overflow-x-hidden">
         {/* Hero Section */}
-        <div className="relative bg-gradient-to-r from-[#5aa6f8] to-[#4a96e8] py-20 overflow-hidden">
+        <div className="relative bg-gradient-to-r from-[#5aa6f8] to-[#4a96e8] py-16 sm:py-20 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute top-0 left-0 w-72 h-72 sm:w-96 sm:h-96 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-72 h-72 sm:w-96 sm:h-96 bg-white rounded-full blur-3xl"></div>
           </div>
 
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div data-aos="fade-right">
-                <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
-                  <FaMapMarkerAlt className="text-white" />
-                  <span className="text-white font-medium">{locationMatch}</span>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+              <div data-aos="fade-right" className="min-w-0">
+                <div className="inline-flex max-w-full flex-wrap items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                  <FaMapMarkerAlt className="text-white shrink-0" />
+                  <span className="text-white font-medium break-words">
+                    {locationMatch}
+                  </span>
                 </div>
 
-                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 leading-tight break-words">
                   {pageSEO.h1 || locationData.heroTitle}
                 </h1>
 
-                <p className="text-xl text-white/90 mb-8">
+                <p className="text-lg sm:text-xl text-white/90 mb-8 break-words">
                   {locationData.heroDescription}
                 </p>
 
@@ -268,16 +269,18 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
                 </div>
               </div>
 
-              <div data-aos="fade-left" data-aos-delay="200">
-                <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
-                  <div className="grid grid-cols-2 gap-6">
+              <div data-aos="fade-left" data-aos-delay="200" className="min-w-0">
+                <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-white/20">
+                  <div className="grid grid-cols-2 gap-4 sm:gap-6">
                     {locationData.localStats.map((stat, index) => (
-                      <div key={index} className="text-center">
-                        <div className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                      <div key={index} className="text-center min-w-0">
+                        <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 break-words">
                           {stat.value}
                           {stat.suffix}
                         </div>
-                        <div className="text-white/80 text-sm">{stat.label}</div>
+                        <div className="text-white/80 text-sm break-words">
+                          {stat.label}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -288,33 +291,33 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
         </div>
 
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid lg:grid-cols-3 gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full">
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
             {/* Left Column */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 min-w-0">
               {/* About Section */}
               <div
-                className="bg-white rounded-3xl shadow-lg p-8 mb-8"
+                className="bg-white rounded-3xl shadow-lg p-6 sm:p-8 mb-8"
                 data-aos="fade-up"
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="bg-[#5aa6f8] text-white p-3 rounded-xl">
+                <div className="flex items-start sm:items-center gap-3 mb-6">
+                  <div className="bg-[#5aa6f8] text-white p-3 rounded-xl shrink-0">
                     <IconComponent className="w-8 h-8" />
                   </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900">
+                  <div className="min-w-0">
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 break-words">
                       About Our {service.title} in {locationMatch}
                     </h2>
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-gray-500 break-words">
                       {service.category}
                     </span>
                   </div>
                 </div>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <p className="text-gray-600 leading-relaxed mb-6 break-words">
                   {service.detailedDescription}
                 </p>
                 <div className="bg-[#5aa6f8]/10 border-l-4 border-[#5aa6f8] p-6 rounded-r-xl">
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 break-words">
                     <strong className="text-[#5aa6f8]">Local Expertise:</strong>{" "}
                     Our {locationMatch}-based team brings deep understanding of
                     the local market and personalized service to every project.
@@ -324,20 +327,22 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
 
               {/* Why Choose Us */}
               <div
-                className="bg-white rounded-3xl shadow-lg p-8 mb-8"
+                className="bg-white rounded-3xl shadow-lg p-6 sm:p-8 mb-8"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 break-words">
                   Why Choose Us in {locationMatch}?
                 </h2>
                 <div className="space-y-4">
                   {locationData.whyChooseLocal.map((reason, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <div className="bg-[#5aa6f8]/20 text-[#5aa6f8] p-1.5 rounded-full mt-1">
+                      <div className="bg-[#5aa6f8]/20 text-[#5aa6f8] p-1.5 rounded-full mt-1 shrink-0">
                         <FaCheck className="w-4 h-4" />
                       </div>
-                      <span className="text-gray-700">{reason}</span>
+                      <span className="text-gray-700 break-words min-w-0">
+                        {reason}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -345,11 +350,11 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
 
               {/* Our Services */}
               <div
-                className="bg-white rounded-3xl shadow-lg p-8 mb-8"
+                className="bg-white rounded-3xl shadow-lg p-6 sm:p-8 mb-8"
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6 break-words">
                   Our Services in {locationMatch}
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -358,16 +363,16 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
                     return (
                       <div
                         key={index}
-                        className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#5aa6f8]/5 transition-colors"
+                        className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl hover:bg-[#5aa6f8]/5 transition-colors min-w-0"
                       >
-                        <div className="bg-white text-[#5aa6f8] p-2 rounded-lg shadow-sm border border-[#5aa6f8]/20">
+                        <div className="bg-white text-[#5aa6f8] p-2 rounded-lg shadow-sm border border-[#5aa6f8]/20 shrink-0">
                           <OfferingIcon className="w-5 h-5" />
                         </div>
-                        <div>
-                          <h3 className="font-semibold text-gray-900 mb-1">
+                        <div className="min-w-0">
+                          <h3 className="font-semibold text-gray-900 mb-1 break-words">
                             {offering.title}
                           </h3>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-gray-600 break-words">
                             {offering.description}
                           </p>
                         </div>
@@ -380,15 +385,15 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
               {/* ===== FAQ SECTION ===== */}
               {faqItems.length > 0 && (
                 <div
-                  className="bg-white rounded-3xl shadow-lg p-8 mb-8"
+                  className="bg-white rounded-3xl shadow-lg p-6 sm:p-8 mb-8"
                   data-aos="fade-up"
                   data-aos-delay="250"
                 >
                   <div className="mb-6">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 break-words">
                       Frequently Asked Questions
                     </h2>
-                    <p className="text-gray-500 text-sm">
+                    <p className="text-gray-500 text-sm break-words">
                       {service.title} services in {locationMatch} — common
                       questions answered
                     </p>
@@ -401,13 +406,13 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
                         className="border border-gray-200 rounded-2xl overflow-hidden"
                       >
                         <button
-                          className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
+                          className="w-full text-left px-4 sm:px-6 py-5 flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
                           onClick={() =>
                             setOpenFaq(openFaq === index ? null : index)
                           }
                           aria-expanded={openFaq === index}
                         >
-                          <span className="font-semibold text-gray-900 text-base leading-snug">
+                          <span className="font-semibold text-gray-900 text-base leading-snug break-words min-w-0">
                             {faq.question}
                           </span>
                           <FaChevronDown
@@ -424,7 +429,7 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
                               : "max-h-0 opacity-0"
                           }`}
                         >
-                          <p className="px-6 pb-5 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                          <p className="px-4 sm:px-6 pb-5 text-gray-600 leading-relaxed border-t border-gray-100 pt-4 break-words">
                             {faq.answer}
                           </p>
                         </div>
@@ -437,7 +442,7 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
 
               {/* Testimonial */}
               <div
-                className="bg-gradient-to-br from-[#5aa6f8] to-[#4a96e8] rounded-3xl shadow-lg p-8 text-white"
+                className="bg-gradient-to-br from-[#5aa6f8] to-[#4a96e8] rounded-3xl shadow-lg p-6 sm:p-8 text-white"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -446,18 +451,18 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
                     <FaStar key={i} className="text-white" />
                   ))}
                 </div>
-                <p className="text-lg mb-6 italic">
+                <p className="text-lg mb-6 italic break-words">
                   "{locationData.testimonial.text}"
                 </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shrink-0">
                     <FaUsers className="text-white" />
                   </div>
-                  <div>
-                    <div className="font-semibold">
+                  <div className="min-w-0">
+                    <div className="font-semibold break-words">
                       {locationData.testimonial.author}
                     </div>
-                    <div className="text-sm text-white/80">
+                    <div className="text-sm text-white/80 break-words">
                       {locationData.testimonial.location}
                     </div>
                   </div>
@@ -466,9 +471,9 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
             </div>
 
             {/* Right Column - Sidebar */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 min-w-0">
               <div
-                className="bg-white rounded-3xl shadow-lg p-8 mb-8 sticky top-4"
+                className="bg-white rounded-3xl shadow-lg p-6 sm:p-8 mb-8 lg:sticky lg:top-4"
                 data-aos="fade-left"
               >
                 <h3 className="text-xl font-bold text-gray-900 mb-6">
@@ -477,33 +482,35 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
                 <div className="space-y-4 mb-6">
                   <a
                     href="tel:+919520989744"
-                    className="flex items-center gap-3 p-4 bg-[#5aa6f8]/10 rounded-xl hover:bg-[#5aa6f8]/20 transition-colors"
+                    className="flex items-center gap-3 p-4 bg-[#5aa6f8]/10 rounded-xl hover:bg-[#5aa6f8]/20 transition-colors min-w-0"
                   >
-                    <FaPhone className="text-[#5aa6f8]" />
-                    <div>
+                    <FaPhone className="text-[#5aa6f8] shrink-0" />
+                    <div className="min-w-0">
                       <div className="text-sm text-gray-600">Call Us</div>
-                      <div className="font-semibold text-gray-900">
+                      <div className="font-semibold text-gray-900 break-words">
                         +91 9520989744
                       </div>
                     </div>
                   </a>
+                  {/* 🔧 This is the box that was overflowing on mobile — the email has no spaces,
+                      so without break-all + min-w-0 it forced the whole card wider than the screen. */}
                   <a
                     href="mailto:zwolfconsultancyservice@gmail.com"
-                    className="flex items-center gap-3 p-4 bg-[#5aa6f8]/10 rounded-xl hover:bg-[#5aa6f8]/20 transition-colors"
+                    className="flex items-center gap-3 p-4 bg-[#5aa6f8]/10 rounded-xl hover:bg-[#5aa6f8]/20 transition-colors min-w-0"
                   >
-                    <FaEnvelope className="text-[#5aa6f8]" />
-                    <div>
+                    <FaEnvelope className="text-[#5aa6f8] shrink-0" />
+                    <div className="min-w-0 flex-1">
                       <div className="text-sm text-gray-600">Email Us</div>
-                      <div className="font-semibold text-gray-900">
+                      <div className="font-semibold text-gray-900 break-all">
                         zwolfconsultancyservice@gmail.com
                       </div>
                     </div>
                   </a>
-                  <div className="flex items-center gap-3 p-4 bg-[#5aa6f8]/10 rounded-xl">
-                    <FaClock className="text-[#5aa6f8]" />
-                    <div>
+                  <div className="flex items-center gap-3 p-4 bg-[#5aa6f8]/10 rounded-xl min-w-0">
+                    <FaClock className="text-[#5aa6f8] shrink-0" />
+                    <div className="min-w-0">
                       <div className="text-sm text-gray-600">Working Hours</div>
-                      <div className="font-semibold text-gray-900">
+                      <div className="font-semibold text-gray-900 break-words">
                         Mon-Sat: 9AM-6PM
                       </div>
                     </div>
@@ -519,7 +526,7 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
 
               {/* Nearby Areas */}
               <div
-                className="bg-white rounded-3xl shadow-lg p-8"
+                className="bg-white rounded-3xl shadow-lg p-6 sm:p-8"
                 data-aos="fade-left"
                 data-aos-delay="200"
               >
@@ -537,11 +544,11 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
                         handleLocationClick(area);
                       }}
                     >
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-700">
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-gray-700 break-words min-w-0">
                           {service.title} in {area}
                         </span>
-                        <FaArrowLeft className="rotate-180 text-[#5aa6f8]" />
+                        <FaArrowLeft className="rotate-180 text-[#5aa6f8] shrink-0" />
                       </div>
                     </a>
                   ))}
@@ -554,10 +561,10 @@ console.log("FAQ TEST:", serviceSlug, locationMatch, faqItems);
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-[#5aa6f8] to-[#4a96e8] py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 break-words">
               Ready to Transform Your Business in {locationMatch}?
             </h2>
-            <p className="text-white/90 text-lg mb-8">
+            <p className="text-white/90 text-lg mb-8 break-words">
               Get expert {service.title.toLowerCase()} services tailored for{" "}
               {locationMatch} businesses
             </p>

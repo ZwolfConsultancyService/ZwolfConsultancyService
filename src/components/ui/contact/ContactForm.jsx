@@ -3,19 +3,31 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/f
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+// 🔧 Dropdown me yahi services dikhengi — naya service add karna ho to bas isi array me add karo
+const SERVICE_OPTIONS = [
+  "Website Development",
+  "Mobile App Development",
+  "Graphic Designing",
+  "Digital Marketing",
+  "Business Consultation",
+  "Cloud & Hosting Services",
+  "Accounting & Financial Services",
+  "Lead Generation",
+  "Software Development",
+  "SEO Services",
+];
+
 const ContactForm = () => {
   useEffect(() => {
     AOS.init({ duration: 800, once: true });
   }, []);
 
-  // form state
+  // form state — ab sirf 4 fields: name, phone, email, service
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
     phone: "",
     email: "",
-    subject: "",
-    message: "",
+    service: "",
   });
 
   // handle change
@@ -33,9 +45,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12">
+    <div className="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12 overflow-x-hidden">
       {/* Left */}
-      <div data-aos="fade-right">
+      <div data-aos="fade-right" className="min-w-0">
         <p className="text-[#5aa6f8] font-medium mb-2">Contact Us</p>
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
           Get in touch with us today
@@ -58,25 +70,18 @@ const ContactForm = () => {
       <form
         onSubmit={handleSubmit}
         data-aos="fade-left"
-        className="bg-[#f4f8ff] rounded-3xl p-8 space-y-4"
+        className="bg-[#f4f8ff] rounded-3xl p-6 sm:p-8 space-y-4 min-w-0"
       >
+        <input
+          type="text"
+          name="name"
+          onChange={handleChange}
+          value={formData.name}
+          placeholder="Name"
+          className="p-3 rounded-lg w-full outline-none border border-gray-400"
+        />
+
         <div className="grid sm:grid-cols-2 gap-4">
-          <input
-            type="text"
-            name="firstName"
-            onChange={handleChange}
-            value={formData.firstName}
-            placeholder="First Name"
-            className="p-3 rounded-lg w-full outline-none border border-gray-400"
-          />
-          <input
-            type="text"
-            name="lastName"
-            onChange={handleChange}
-            value={formData.lastName}
-            placeholder="Last Name"
-            className="p-3 rounded-lg w-full outline-none border border-gray-400"
-          />
           <input
             type="text"
             name="phone"
@@ -95,23 +100,21 @@ const ContactForm = () => {
           />
         </div>
 
-        <input
-          type="text"
-          name="subject"
+        <select
+          name="service"
           onChange={handleChange}
-          value={formData.subject}
-          placeholder="Subject"
-          className="p-3 rounded-lg w-full outline-none border border-gray-400"
-        />
-
-        <textarea
-          name="message"
-          onChange={handleChange}
-          value={formData.message}
-          rows="6"
-          placeholder="Message"
-          className="p-3 rounded-lg w-full outline-none border border-gray-600"
-        ></textarea>
+          value={formData.service}
+          className="p-3 rounded-lg w-full outline-none border border-gray-400 bg-white text-gray-700"
+        >
+          <option value="" disabled>
+            Select a Service
+          </option>
+          {SERVICE_OPTIONS.map((service) => (
+            <option key={service} value={service}>
+              {service}
+            </option>
+          ))}
+        </select>
 
         <button
           type="submit"
