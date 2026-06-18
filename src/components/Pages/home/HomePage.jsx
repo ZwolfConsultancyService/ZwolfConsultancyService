@@ -14,7 +14,7 @@ const HomePage = () => {
   return (
     <div>
       <Hero />
-      <OurPortfolio />
+      {/* <OurPortfolio /> */}
       <AboutSection />
       <WhyChooseUs />
       <ServicesSection />
