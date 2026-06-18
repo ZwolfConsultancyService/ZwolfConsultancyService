@@ -3,6 +3,8 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/f
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const API_URL = "https://www.zwolfconsultancy.com/api/appointments";
+
 // 🔧 Dropdown me yahi services dikhengi — naya service add karna ho to bas isi array me add karo
 const SERVICE_OPTIONS = [
   "Website Development",
@@ -22,7 +24,6 @@ const ContactForm = () => {
     AOS.init({ duration: 800, once: true });
   }, []);
 
-  // form state — ab sirf 4 fields: name, phone, email, service
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -30,7 +31,11 @@ const ContactForm = () => {
     service: "",
   });
 
-  // handle change
+  // loading, success, error states
+  const [loading, setLoading] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -38,10 +43,36 @@ const ContactForm = () => {
     });
   };
 
-  // handle submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Data =>", formData);
+    setLoading(true);
+    setSuccessMsg("");
+    setErrorMsg("");
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        // Server ne error diya (4xx / 5xx)
+        throw new Error(data?.message || "Something went wrong. Please try again.");
+      }
+
+      // Success
+      setSuccessMsg("Your message has been sent successfully! We'll get back to you soon.");
+      setFormData({ name: "", phone: "", email: "", service: "" });
+    } catch (err) {
+      setErrorMsg(err.message || "Network error. Please check your connection.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -59,10 +90,18 @@ const ContactForm = () => {
 
         <h4 className="font-semibold text-lg mb-2">Follow Us:</h4>
         <div className="flex gap-4">
-          <a href="https://www.facebook.com/profile.php?id=61576374277131" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white"><FaFacebookF /></a>
-          <a href="https://www.instagram.com/zwolfconsultancy/profilecard/?igsh=d2pzOWJmeDBnbWZx" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white"><FaInstagram /></a>
-          <a href="https://www.linkedin.com/company/zwolf-consultancy/" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white"><FaLinkedinIn /></a>
-          <a href="https://x.com/Zwolfconsultanc" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white"><FaTwitter /></a>
+          <a href="https://www.facebook.com/profile.php?id=61576374277131" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white">
+            <FaFacebookF />
+          </a>
+          <a href="https://www.instagram.com/zwolfconsultancy/profilecard/?igsh=d2pzOWJmeDBnbWZx" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white">
+            <FaInstagram />
+          </a>
+          <a href="https://www.linkedin.com/company/zwolf-consultancy/" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white">
+            <FaLinkedinIn />
+          </a>
+          <a href="https://x.com/Zwolfconsultanc" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#5aa6f8] text-white">
+            <FaTwitter />
+          </a>
         </div>
       </div>
 
@@ -78,6 +117,7 @@ const ContactForm = () => {
           onChange={handleChange}
           value={formData.name}
           placeholder="Name"
+          required
           className="p-3 rounded-lg w-full outline-none border border-gray-400"
         />
 
@@ -88,6 +128,7 @@ const ContactForm = () => {
             onChange={handleChange}
             value={formData.phone}
             placeholder="Phone"
+            required
             className="p-3 rounded-lg w-full outline-none border border-gray-400"
           />
           <input
@@ -96,6 +137,7 @@ const ContactForm = () => {
             onChange={handleChange}
             value={formData.email}
             placeholder="Email"
+            required
             className="p-3 rounded-lg w-full outline-none border border-gray-400"
           />
         </div>
@@ -104,6 +146,7 @@ const ContactForm = () => {
           name="service"
           onChange={handleChange}
           value={formData.service}
+          required
           className="p-3 rounded-lg w-full outline-none border border-gray-400 bg-white text-gray-700"
         >
           <option value="" disabled>
@@ -116,11 +159,30 @@ const ContactForm = () => {
           ))}
         </select>
 
+        {/* Success Message */}
+        {successMsg && (
+          <p className="text-green-600 text-sm font-medium bg-green-50 border border-green-200 rounded-lg px-4 py-3">
+            ✅ {successMsg}
+          </p>
+        )}
+
+        {/* Error Message */}
+        {errorMsg && (
+          <p className="text-red-600 text-sm font-medium bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+            ❌ {errorMsg}
+          </p>
+        )}
+
         <button
           type="submit"
-          className="bg-[#5aa6f8] text-white px-8 py-3 rounded-full font-semibold hover:bg-[#467ddc] transition"
+          disabled={loading}
+          className={`px-8 py-3 rounded-full font-semibold text-white transition ${
+            loading
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-[#5aa6f8] hover:bg-[#467ddc]"
+          }`}
         >
-          Send A Message
+          {loading ? "Sending..." : "Send A Message"}
         </button>
       </form>
     </div>
