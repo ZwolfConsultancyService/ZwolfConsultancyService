@@ -15,6 +15,8 @@ import ServiceLocationDetail from "./components/ui/service/ServiceLocationDetail
 import ScrollToTop from "./lib/ScrollToTop";
 import Contact from "./components/ui/contact/Contact";
 import BlogDetail from "./components/ui/blog/BlogDetail";
+import CaseStudy from "./components/ui/CaseStudy/CaseStudy";
+import CaseStudyDetail from "./components/ui/CaseStudy/CaseStudyDetail";
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/contacts" element={<Contact />} />
+          <Route path="/case-study" element={<CaseStudy />} />
+          <Route path="/case-study/:slug" element={<CaseStudyDetail />} />
 
           {/* OLD URL redirect (IMPORTANT FIX) */}
           <Route path="/service/:slug" element={<RedirectService />} />
