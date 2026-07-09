@@ -1,32 +1,83 @@
-import React from "react";
-import { useParams, Link, Navigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { caseStudyData } from "./caseStudyData";
+import { Loader2 } from "lucide-react";
+
+const API_URL = "https://www.zwolfconsultancy.com/api/case-studies";
 
 const CaseStudyDetail = () => {
   const { slug } = useParams();
-  const caseStudy = caseStudyData.find((item) => item.slug === slug);
+  const [caseStudy, setCaseStudy] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  if (!caseStudy) {
-    return <Navigate to="/case-study" replace />;
+  useEffect(() => {
+    const fetchCaseStudy = async () => {
+      setLoading(true);
+      setError("");
+      try {
+        const res = await fetch(`${API_URL}/${slug}`);
+        const rawText = await res.text();
+
+        let json;
+        try {
+          json = rawText ? JSON.parse(rawText) : {};
+        } catch {
+          throw new Error(`Server returned an unexpected response (status ${res.status}).`);
+        }
+
+        if (!res.ok || !json.success) {
+          throw new Error(json.message || `Failed to fetch case study (status ${res.status})`);
+        }
+
+        setCaseStudy(json.data);
+      } catch (err) {
+        console.error("fetchCaseStudy error:", err);
+        setError(err.message || "Could not load this case study.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCaseStudy();
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 pt-28 pb-16 flex flex-col items-center justify-center py-24">
+        <Loader2 className="h-8 w-8 text-[#5aa6f8] animate-spin mb-3" />
+        <p className="text-sm text-gray-500">Loading case study...</p>
+      </div>
+    );
   }
 
-  const pageUrl = `https://yourdomain.com/case-study/${caseStudy.slug}`;
+  if (error || !caseStudy) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 pt-28 pb-16 text-center">
+        <p className="text-red-600 mb-4">{error || "Case study not found."}</p>
+        <Link to="/case-study" className="text-[#5aa6f8] font-medium hover:underline">
+          ← Back to Case Studies
+        </Link>
+      </div>
+    );
+  }
+
+  const pageUrl = `https://www.zwolfconsultancy.com/case-study/${caseStudy.slug}`;
 
   return (
     <>
       <Helmet>
         <title>{caseStudy.title} | ZWOLF Consultancy Case Study</title>
-        <meta name="description" content={caseStudy.summary} />
+        <meta name="description" content={caseStudy.description} />
         <meta
           name="keywords"
-          content={`${caseStudy.industry}, ${caseStudy.client}, web development case study, ZWOLF Consultancy`}
+          content={`${caseStudy.title}, web development case study, ZWOLF Consultancy`}
         />
         <link rel="canonical" href={pageUrl} />
 
         {/* Open Graph */}
         <meta property="og:title" content={caseStudy.title} />
-        <meta property="og:description" content={caseStudy.summary} />
+        <meta property="og:description" content={caseStudy.description} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:image" content={caseStudy.image} />
@@ -34,7 +85,7 @@ const CaseStudyDetail = () => {
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={caseStudy.title} />
-        <meta name="twitter:description" content={caseStudy.summary} />
+        <meta name="twitter:description" content={caseStudy.description} />
         <meta name="twitter:image" content={caseStudy.image} />
 
         {/* Structured Data - JSON-LD for rich results */}
@@ -43,7 +94,7 @@ const CaseStudyDetail = () => {
             "@context": "https://schema.org",
             "@type": "Article",
             headline: caseStudy.title,
-            description: caseStudy.summary,
+            description: caseStudy.description,
             image: caseStudy.image,
             author: {
               "@type": "Organization",
@@ -53,7 +104,7 @@ const CaseStudyDetail = () => {
               "@type": "Organization",
               name: "ZWOLF Consultancy",
             },
-            datePublished: caseStudy.year,
+            datePublished: caseStudy.createdAt,
           })}
         </script>
       </Helmet>
@@ -69,13 +120,18 @@ const CaseStudyDetail = () => {
 
         {/* Header */}
         <div className="mb-8">
-          <span className="text-xs font-semibold text-[#5aa6f8] uppercase tracking-wide">
-            {caseStudy.industry} • {caseStudy.year}
-          </span>
+          {caseStudy.createdAt && (
+            <span className="text-xs font-semibold text-[#5aa6f8] uppercase tracking-wide">
+              {new Date(caseStudy.createdAt).toLocaleDateString("en-IN", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </span>
+          )}
           <h1 className="text-3xl sm:text-4xl font-bold text-[#1e1e2d] mt-2 mb-3">
             {caseStudy.title}
           </h1>
-          <p className="text-gray-600">{caseStudy.summary}</p>
         </div>
 
         {/* Hero image */}
@@ -87,51 +143,14 @@ const CaseStudyDetail = () => {
           />
         </div>
 
-        {/* Meta info */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10 border-y border-gray-100 py-5">
-          <div>
-            <p className="text-xs text-gray-500 uppercase mb-1">Client</p>
-            <p className="font-medium text-[#1e1e2d]">{caseStudy.client}</p>
-          </div>
-          <div>
-            <p className="text-xs text-gray-500 uppercase mb-1">Industry</p>
-            <p className="font-medium text-[#1e1e2d]">{caseStudy.industry}</p>
-          </div>
-          <div>
-            <p className="text-xs text-gray-500 uppercase mb-1">Duration</p>
-            <p className="font-medium text-[#1e1e2d]">{caseStudy.duration}</p>
-          </div>
-        </div>
-
-        {/* Challenge */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-[#1e1e2d] mb-3">
-            The Challenge
-          </h2>
-          <p className="text-gray-600 leading-relaxed">{caseStudy.challenge}</p>
-        </div>
-
-        {/* Solution */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-[#1e1e2d] mb-3">
-            Our Solution
-          </h2>
-          <p className="text-gray-600 leading-relaxed">{caseStudy.solution}</p>
-        </div>
-
-        {/* Results */}
+        {/* Description */}
         <div className="mb-10">
           <h2 className="text-xl font-semibold text-[#1e1e2d] mb-3">
-            Results
+            Overview
           </h2>
-          <ul className="space-y-2">
-            {caseStudy.results.map((result, idx) => (
-              <li key={idx} className="flex items-start gap-2 text-gray-600">
-                <span className="text-[#5aa6f8] font-bold mt-0.5">✓</span>
-                <span>{result}</span>
-              </li>
-            ))}
-          </ul>
+          <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+            {caseStudy.description}
+          </p>
         </div>
 
         {/* CTA */}
