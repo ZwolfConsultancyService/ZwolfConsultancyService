@@ -172,6 +172,7 @@
 
 // export default CaseStudyDetail;
 
+
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -328,10 +329,107 @@ const CaseStudyDetail = () => {
             Overview
           </h2>
           <div
-            className="text-gray-600 leading-relaxed prose prose-sm max-w-none"
+            className="case-study-content text-gray-600 leading-relaxed"
             dangerouslySetInnerHTML={{ __html: caseStudy.description }}
           />
         </div>
+
+        <style>{`
+          .case-study-content h1 {
+            font-size: 2rem;
+            line-height: 1.25;
+            font-weight: 700;
+            color: #1e1e2d;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+          }
+          .case-study-content h2 {
+            font-size: 1.5rem;
+            line-height: 1.3;
+            font-weight: 700;
+            color: #1e1e2d;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+          }
+          .case-study-content h3 {
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 600;
+            color: #1e1e2d;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+          }
+          .case-study-content p {
+            margin-bottom: 1rem;
+          }
+          .case-study-content strong,
+          .case-study-content b {
+            font-weight: 700;
+            color: #1e1e2d;
+          }
+          .case-study-content em,
+          .case-study-content i {
+            font-style: italic;
+          }
+          .case-study-content u {
+            text-decoration: underline;
+          }
+          .case-study-content s,
+          .case-study-content strike {
+            text-decoration: line-through;
+          }
+          .case-study-content a {
+            color: #5aa6f8;
+            text-decoration: underline;
+            font-weight: 500;
+          }
+          .case-study-content a:hover {
+            color: #1467c0;
+          }
+          .case-study-content ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+          }
+          .case-study-content ol {
+            list-style: decimal;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+          }
+          .case-study-content li {
+            margin-bottom: 0.25rem;
+          }
+          .case-study-content blockquote {
+            border-left: 4px solid #5aa6f8;
+            padding-left: 1rem;
+            font-style: italic;
+            color: #4b5563;
+            margin: 1rem 0;
+          }
+          .case-study-content code,
+          .case-study-content pre {
+            background: #f3f4f6;
+            border-radius: 4px;
+            font-family: monospace;
+          }
+          .case-study-content code {
+            padding: 0.15rem 0.4rem;
+            font-size: 0.9em;
+          }
+          .case-study-content pre {
+            padding: 1rem;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+          }
+          .case-study-content sub {
+            vertical-align: sub;
+            font-size: smaller;
+          }
+          .case-study-content sup {
+            vertical-align: super;
+            font-size: smaller;
+          }
+        `}</style>
 
         {/* CTA */}
         <div className="bg-[#f7f8fc] rounded-xl p-8 text-center">
