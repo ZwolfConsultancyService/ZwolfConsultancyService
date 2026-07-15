@@ -165,7 +165,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Loader2 } from "lucide-react";
-import { stripHtml } from "./stripHtml"; // path apne project ke hisaab se adjust karo
+import { stripHtml } from "./Striphtml"; // path apne project ke hisaab se adjust karo
 
 const API_URL = "https://www.zwolfconsultancy.com/api/case-studies";
 
