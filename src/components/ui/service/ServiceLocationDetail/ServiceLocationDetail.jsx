@@ -440,34 +440,7 @@ const ServiceLocationDetail = () => {
               )}
               {/* ===== END FAQ SECTION ===== */}
 
-              {/* Testimonial */}
-              <div
-                className="bg-gradient-to-br from-[#5aa6f8] to-[#4a96e8] rounded-3xl shadow-lg p-6 sm:p-8 text-white"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(locationData.testimonial.rating)].map((_, i) => (
-                    <FaStar key={i} className="text-white" />
-                  ))}
-                </div>
-                <p className="text-lg mb-6 italic break-words">
-                  "{locationData.testimonial.text}"
-                </p>
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center shrink-0">
-                    <FaUsers className="text-white" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="font-semibold break-words">
-                      {locationData.testimonial.author}
-                    </div>
-                    <div className="text-sm text-white/80 break-words">
-                      {locationData.testimonial.location}
-                    </div>
-                  </div>
-                </div>
-              </div>
+            
             </div>
 
             {/* Right Column - Sidebar */}
