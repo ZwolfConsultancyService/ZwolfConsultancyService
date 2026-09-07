@@ -336,8 +336,8 @@ import { Helmet } from "react-helmet-async";
 import { Loader2 } from "lucide-react";
 import { stripHtml } from "./Striphtml";
 
-// const API_URL = "http://localhost:5002/api/case-studies";
-const API_URL = "https://zwolfconsultancy.com/api/case-studies";
+const API_URL = "http://localhost:5002/api/case-studies";
+// const API_URL = "https://zwolfconsultancy.com/api/case-studies";
 
 const FALLBACK_IMAGE =
   "https://via.placeholder.com/800x450?text=Case+Study";

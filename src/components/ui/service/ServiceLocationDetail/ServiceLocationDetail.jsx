@@ -19,6 +19,7 @@ import { getFaqData } from "../ServiceLocationDetail/serviceFaqDataSeo";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { slugify } from "../../../../lib/slugify";
+import RelatedContent from "../RelatedContent";
 
 const ServiceLocationDetail = () => {
   const params = useParams();
@@ -530,6 +531,7 @@ const ServiceLocationDetail = () => {
             </div>
           </div>
         </div>
+          <RelatedContent service={service} />
 
         {/* CTA Section */}
         <div className="bg-gradient-to-r from-[#5aa6f8] to-[#4a96e8] py-16">

@@ -845,69 +845,69 @@ export const servicesData = [
       "Strong security protocols",
     ],
   },
-  {
-    id: 7,
-    title: "Accounting & Financial Services",
-    slug: "accounting-financial-services",
-    tagline: "Simplifying Finances, Maximizing Growth",
-    description:
-      "Stress-free accounting and compliance so you can focus on growth.",
-    detailedDescription:
-      "We handle your accounting, compliance, and financial planning so you can focus on growing your business without stress.",
-    icon: FaCalculator,
-    image:
-      "https://plus.unsplash.com/premium_photo-1682141025267-9e0ade0c0826?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2FtZSUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww",
-    category: "Finance",
-    locations: serviceLocations,
-    offerings: [
-      {
-        title: "Bookkeeping & Accounting",
-        description: "Complete financial record management.",
-        icon: FaFileInvoiceDollar,
-      },
-      {
-        title: "GST, TDS & Income Tax Filing",
-        description: "Complete tax compliance services.",
-        icon: FaClipboardList,
-      },
-      {
-        title: "Payroll Management",
-        description: "Efficient employee payroll processing.",
-        icon: FaUsers,
-      },
-      {
-        title: "Financial Statements & Audits",
-        description: "Professional financial reporting and audits.",
-        icon: FaChartLine,
-      },
-      {
-        title: "ROC & Compliance Filing",
-        description: "Regulatory compliance and filing services.",
-        icon: FaClipboardList,
-      },
-      {
-        title: "Budgeting & Forecasting",
-        description: "Financial planning and forecasting services.",
-        icon: FaChartLine,
-      },
-    ],
-    process: [
-      "Data collection & verification",
-      "Record maintenance",
-      "Compliance filing",
-      "Reporting & advisory",
-    ],
-    benefits: [
-      "Clear financial picture",
-      "Avoid penalties",
-      "Strategic growth planning",
-    ],
-    whyChooseUs: [
-      "Accurate & confidential handling",
-      "On-time compliance",
-      "Expert financial advice",
-    ],
-  },
+  // {
+  //   id: 7,
+  //   title: "Accounting & Financial Services",
+  //   slug: "accounting-financial-services",
+  //   tagline: "Simplifying Finances, Maximizing Growth",
+  //   description:
+  //     "Stress-free accounting and compliance so you can focus on growth.",
+  //   detailedDescription:
+  //     "We handle your accounting, compliance, and financial planning so you can focus on growing your business without stress.",
+  //   icon: FaCalculator,
+  //   image:
+  //     "https://plus.unsplash.com/premium_photo-1682141025267-9e0ade0c0826?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Z2FtZSUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww",
+  //   category: "Finance",
+  //   locations: serviceLocations,
+  //   offerings: [
+  //     {
+  //       title: "Bookkeeping & Accounting",
+  //       description: "Complete financial record management.",
+  //       icon: FaFileInvoiceDollar,
+  //     },
+  //     {
+  //       title: "GST, TDS & Income Tax Filing",
+  //       description: "Complete tax compliance services.",
+  //       icon: FaClipboardList,
+  //     },
+  //     {
+  //       title: "Payroll Management",
+  //       description: "Efficient employee payroll processing.",
+  //       icon: FaUsers,
+  //     },
+  //     {
+  //       title: "Financial Statements & Audits",
+  //       description: "Professional financial reporting and audits.",
+  //       icon: FaChartLine,
+  //     },
+  //     {
+  //       title: "ROC & Compliance Filing",
+  //       description: "Regulatory compliance and filing services.",
+  //       icon: FaClipboardList,
+  //     },
+  //     {
+  //       title: "Budgeting & Forecasting",
+  //       description: "Financial planning and forecasting services.",
+  //       icon: FaChartLine,
+  //     },
+  //   ],
+  //   process: [
+  //     "Data collection & verification",
+  //     "Record maintenance",
+  //     "Compliance filing",
+  //     "Reporting & advisory",
+  //   ],
+  //   benefits: [
+  //     "Clear financial picture",
+  //     "Avoid penalties",
+  //     "Strategic growth planning",
+  //   ],
+  //   whyChooseUs: [
+  //     "Accurate & confidential handling",
+  //     "On-time compliance",
+  //     "Expert financial advice",
+  //   ],
+  // },
   {
     id: 8,
     title: "Lead Generation",
